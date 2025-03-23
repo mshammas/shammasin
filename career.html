@@ -207,7 +207,13 @@
          class="h-6 w-6 hover:invert">
   </a>
   
-  <!-- Mobile Menu Toggle -->
+  <!-- Floating Scroll-to-Top Button -->
+  <button id="scrollTopBtn"
+    class="hidden fixed bottom-4 left-4 bg-blue-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition z-50">
+    ↑ Top
+  </button>  
+  
+    <!-- Mobile Menu Toggle -->
   <script>
     const toggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -231,11 +237,5 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });        
   </script>
-  
-  <!-- Floating Scroll-to-Top Button -->
-  <button id="scrollTopBtn"
-    class="hidden fixed bottom-4 left-4 bg-blue-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition z-50">
-    ↑ Top
-  </button>  
 </body>
 </html>
