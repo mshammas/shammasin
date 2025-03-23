@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Music | Shammas Oliyath</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- Header -->
+  <header class="p-6 shadow-md bg-gray-50">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold hover:text-blue-500">Shammas Oliyath</a>
+      <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+      <nav id="menu" class="hidden md:flex md:space-x-6 text-gray-700 font-medium">
+        <a href="index.html" class="hover:text-blue-500">Home</a>
+        <a href="career.html" class="hover:text-blue-500">Career & Education</a>
+        <a href="music.html" class="hover:text-blue-500">Music</a>
+        <a href="check4spam.html" class="hover:text-blue-500">Check4Spam</a>
+        <a href="sports.html" class="hover:text-blue-500">Sports</a>
+        <a href="https://tools.shammas.in" target="_blank" class="hover:text-blue-500">AI Tools</a>
+        <a href="contact.html" class="hover:text-blue-500">Contact</a>
+      </nav>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden mt-4 space-y-2 text-center text-gray-700 font-medium">
+      <a href="index.html" class="block hover:text-blue-500">Home</a>
+      <a href="career.html" class="block hover:text-blue-500">Career & Education</a>
+      <a href="music.html" class="block hover:text-blue-500">Music</a>
+      <a href="check4spam.html" class="block hover:text-blue-500">Check4Spam</a>
+      <a href="sports.html" class="block hover:text-blue-500">Sports</a>
+      <a href="https://tools.shammas.in" target="_blank" class="block hover:text-blue-500">AI Tools</a>
+      <a href="contact.html" class="block hover:text-blue-500">Contact</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-4xl mx-auto p-6 mt-10">
+    <h2 class="text-3xl font-semibold mb-6">Music</h2>
+
+    <!-- Introduction -->
+    <section class="mb-10">
+      <p class="text-lg text-gray-700 leading-relaxed">
+        Music has always been a profound part of my life. Growing up in a musical family in Thalassery, Kerala, I was deeply influenced by the rich traditions of Indian melodies. My grandfather, the late TC Ummer, was a renowned musician and a guiding light in my musical journey. While I pursued a career in technology, my passion for music remained steadfast, leading me to explore and perform various genres, especially Ghazals and Hindustani music.
+      </p>
+    </section>
+
+    <!-- SoundCloud Profile -->
+    <section class="mb-10">
+      <h3 class="text-2xl font-semibold mb-4 text-blue-600">SoundCloud Profile</h3>
+      <p class="text-gray-700 mb-4">
+        Explore my musical renditions and covers on my SoundCloud profile.
+      </p>
+      <a href="https://soundcloud.com/shammas" target="_blank" class="text-blue-500 hover:underline">Visit my SoundCloud Profile</a>
+    </section>
+
+    <!-- Notable Tracks -->
+    <section>
+      <h3 class="text-2xl font-semibold mb-4 text-blue-600">Notable Tracks</h3>
+      <ul class="space-y-4">
+        <li>
+          <a href="https://soundcloud.com/mshammas/ae-mere-watan-ke-logon" target="_blank" class="text-xl font-semibold text-blue-500 hover:underline">Ae Mere Watan Ke Logon</a>
+          <p class="text-gray-700">A heartfelt rendition of the patriotic song originally sung by Lata Mangeshkar.</p>
+        </li>
+        <!-- Add more tracks as needed -->
+      </ul>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-16 py-6 bg-gray-100 text-center text-gray-500 text-sm">
+    &copy; 2025 Shammas Oliyath. All rights reserved.
+  </footer>
+
+  <!-- Mobile Menu Toggle -->
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    toggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
