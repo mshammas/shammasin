@@ -216,29 +216,35 @@
     ↑ Top
   </button>  
   
-    <!-- Mobile Menu Toggle -->
+  <!-- Mobile Menu Toggle -->
   <script>
     const toggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
-
+  
     toggle.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
     });
-
-    // Scroll-to-top button logic
-    const scrollBtn = document.getElementById("scrollTopBtn");
-    
+  
+    // Scroll-to-top button with idle detection
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    let scrollTimeout;
+  
     window.addEventListener("scroll", () => {
+      // Show button if user scrolls beyond 300px
       if (window.scrollY > 300) {
-        scrollBtn.classList.remove("hidden");
+        scrollTopBtn.classList.remove("hidden");
+  
+        // Clear any previous timeout
+        clearTimeout(scrollTimeout);
+  
+        // Hide button after 3 seconds of no scroll activity
+        scrollTimeout = setTimeout(() => {
+          scrollTopBtn.classList.add("hidden");
+        }, 3000);
       } else {
-        scrollBtn.classList.add("hidden");
+        scrollTopBtn.classList.add("hidden");
       }
     });
-    
-    scrollBtn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });        
   </script>
 </body>
 </html>
