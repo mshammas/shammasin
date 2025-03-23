@@ -120,16 +120,27 @@
     toggle.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
     });
-
-    // Show/hide scroll-to-top button
+  
+    // Scroll-to-top button with idle detection
     const scrollTopBtn = document.getElementById("scrollTopBtn");
+    let scrollTimeout;
+  
     window.addEventListener("scroll", () => {
+      // Show button if user scrolls beyond 300px
       if (window.scrollY > 300) {
         scrollTopBtn.classList.remove("hidden");
+  
+        // Clear any previous timeout
+        clearTimeout(scrollTimeout);
+  
+        // Hide button after 3 seconds of no scroll activity
+        scrollTimeout = setTimeout(() => {
+          scrollTopBtn.classList.add("hidden");
+        }, 3000);
       } else {
         scrollTopBtn.classList.add("hidden");
       }
     });
-  </script>  
+  </script>
 </body>
 </html>
