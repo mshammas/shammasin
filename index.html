@@ -90,7 +90,10 @@
   <header class="p-6 shadow-md bg-gray-50">
     <div class="max-w-6xl mx-auto flex justify-between items-center">
       <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold hover:text-blue-500">
-        <img src="images/profile.jpg" loading="lazy" alt="Profile" class="w-8 h-8 rounded-full object-cover shadow">
+        <picture>
+          <source srcset="images/profile.webp" type="image/webp">
+          <img src="images/profile.jpg" loading="lazy" alt="Shammas Oliyath" class="w-40 h-40 mx-auto rounded-full shadow-lg object-cover">
+        </picture>        
         <span>Shammas Oliyath</span>
       </a>
       <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none">
