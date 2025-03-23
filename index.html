@@ -2,10 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="theme-color" content="#ffffff">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Shammas Oliyath — technologist, musician, and innovator. Explore his work, tools, and musical journey.">
+  <meta name="keywords" content="Shammas Oliyath, AI Tools, Music, System Engineer, Portfolio, Check4Spam">
+  <meta name="author" content="Shammas Oliyath">
+  <meta property="og:title" content="Shammas Oliyath | Portfolio">
+  <meta property="og:description" content="Harmony in Technology, Music, and Passion. Explore Shammas' tools, music, and more.">
+  <meta property="og:image" content="https://shammas.in/images/profile.jpg">
+  <meta property="og:url" content="https://shammas.in">
+  <meta name="twitter:card" content="summary_large_image">
   <title>Shammas Oliyath | Portfolio</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" as="style">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Shammas Oliyath",
+    "url": "https://shammas.in",
+    "image": "https://shammas.in/images/profile.jpg",
+    "sameAs": [
+      "https://www.linkedin.com/in/shammas/",
+      "https://www.youtube.com/@mshammas",
+      "https://www.instagram.com/shammasoliyath",
+      "https://twitter.com/mshammas"
+    ],
+    "jobTitle": "System Engineer & Developer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "IBM"
+    }
+  }
+  </script>
   <style>
     body {
       font-family: 'Inter', sans-serif;
@@ -19,7 +50,7 @@
   <header class="p-6 shadow-md bg-gray-50">
     <div class="max-w-6xl mx-auto flex justify-between items-center">
       <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold hover:text-blue-500">
-        <img src="images/profile.jpg" alt="Profile" class="w-8 h-8 rounded-full object-cover shadow">
+        <img src="images/profile.jpg" loading="lazy" alt="Profile" class="w-8 h-8 rounded-full object-cover shadow">
         <span>Shammas Oliyath</span>
       </a>
       <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none">
@@ -57,7 +88,7 @@
       range of fields from AI tools to performing ghazals and curating spam protection systems.
     </p>
     <div class="mt-8">
-      <img src="images/profile.jpg" alt="Shammas Oliyath" class="w-40 h-40 mx-auto rounded-full shadow-lg object-cover">
+      <img src="images/profile.jpg" loading="lazy" alt="Shammas Oliyath" class="w-40 h-40 mx-auto rounded-full shadow-lg object-cover">
     </div>
   </section>
 
@@ -117,7 +148,7 @@
     ↑ Top
   </a>
   
-  <script>
+  <script defer>
     const toggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
   
@@ -145,6 +176,10 @@
         scrollTopBtn.classList.add("hidden");
       }
     });
+
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js');
+    }    
   </script>
 </body>
 </html>
