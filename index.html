@@ -10,9 +10,12 @@
     body {
       font-family: 'Inter', sans-serif;
     }
+    html {
+      scroll-behavior: smooth;
+    }    
   </style>
 </head>
-<body class="bg-white text-gray-800">
+<body id="top" class="bg-white text-gray-800">  
   <header class="p-6 shadow-md bg-gray-50">
     <div class="max-w-6xl mx-auto flex justify-between items-center">
       <a href="index.html" class="text-2xl font-bold hover:text-blue-500">Shammas Oliyath</a>
@@ -101,9 +104,9 @@
     &copy; 2025 Shammas Oliyath. All rights reserved.
   </footer>
   
-    <!-- Floating Go to Top Button -->
-  <a href="#top"
-     class="fixed bottom-4 left-4 bg-blue-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition z-50">
+  <!-- Floating Go to Top Button -->
+  <a href="#top" id="scrollTopBtn"
+     class="hidden fixed bottom-4 left-4 bg-blue-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition z-50">
     ↑ Top
   </a>
   
@@ -114,6 +117,23 @@
     toggle.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
     });
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  toggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  // Show/hide scroll-to-top button
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      scrollTopBtn.classList.remove("hidden");
+    } else {
+      scrollTopBtn.classList.add("hidden");
+    }
+  });
+</script>    
   </script>  
 </body>
 </html>
