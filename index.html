@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/images/profile.jpg"> <!-- or better: optimized icon -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="theme-color" content="#ffffff">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Portfolio of Shammas Oliyath — technologist, musician, and innovator. Explore his work, tools, and musical journey.">
@@ -40,6 +43,27 @@
       "@type": "Organization",
       "name": "IBM"
     }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://shammas.in"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Career & Education",
+        "item": "https://shammas.in/career.html"
+      }
+      // Add others as needed
+    ]
   }
   </script>
   <style>
