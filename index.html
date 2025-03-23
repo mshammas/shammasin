@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <link rel="manifest" href="/manifest.json">
   <link rel="apple-touch-icon" href="/images/profile.jpg"> <!-- or better: optimized icon -->
+  <link rel="preload" href="/images/profile.webp" as="image" type="image/webp">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="theme-color" content="#ffffff">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -78,7 +79,7 @@
     }    
   </style>
 </head>
-<body class="transition-all duration-300 ease-in-out id="top" class="bg-white text-gray-800">  
+<body id="top" class="bg-white text-gray-800 transition-all duration-300 ease-in-out">
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded">
     Skip to main content
   </a>  
@@ -92,7 +93,7 @@
       <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold hover:text-blue-500">
         <picture>
           <source srcset="images/profile.webp" type="image/webp">
-          <img src="images/profile.jpg" loading="lazy" alt="Shammas Oliyath" class="w-40 h-40 mx-auto rounded-full shadow-lg object-cover">
+          <img src="images/profile.jpg" loading="lazy" width="64" height="64" alt="Shammas Oliyath" class="w-8 h-8 rounded-full object-cover shadow" />
         </picture>        
         <span>Shammas Oliyath</span>
       </a>
@@ -108,7 +109,7 @@
         <a href="music.html" class="hover:text-blue-500">Music</a>
         <a href="check4spam.html" class="hover:text-blue-500">Check4Spam</a>
         <a href="sports.html" class="hover:text-blue-500">Sports</a>
-        <a href="https://tools.shammas.in" target="_blank" class="hover:text-blue-500">AI Tools</a>
+        <a href="https://tools.shammas.in" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">AI Tools</a>
         <a href="contact.html" class="hover:text-blue-500">Contact</a>
       </nav>
     </div>
