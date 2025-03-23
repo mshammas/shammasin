@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Career & Education | Shammas</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- Header -->
+  <header class="p-6 shadow-md bg-gray-50">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Shammas</h1>
+      <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+      <nav id="menu" class="hidden md:flex md:space-x-6 text-gray-700 font-medium">
+        <a href="index.html" class="hover:text-blue-500">Home</a>
+        <a href="career.html" class="hover:text-blue-500">Career & Education</a>
+        <a href="music.html" class="hover:text-blue-500">Music</a>
+        <a href="check4spam.html" class="hover:text-blue-500">Check4Spam</a>
+        <a href="sports.html" class="hover:text-blue-500">Sports</a>
+        <a href="https://tools.shammas.in" target="_blank" class="hover:text-blue-500">AI Tools</a>
+        <a href="contact.html" class="hover:text-blue-500">Contact</a>
+      </nav>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden mt-4 space-y-2 text-center text-gray-700 font-medium">
+      <a href="index.html" class="block hover:text-blue-500">Home</a>
+      <a href="career.html" class="block hover:text-blue-500">Career & Education</a>
+      <a href="music.html" class="block hover:text-blue-500">Music</a>
+      <a href="check4spam.html" class="block hover:text-blue-500">Check4Spam</a>
+      <a href="sports.html" class="block hover:text-blue-500">Sports</a>
+      <a href="https://tools.shammas.in" target="_blank" class="block hover:text-blue-500">AI Tools</a>
+      <a href="contact.html" class="block hover:text-blue-500">Contact</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-4xl mx-auto p-6 mt-10">
+    <h2 class="text-3xl font-semibold mb-6">Career & Education</h2>
+
+    <!-- Career Section -->
+    <section class="mb-10">
+      <h3 class="text-2xl font-semibold mb-4 text-blue-600">Professional Journey</h3>
+      <div class="space-y-4">
+        <div>
+          <h4 class="text-xl font-semibold">Senior System Engineer & Developer</h4>
+          <p class="text-gray-600">IBM System z • 2005 – Present</p>
+          <p class="mt-1 text-gray-700">
+            Over two decades of experience in enterprise systems, mainframes, and solution architecture. 
+            Specialized in modernization, automation, and DevOps on the IBM z platform.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-xl font-semibold">Founder, Check4Spam</h4>
+          <p class="text-gray-600">2016 – Present</p>
+          <p class="mt-1 text-gray-700">
+            Built a community-driven platform to identify and bust misinformation and fake news. Featured in top Indian news portals for its unique public service model.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section>
+      <h3 class="text-2xl font-semibold mb-4 text-blue-600">Education</h3>
+      <div class="space-y-4">
+        <div>
+          <h4 class="text-xl font-semibold">St. Aloysius College, Mangalore</h4>
+          <p class="text-gray-600">Bachelor's in Computer Applications (BCA)</p>
+          <p class="mt-1 text-gray-700">
+            Built a strong foundation in computer science, programming, and systems thinking. Active in college tech clubs and music performances.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-16 py-6 bg-gray-100 text-center text-gray-500 text-sm">
+    &copy; 2025 Shammas. All rights reserved.
+  </footer>
+
+  <!-- Mobile Menu Toggle -->
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    toggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
