@@ -264,7 +264,7 @@
     class="hidden fixed bottom-4 left-4 bg-blue-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition z-50">
     ↑ Top
   </button>
-  <script>
+  <script defer>
     const toggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
   
@@ -295,6 +295,9 @@
         behavior: "smooth"
       });
     });
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js');
+    }        
   </script>
 </body>
 </html>
