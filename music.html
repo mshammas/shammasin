@@ -94,12 +94,17 @@
       </p>
     </section>
 
-    <!-- SEO-Friendly YouTube Subscribe Button -->
+    <!-- SEO-Friendly YouTube Subscribe Button with GA4 Tracking -->
     <div class="my-8 flex justify-center">
       <a href="https://www.youtube.com/channel/UC7gjsjH6abSKVrMsKMUspCg?sub_confirmation=1"
          target="_blank"
          rel="noopener"
-         class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-full shadow-lg transition">
+         class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-full shadow-lg transition"
+         onclick="gtag('event', 'click', {
+           'event_category': 'engagement',
+           'event_label': 'YouTube Subscribe Button',
+           'value': 1
+         });">
         🎵 Subscribe on YouTube
       </a>
     </div>
