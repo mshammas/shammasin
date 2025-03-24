@@ -8,7 +8,7 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-2ZNW1FKGM0');
-  </script>
+  </script>  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Music by Shammas Oliyath | Ghazals, Hindustani & Covers</title>
@@ -24,6 +24,7 @@
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="/images/icon-192.png">
   <meta name="theme-color" content="#ffffff">
+
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
@@ -31,6 +32,7 @@
       font-family: 'Inter', sans-serif;
     }
   </style>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -51,14 +53,13 @@
   <!-- Header -->
   <header class="p-6 shadow-md bg-gray-50">
     <div class="max-w-6xl mx-auto flex justify-between items-center">
-    <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold hover:text-blue-500">
-      <img src="images/profile.jpg" alt="Profile" class="w-8 h-8 rounded-full object-cover shadow">
-      <span>Shammas Oliyath</span>
-    </a>
+      <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold hover:text-blue-500">
+        <img src="images/profile.jpg" alt="Profile" class="w-8 h-8 rounded-full object-cover shadow">
+        <span>Shammas Oliyath</span>
+      </a>
       <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
       </button>
       <nav id="menu" class="hidden md:flex md:space-x-6 text-gray-700 font-medium">
@@ -92,49 +93,20 @@
         Music has always been a profound part of my life. Growing up in a musical family in Thalassery, Kerala, I was deeply influenced by the rich traditions of Indian melodies. My grandfather, the late TC Ummer, was a renowned musician and a guiding light in my musical journey. While I pursued a career in technology, my passion for music remained steadfast, leading me to explore and perform various genres, especially Ghazals and Hindustani music.
       </p>
     </section>
-<div style="display: none;">
-    <!-- SoundCloud Profile -->
-    <section class="mb-10">
-      <h3 class="text-2xl font-semibold mb-4 text-blue-600">SoundCloud Profile</h3>
-      <p class="text-gray-700 mb-4">
-        Explore my musical renditions and covers on my SoundCloud profile.
-      </p>
-      <a href="https://soundcloud.com/shammas" target="_blank" class="text-blue-500 hover:underline">Visit my SoundCloud Profile</a>
-    </section>
 
-    <!-- Notable Tracks -->
-    <section>
-      <h3 class="text-2xl font-semibold mb-4 text-blue-600">Notable Tracks</h3>
-      <ul class="space-y-4">
-        <li>
-          <a href="https://soundcloud.com/mshammas/ae-mere-watan-ke-logon" target="_blank" class="text-xl font-semibold text-blue-500 hover:underline">Ae Mere Watan Ke Logon</a>
-          <p class="text-gray-700">A heartfelt rendition of the patriotic song originally sung by Lata Mangeshkar.</p>
-        </li>
-        <!-- Add more tracks as needed -->
-      </ul>
-    </section>
-</div>
     <!-- YouTube Subscribe Button -->
-<!-- Make sure this script is present somewhere on your page -->
-<script src="https://apis.google.com/js/platform.js"></script>
+    <script async defer src="https://apis.google.com/js/platform.js"></script>
+    <div class="my-8 flex justify-center">
+      <div class="g-ytsubscribe" data-channel="mshammas" data-layout="default" data-count="default"></div>
+    </div>
 
-<!-- YouTube Subscribe Button -->
-<script src="https://apis.google.com/js/platform.js"></script>    
-<div class="my-8 flex justify-center">
-<div class="g-ytsubscribe"
-     data-channel="mshammas"
-     data-layout="default"
-     data-count="default">
-</div>
-</div>
-
-    <!-- Embedded Playlist of Latest Uploads -->
+    <!-- Embedded Playlist -->
     <div class="relative" style="padding-top: 56.25%;">
       <iframe class="absolute top-0 left-0 w-full h-full" 
               src="https://www.youtube.com/embed/B0z-Y1NBNms?list=PLBFc521pLeCgU_hMsFXg45uFr-uUSnz6A&pp=gAQB" 
               frameborder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen>
+              allowfullscreen loading="lazy">
       </iframe>
     </div>
   </main>
@@ -143,12 +115,11 @@
   <footer class="mt-16 py-6 bg-gray-100 text-center text-gray-500 text-sm">
     &copy; 2025 Shammas Oliyath. All rights reserved.
   </footer>
-  
-  <!-- Mobile Menu Toggle -->
+
+  <!-- Mobile Menu Toggle Script -->
   <script>
     const toggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
-
     toggle.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
     });
