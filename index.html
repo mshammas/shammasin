@@ -230,10 +230,12 @@
   <script defer>
     const toggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
-  
-    toggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
+    
+    if (toggle && mobileMenu) {
+      toggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
   
     // Scroll-to-top button with idle detection
     const scrollTopBtn = document.getElementById("scrollTopBtn");
