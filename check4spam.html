@@ -240,19 +240,21 @@
     
         <!-- Gallery Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-          <img src="images/kspfactcheck-launch-1.jpg" alt="KSP Launch 1" class="rounded-xl cursor-pointer shadow hover:shadow-xl transition-transform transform hover:scale-105" onclick="openLightbox(this.src)" loading="lazy">
-          <img src="images/kspfactcheck-launch-2.jpg" alt="KSP Launch 2" class="rounded-xl cursor-pointer shadow hover:shadow-xl transition-transform transform hover:scale-105" onclick="openLightbox(this.src)" loading="lazy">
-          <img src="images/kspfactcheck-launch-3.jpg" alt="KSP Launch 3" class="rounded-xl cursor-pointer shadow hover:shadow-xl transition-transform transform hover:scale-105" onclick="openLightbox(this.src)" loading="lazy">
+          <img src="images/kspfactcheck-launch-1.jpg" data-index="0" alt="KSP Launch 1" class="rounded-xl cursor-pointer shadow hover:shadow-xl transition-transform transform hover:scale-105" onclick="openLightbox(this)">
+          <img src="images/kspfactcheck-launch-2.jpg" data-index="1" alt="KSP Launch 2" class="rounded-xl cursor-pointer shadow hover:shadow-xl transition-transform transform hover:scale-105" onclick="openLightbox(this)">
+          <img src="images/kspfactcheck-launch-3.jpg" data-index="2" alt="KSP Launch 3" class="rounded-xl cursor-pointer shadow hover:shadow-xl transition-transform transform hover:scale-105" onclick="openLightbox(this)">
         </div>
       </div>
     
       <!-- Lightbox Modal -->
       <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 hidden items-center justify-center z-50">
-        <span class="absolute top-6 right-6 text-white text-4xl cursor-pointer" onclick="closeLightbox()">&times;</span>
-        <img id="lightbox-img" src="" alt="Preview" class="max-w-full max-h-[90vh] rounded-lg shadow-lg transition duration-300">
+        <span class="absolute top-6 right-6 text-white text-4xl cursor-pointer z-50" onclick="closeLightbox()">&times;</span>
+        <button onclick="prevImage()" class="absolute left-4 text-white text-3xl md:text-5xl z-50">&#10094;</button>
+        <img id="lightbox-img" src="" alt="Preview" class="max-w-full max-h-[90vh] rounded-lg shadow-lg transition duration-300 z-40">
+        <button onclick="nextImage()" class="absolute right-4 text-white text-3xl md:text-5xl z-50">&#10095;</button>
       </div>
     </section>
-  
+      
   <!-- How It Works Section -->
   <section id="how-it-works" class="bg-white py-16">
     <div class="max-w-4xl mx-auto px-6">
@@ -639,8 +641,12 @@
     });
   </script>
   <script>
-    function openLightbox(src) {
-      document.getElementById("lightbox-img").src = src;
+    const images = Array.from(document.querySelectorAll('[onclick^="openLightbox"]'));
+    let currentIndex = 0;
+  
+    function openLightbox(img) {
+      currentIndex = parseInt(img.dataset.index);
+      updateLightbox();
       document.getElementById("lightbox").classList.remove("hidden");
       document.body.classList.add("overflow-hidden");
     }
@@ -650,9 +656,44 @@
       document.body.classList.remove("overflow-hidden");
     }
   
-    // Optional: Close lightbox on outside click
-    document.getElementById("lightbox").addEventListener("click", function (e) {
+    function updateLightbox() {
+      const imgElement = document.getElementById("lightbox-img");
+      imgElement.src = images[currentIndex].src;
+    }
+  
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      updateLightbox();
+    }
+  
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateLightbox();
+    }
+  
+    document.getElementById("lightbox").addEventListener("click", (e) => {
       if (e.target.id === "lightbox") closeLightbox();
+    });
+  
+    document.addEventListener("keydown", (e) => {
+      if (document.getElementById("lightbox").classList.contains("hidden")) return;
+      if (e.key === "ArrowLeft") prevImage();
+      else if (e.key === "ArrowRight") nextImage();
+      else if (e.key === "Escape") closeLightbox();
+    });
+  
+    // Swipe Support
+    let touchStartX = 0;
+    let touchEndX = 0;
+  
+    document.getElementById("lightbox").addEventListener("touchstart", e => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+  
+    document.getElementById("lightbox").addEventListener("touchend", e => {
+      touchEndX = e.changedTouches[0].screenX;
+      if (touchEndX < touchStartX - 50) nextImage();
+      if (touchEndX > touchStartX + 50) prevImage();
     });
   </script>
 </body>
