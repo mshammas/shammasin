@@ -681,10 +681,12 @@
     // Swipe Support
     let touchStartX = 0;
     let touchEndX = 0;
-  
-    document.getElementById("lightbox").addEventListener("touchstart", e => {
-      touchStartX = e.changedTouches[0].screenX;
-    });
+
+    if (toggle && mobileMenu) {   
+      document.getElementById("lightbox").addEventListener("touchstart", e => {
+        touchStartX = e.changedTouches[0].screenX;
+      });
+    }
   
     document.getElementById("lightbox").addEventListener("touchend", e => {
       touchEndX = e.changedTouches[0].screenX;
