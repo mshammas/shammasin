@@ -687,12 +687,14 @@
         touchStartX = e.changedTouches[0].screenX;
       });
     }
-  
-    document.getElementById("lightbox").addEventListener("touchend", e => {
-      touchEndX = e.changedTouches[0].screenX;
-      if (touchEndX < touchStartX - 50) nextImage();
-      if (touchEndX > touchStartX + 50) prevImage();
-    });
+
+    if (toggle && mobileMenu) {       
+      document.getElementById("lightbox").addEventListener("touchend", e => {
+        touchEndX = e.changedTouches[0].screenX;
+        if (touchEndX < touchStartX - 50) nextImage();
+        if (touchEndX > touchStartX + 50) prevImage();
+      });
+    }
   </script>
 </body>
 </html>
