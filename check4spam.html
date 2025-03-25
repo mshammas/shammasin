@@ -605,12 +605,14 @@
   </a>
   
   <script defer>
-    const toggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
+  const toggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
   
+  if (toggle && mobileMenu) {
     toggle.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
     });
+  }
   
     // Scroll-to-top button with idle detection
     const scrollTopBtn = document.getElementById("scrollTopBtn");
@@ -663,11 +665,12 @@
       currentIndex = (currentIndex + 1) % images.length;
       updateLightbox();
     }
-  
-    document.getElementById("lightbox").addEventListener("click", (e) => {
-      if (e.target.id === "lightbox") closeLightbox();
-    });
-  
+
+    if (toggle && mobileMenu) {   
+        document.getElementById("lightbox").addEventListener("click", (e) => {
+          if (e.target.id === "lightbox") closeLightbox();
+        });
+    }
     document.addEventListener("keydown", (e) => {
       if (document.getElementById("lightbox").classList.contains("hidden")) return;
       if (e.key === "ArrowLeft") prevImage();
