@@ -63,11 +63,18 @@
       border-radius: var(--radius);
       transition: all var(--t);
       color: var(--text);
+      will-change: transform;
     }
     .contact-method:hover {
       background: var(--card-hover);
       border-color: var(--border-hover);
       transform: translateX(4px);
+    }
+    [data-theme="light"] .contact-method {
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+    [data-theme="light"] .contact-method:hover {
+      box-shadow: 0 4px 16px rgba(79,142,247,0.1);
     }
 
     .method-icon {
@@ -95,6 +102,10 @@
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
       overflow: hidden;
+      transition: border-color var(--t), box-shadow var(--t);
+    }
+    [data-theme="light"] .form-card {
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
     }
 
     .form-card-header {
@@ -174,8 +185,15 @@
     .page-subtitle { color: var(--muted); font-size: 1rem; line-height: 1.7; }
 
     @media (max-width: 900px) {
-      .contact-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .contact-layout { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 1.25rem 0; }
       .contact-info { position: static; }
+      .page-hero { padding: 3rem 1.25rem 1.5rem; }
+    }
+    @media (max-width: 600px) {
+      .contact-layout { padding: 2rem 1rem 0; }
+      .form-iframe-wrap { min-height: 600px; }
+      .form-iframe-wrap iframe { min-height: 600px; }
+      .form-card-header { padding: 1.25rem 1.25rem 0; }
     }
   </style>
 </head>

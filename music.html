@@ -71,6 +71,10 @@
                   radial-gradient(ellipse at 60% 80%, rgba(79,142,247,0.08) 0%, transparent 50%);
       pointer-events: none;
     }
+    [data-theme="light"] .music-hero-bg {
+      background: radial-gradient(ellipse at 20% 50%, rgba(240,165,0,0.07) 0%, transparent 55%),
+                  radial-gradient(ellipse at 80% 20%, rgba(139,92,246,0.07) 0%, transparent 55%);
+    }
 
     /* Animated waveform SVG */
     .waveform-wrap {
@@ -141,6 +145,11 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
+    [data-theme="light"] .music-title {
+      background: linear-gradient(135deg, #1a1a2e 0%, #d97706 60%, #7c3aed 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
 
     .music-subtitle {
       font-size: 1.05rem;
@@ -168,6 +177,11 @@
       border-radius: var(--radius-lg);
       padding: 2.5rem 2.5rem 2.5rem 3rem;
       position: relative;
+    }
+    [data-theme="light"] .quote-card {
+      background: linear-gradient(135deg, rgba(240,165,0,0.05), rgba(255,255,255,0.8));
+      border-color: rgba(240,165,0,0.3);
+      box-shadow: 0 4px 20px rgba(240,165,0,0.06), 0 1px 4px rgba(0,0,0,0.06);
     }
 
     .quote-mark {
@@ -409,6 +423,15 @@
     @media (max-width: 768px) {
       .soundcloud-card { flex-direction: column; text-align: center; }
       .soundcloud-link { margin: 0 auto; }
+      .quote-card { padding: 1.75rem 1.5rem 1.75rem 2rem; }
+      .music-hero { padding: 3.5rem 1.5rem 3.5rem; }
+      .music-layout { padding: 0 1.25rem; }
+      .heritage-quote { padding: 0 1.25rem; }
+    }
+    @media (max-width: 480px) {
+      .quote-mark { font-size: 4rem; top: 1rem; left: 1.25rem; }
+      .genre-chips { gap: 0.5rem; }
+      .genre-chip { font-size: 0.8rem; padding: 0.4rem 1rem; }
     }
   </style>
 </head>

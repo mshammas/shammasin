@@ -13,7 +13,16 @@
   document.documentElement.classList.add('js-reveal');
 })();
 
-// ── 2. Header init — called after header HTML is injected ─────
+// ── 2. Page fade-in (injected before body renders) ───────────
+(function () {
+  var s = document.createElement('style');
+  s.textContent =
+    '@keyframes pageFadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}' +
+    'body{animation:pageFadeIn 0.45s cubic-bezier(0.4,0,0.2,1) both}';
+  document.head.appendChild(s);
+})();
+
+// ── 3. Header init — called after header HTML is injected ─────
 window.initHeader = function () {
 
   // Theme toggle button
@@ -73,7 +82,7 @@ window.initHeader = function () {
   }
 };
 
-// ── 3. Scroll: progress bar + header elevation ────────────────
+// ── 4. Scroll: progress bar + header elevation ────────────────
 window.addEventListener('scroll', function () {
   var scrollTop    = document.documentElement.scrollTop || document.body.scrollTop;
   var scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -87,7 +96,7 @@ window.addEventListener('scroll', function () {
   if (header) header.classList.toggle('elevated', scrollTop > 30);
 }, { passive: true });
 
-// ── 4. Scroll reveal ─────────────────────────────────────────
+// ── 5. Scroll reveal ─────────────────────────────────────────
 (function () {
   var observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
