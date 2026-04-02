@@ -223,19 +223,20 @@
   /* ============================================================
      SCROLL REVEAL
      ============================================================ */
-  .reveal {
+  /* Reveal: hidden by default only when JS has run (js-reveal class on html) */
+  .js-reveal .reveal {
     opacity: 0;
     transform: translateY(28px);
     transition: opacity 0.65s ease, transform 0.65s ease;
   }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-  .reveal-delay-1 { transition-delay: 0.1s; }
-  .reveal-delay-2 { transition-delay: 0.2s; }
-  .reveal-delay-3 { transition-delay: 0.3s; }
-  .reveal-delay-4 { transition-delay: 0.4s; }
-  .reveal-delay-5 { transition-delay: 0.5s; }
-  .reveal-left { opacity: 0; transform: translateX(-30px); transition: opacity 0.65s ease, transform 0.65s ease; }
-  .reveal-left.visible { opacity: 1; transform: translateX(0); }
+  .js-reveal .reveal.visible { opacity: 1; transform: translateY(0); }
+  .js-reveal .reveal-delay-1 { transition-delay: 0.1s; }
+  .js-reveal .reveal-delay-2 { transition-delay: 0.2s; }
+  .js-reveal .reveal-delay-3 { transition-delay: 0.3s; }
+  .js-reveal .reveal-delay-4 { transition-delay: 0.4s; }
+  .js-reveal .reveal-delay-5 { transition-delay: 0.5s; }
+  .js-reveal .reveal-left { opacity: 0; transform: translateX(-30px); transition: opacity 0.65s ease, transform 0.65s ease; }
+  .js-reveal .reveal-left.visible { opacity: 1; transform: translateX(0); }
 
   /* ============================================================
      SHARED CARD STYLE

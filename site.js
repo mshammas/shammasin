@@ -5,10 +5,12 @@
    shared behaviour lives here instead of inside header.html.
    ============================================================ */
 
-// ── 1. Theme (apply immediately — no flash) ───────────────────
+// ── 1. Theme + JS flag (apply immediately — no flash) ────────
 (function () {
   var t = localStorage.getItem('theme') || 'dark';
   document.documentElement.setAttribute('data-theme', t);
+  // Mark that JS is running so reveal CSS activates
+  document.documentElement.classList.add('js-reveal');
 })();
 
 // ── 2. Header init — called after header HTML is injected ─────
@@ -101,7 +103,15 @@ window.addEventListener('scroll', function () {
 
   function observeAll() {
     document.querySelectorAll('.reveal:not(.visible), .reveal-left:not(.visible)')
-      .forEach(function (el) { observer.observe(el); });
+      .forEach(function (el) {
+        var rect = el.getBoundingClientRect();
+        // Already above the viewport (scrolled past) — show immediately
+        if (rect.bottom < window.innerHeight * 0.5 && rect.top < 0) {
+          el.classList.add('visible');
+        } else {
+          observer.observe(el);
+        }
+      });
   }
 
   // Run now + after DOM is ready + after header injection settles
@@ -110,5 +120,5 @@ window.addEventListener('scroll', function () {
     document.addEventListener('DOMContentLoaded', observeAll);
   }
   setTimeout(observeAll, 200);
-  setTimeout(observeAll, 600);
+  setTimeout(observeAll, 700);
 })();
