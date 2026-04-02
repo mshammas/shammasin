@@ -309,7 +309,7 @@
 
     .stats-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 1px;
       background: var(--border);
       border: 1px solid var(--border);
@@ -322,7 +322,7 @@
 
     .stat-item {
       background: var(--card);
-      padding: 2rem 1.5rem;
+      padding: 1.75rem 1rem;
       text-align: center;
       transition: background var(--t);
     }
@@ -330,7 +330,7 @@
 
     .stat-number {
       font-family: var(--font-display);
-      font-size: clamp(2rem, 5vw, 3rem);
+      font-size: clamp(1.6rem, 3.5vw, 2.6rem);
       font-weight: 700;
       letter-spacing: -0.04em;
       background: linear-gradient(135deg, var(--blue), var(--gold));
@@ -338,14 +338,31 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
       line-height: 1;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
+    }
+    .stat-number.music-grad {
+      background: linear-gradient(135deg, var(--gold), var(--purple));
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+    .stat-number.sports-grad {
+      background: linear-gradient(135deg, var(--green), var(--blue));
+      -webkit-background-clip: text;
+      background-clip: text;
     }
 
     .stat-label {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 500;
       color: var(--muted);
       letter-spacing: 0.02em;
+    }
+    .stat-sublabel {
+      font-size: 0.72rem;
+      color: var(--muted);
+      opacity: 0.7;
+      margin-top: 0.2rem;
+      letter-spacing: 0.01em;
     }
 
     /* ============================================================
@@ -559,7 +576,7 @@
       .hero-typewriter { justify-content: center; }
       .scroll-indicator { display: none; }
 
-      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-grid { grid-template-columns: repeat(3, 1fr); }
       .stats-band { padding: 0 1.25rem; margin-bottom: 3.5rem; }
       .bento-section { padding: 0 1.25rem; margin-bottom: 3.5rem; }
       .social-strip { padding: 0 1.25rem; margin-bottom: 3.5rem; }
@@ -579,6 +596,7 @@
       .bento-career, .bento-blog { grid-column: span 1; }
       .bento-item { min-height: 160px; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-grid .stat-item:last-child { grid-column: 1 / -1; }
       .stat-item { padding: 1.5rem 1rem; }
     }
   </style>
@@ -624,7 +642,8 @@
 
           <p class="hero-desc">
             Two decades at IBM on Enterprise &amp; Mainframe systems. Founder of Check4Spam.
-            Ghazal and Hindustani musician. Building at the intersection of technology, creativity, and community.
+            Ghazal and Hindustani musician. Kerala State-level cricketer and table tennis player.
+            Building at the intersection of technology, sports, and music.
           </p>
 
           <div class="hero-cta">
@@ -665,12 +684,17 @@
           <div class="stat-label">System z Expert</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number"><span class="counter" data-target="2">0</span></div>
-          <div class="stat-label">Patents Filed</div>
-        </div>
-        <div class="stat-item">
           <div class="stat-number">2016</div>
           <div class="stat-label">Check4Spam Founded</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number music-grad">Ghazals</div>
+          <div class="stat-label">Musician &amp; Composer</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number sports-grad">Kerala</div>
+          <div class="stat-label">State Level Sportsman</div>
+          <div class="stat-sublabel">Cricket U-13 · Table Tennis U-14</div>
         </div>
       </div>
     </div>

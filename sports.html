@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZNW1FKGM0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -9,187 +8,411 @@
     gtag('js', new Date());
     gtag('config', 'G-2ZNW1FKGM0');
   </script>
-  <!-- Flash-free theme -->
   <script>(function(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
 
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sports | Shammas Oliyath</title>
-  <meta name="description" content="Shammas Oliyath's sports page — coming soon.">
+  <meta name="description" content="Shammas Oliyath — Kerala State U-13 Cricketer, Kerala State U-14 Table Tennis Player, and IT Director of Beatrice Sports Club, Thalassery.">
+  <meta name="author" content="Shammas Oliyath">
+  <meta property="og:title" content="Sports | Shammas Oliyath">
+  <meta property="og:description" content="Kerala State-level cricket and table tennis player. IT Director & Executive Member of Beatrice Sports Club, Thalassery.">
+  <meta property="og:image" content="https://shammas.in/images/profile-linkedin.jpg">
+  <meta property="og:url" content="https://shammas.in/sports.html">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#0a0a0f">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
   <link rel="apple-touch-icon" href="/images/icon-192.png">
   <link rel="manifest" href="/manifest.json">
+  <link rel="canonical" href="https://shammas.in/sports.html"/>
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <script src="/site.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    .coming-soon-page {
-      min-height: calc(100vh - var(--header-h));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 4rem 2rem;
+    /* ── Page hero ── */
+    .sports-hero {
       position: relative;
+      padding: 5rem 2rem 4.5rem;
+      text-align: center;
       overflow: hidden;
     }
-
-    /* Background orbs */
-    .cs-bg {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
+    .sports-hero-bg {
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse at 15% 50%, rgba(16,185,129,0.18) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 20%, rgba(79,142,247,0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 55% 80%, rgba(240,165,0,0.08) 0%, transparent 45%);
     }
-    .cs-orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(100px);
-      pointer-events: none;
-    }
-    .cs-orb-1 {
-      width: 500px; height: 400px;
-      background: radial-gradient(circle, rgba(16,185,129,0.2), transparent 70%);
-      top: -10%; left: -10%;
-      animation: csFloat 14s ease-in-out infinite;
-    }
-    .cs-orb-2 {
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(79,142,247,0.15), transparent 70%);
-      bottom: -10%; right: -10%;
-      animation: csFloat 18s ease-in-out infinite reverse;
-      animation-delay: -6s;
-    }
-    [data-theme="light"] .cs-orb { opacity: 0.5; }
-
-    @keyframes csFloat {
-      0%, 100% { transform: translate(0,0); }
-      50%       { transform: translate(20px, -30px); }
-    }
-
-    /* Grid overlay */
-    .cs-bg::after {
+    .sports-hero-bg::after {
       content: '';
-      position: absolute;
-      inset: 0;
+      position: absolute; inset: 0;
       background-image:
         linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
       background-size: 55px 55px;
     }
-    [data-theme="light"] .cs-bg::after {
+    [data-theme="light"] .sports-hero-bg {
+      background:
+        radial-gradient(ellipse at 15% 50%, rgba(16,185,129,0.08) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 20%, rgba(79,142,247,0.06) 0%, transparent 50%);
+    }
+    [data-theme="light"] .sports-hero-bg::after {
       background-image:
-        linear-gradient(rgba(0,0,0,0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,0,0,0.035) 1px, transparent 1px);
+        linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
     }
 
-    /* Content */
-    .cs-inner {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      max-width: 560px;
+    .sports-hero-inner {
+      position: relative; z-index: 1;
+      max-width: 680px; margin: 0 auto;
     }
 
-    .cs-emoji {
-      font-size: 5rem;
-      margin-bottom: 1.5rem;
-      display: block;
-      animation: bounce 2.5s ease-in-out infinite;
-    }
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50%       { transform: translateY(-12px); }
-    }
-
-    .cs-badge {
+    .sports-badge {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      padding: 0.3rem 0.875rem;
+      gap: 0.5rem;
+      padding: 0.35rem 1rem;
       border-radius: 99px;
       background: rgba(16,185,129,0.1);
-      border: 1px solid rgba(16,185,129,0.25);
-      font-size: 0.75rem;
+      border: 1px solid rgba(16,185,129,0.28);
+      font-size: 0.78rem;
       font-weight: 700;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--green, #10b981);
+      color: var(--green);
       margin-bottom: 1.5rem;
     }
-    .cs-badge::before {
+    .sports-badge::before {
       content: '';
-      width: 6px; height: 6px;
+      width: 7px; height: 7px;
       border-radius: 50%;
-      background: var(--green, #10b981);
+      background: var(--green);
       animation: pulse 2s ease-in-out infinite;
     }
     @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50%       { opacity: 0.4; }
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.5; transform: scale(0.8); }
     }
 
-    .cs-title {
+    .sports-title {
       font-family: var(--font-display);
-      font-size: clamp(2.2rem, 6vw, 3.5rem);
+      font-size: clamp(2.4rem, 7vw, 4.2rem);
       font-weight: 700;
       letter-spacing: -0.04em;
-      line-height: 1.1;
-      background: linear-gradient(135deg, var(--text) 0%, var(--muted) 100%);
+      line-height: 1.08;
+      background: linear-gradient(135deg, var(--text) 0%, var(--green) 50%, var(--blue) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       margin-bottom: 1rem;
     }
+    [data-theme="light"] .sports-title {
+      background: linear-gradient(135deg, #0f172a 0%, #059669 50%, #2563eb 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
 
-    .cs-desc {
-      font-size: 1rem;
+    .sports-subtitle {
+      font-size: 1.05rem;
       color: var(--muted);
       line-height: 1.75;
-      margin-bottom: 2.5rem;
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
     }
 
-    .cs-actions {
+    /* ── Floating sport icons row ── */
+    .sport-icons-row {
       display: flex;
-      gap: 0.875rem;
       justify-content: center;
+      gap: 1rem;
       flex-wrap: wrap;
+      margin-bottom: 1rem;
     }
-
-    /* Sports teaser cards */
-    .sports-preview {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.875rem;
-      margin-top: 3rem;
-      max-width: 480px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .sport-chip {
+    .sport-icon-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 1.1rem;
+      border-radius: 99px;
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1rem 0.75rem;
-      text-align: center;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text);
       transition: all var(--t);
     }
-    .sport-chip:hover {
+    .sport-icon-pill:hover {
       background: var(--card-hover);
-      border-color: rgba(16,185,129,0.35);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 24px rgba(16,185,129,0.1);
+      border-color: rgba(16,185,129,0.4);
+      transform: translateY(-2px);
     }
-    .sport-chip-icon { font-size: 1.75rem; margin-bottom: 0.4rem; }
-    .sport-chip-label {
+
+    /* ── Layout ── */
+    .sports-layout {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .sports-section { margin-bottom: 5rem; }
+
+    /* ── Achievement cards ── */
+    .achievement-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .achievement-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: all var(--t);
+      will-change: transform;
+    }
+    .achievement-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      opacity: 0;
+      transition: opacity var(--t);
+      border-radius: var(--radius-lg);
+    }
+    .achievement-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--card-accent, var(--green));
+      box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+    }
+    .achievement-card:hover::before { opacity: 1; }
+    [data-theme="light"] .achievement-card { box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+    [data-theme="light"] .achievement-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
+
+    .ac-cricket {
+      --card-accent: var(--green);
+    }
+    .ac-cricket::before {
+      background: radial-gradient(ellipse at top left, rgba(16,185,129,0.07), transparent 60%);
+    }
+
+    .ac-tt {
+      --card-accent: var(--blue);
+    }
+    .ac-tt::before {
+      background: radial-gradient(ellipse at top right, rgba(79,142,247,0.07), transparent 60%);
+    }
+
+    .ac-sport-emoji {
+      font-size: 3.5rem;
+      line-height: 1;
+      margin-bottom: 1.25rem;
+      display: block;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2));
+    }
+
+    .ac-level-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 99px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.875rem;
+    }
+    .ac-cricket .ac-level-badge {
+      background: rgba(16,185,129,0.12);
+      border: 1px solid rgba(16,185,129,0.25);
+      color: var(--green);
+    }
+    .ac-tt .ac-level-badge {
+      background: rgba(79,142,247,0.12);
+      border: 1px solid rgba(79,142,247,0.25);
+      color: var(--blue);
+    }
+
+    .ac-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+    .ac-org {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--card-accent, var(--green));
+      margin-bottom: 0.75rem;
+    }
+    .ac-body {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    /* ── Beatrice Sports Club card ── */
+    .beatrice-card {
+      background: linear-gradient(135deg, rgba(240,165,0,0.05), rgba(79,142,247,0.04));
+      border: 1px solid rgba(240,165,0,0.2);
+      border-left: 4px solid var(--gold);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2rem;
+      align-items: center;
+      transition: all var(--t);
+    }
+    .beatrice-card:hover {
+      background: linear-gradient(135deg, rgba(240,165,0,0.08), rgba(79,142,247,0.06));
+      border-color: rgba(240,165,0,0.4);
+      box-shadow: var(--glow-gold);
+    }
+    [data-theme="light"] .beatrice-card {
+      background: linear-gradient(135deg, rgba(240,165,0,0.05), rgba(255,255,255,0.9));
+      box-shadow: 0 2px 12px rgba(240,165,0,0.06), 0 1px 4px rgba(0,0,0,0.05);
+    }
+    [data-theme="light"] .beatrice-card:hover {
+      box-shadow: 0 8px 32px rgba(240,165,0,0.12), 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .beatrice-emblem {
+      width: 80px; height: 80px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(240,165,0,0.15), rgba(79,142,247,0.1));
+      border: 1px solid rgba(240,165,0,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      flex-shrink: 0;
+    }
+
+    .beatrice-role {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 99px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: rgba(240,165,0,0.1);
+      border: 1px solid rgba(240,165,0,0.25);
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+    .beatrice-title {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 0.35rem;
+    }
+    .beatrice-loc {
+      font-size: 0.875rem;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    .beatrice-body {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+    .beatrice-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    .beatrice-tag {
+      padding: 0.25rem 0.75rem;
+      border-radius: 99px;
       font-size: 0.75rem;
       font-weight: 600;
-      color: var(--muted);
-      letter-spacing: 0.04em;
+      background: rgba(240,165,0,0.08);
+      border: 1px solid rgba(240,165,0,0.2);
+      color: var(--gold);
+    }
+
+    /* ── Sports philosophy quote ── */
+    .sports-quote {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--green);
+      border-radius: var(--radius-lg);
+      padding: 2rem 2rem 2rem 2.5rem;
+      position: relative;
+    }
+    .sports-quote-text {
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.75;
+      font-style: italic;
+      margin-bottom: 0.75rem;
+    }
+    .sports-quote-attr {
+      font-size: 0.85rem;
+      color: var(--green);
+      font-weight: 600;
+    }
+
+    /* ── Stats strip ── */
+    .sports-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-top: 2rem;
+    }
+    [data-theme="light"] .sports-stats { box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+    .sports-stat {
+      background: var(--card);
+      padding: 1.75rem 1.5rem;
+      text-align: center;
+      transition: background var(--t);
+    }
+    .sports-stat:hover { background: var(--card-hover); }
+    .sports-stat-num {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 4vw, 2.25rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      background: linear-gradient(135deg, var(--green), var(--blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .sports-stat-lbl { font-size: 0.82rem; font-weight: 500; color: var(--muted); }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .achievement-grid { grid-template-columns: 1fr; }
+      .beatrice-card { grid-template-columns: 1fr; gap: 1.25rem; }
+      .sports-layout { padding: 0 1.25rem; }
+      .sports-hero { padding: 3.5rem 1.25rem 3.5rem; }
+    }
+    @media (max-width: 480px) {
+      .sports-stats { grid-template-columns: 1fr; }
+      .achievement-card { padding: 1.5rem; }
     }
   </style>
 </head>
@@ -206,51 +429,142 @@
       });
   </script>
 
-  <main id="main-content" class="coming-soon-page">
-    <div class="cs-bg">
-      <div class="cs-orb cs-orb-1"></div>
-      <div class="cs-orb cs-orb-2"></div>
-    </div>
+  <main id="main-content">
 
-    <div class="cs-inner">
-      <span class="cs-emoji" aria-hidden="true">🏏</span>
+    <!-- ══ HERO ══════════════════════════════════════════════ -->
+    <section class="sports-hero" aria-label="Sports introduction">
+      <div class="sports-hero-bg"></div>
+      <div class="sports-hero-inner">
+        <div class="sports-badge">State Level Sportsman</div>
 
-      <div class="cs-badge">Coming Soon</div>
+        <h1 class="sports-title">Sports &amp;<br>Athletics</h1>
 
-      <h1 class="cs-title">Sports Page<br>Is on Its Way</h1>
+        <p class="sports-subtitle">
+          From the cricket fields of Kerala to the table tennis courts —
+          sports have always been a parallel passion alongside technology and music.
+          Represented Kerala at the state level in two disciplines.
+        </p>
 
-      <p class="cs-desc">
-        Cricket, football, and beyond — this page will soon showcase the sporting
-        passions that keep the energy going off the field and outside the terminal.
-      </p>
-
-      <div class="cs-actions">
-        <a href="index.html" class="btn-primary">
-          Back to Home
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 12l7-7M3 12l7 7"/></svg>
-        </a>
-        <a href="contact.html" class="btn-secondary">Get Notified</a>
-      </div>
-
-      <!-- Teaser sport chips -->
-      <div class="sports-preview" aria-hidden="true">
-        <div class="sport-chip">
-          <div class="sport-chip-icon">🏏</div>
-          <div class="sport-chip-label">Cricket</div>
-        </div>
-        <div class="sport-chip">
-          <div class="sport-chip-icon">⚽</div>
-          <div class="sport-chip-label">Football</div>
-        </div>
-        <div class="sport-chip">
-          <div class="sport-chip-icon">🏸</div>
-          <div class="sport-chip-label">Badminton</div>
+        <div class="sport-icons-row">
+          <div class="sport-icon-pill">🏏 Cricket</div>
+          <div class="sport-icon-pill">🏓 Table Tennis</div>
+          <div class="sport-icon-pill">🏆 Beatrice Sports Club</div>
         </div>
       </div>
+    </section>
+
+    <div class="sports-layout">
+
+      <!-- ══ STATS STRIP ══════════════════════════════════════ -->
+      <div class="sports-stats reveal">
+        <div class="sports-stat">
+          <div class="sports-stat-num">2</div>
+          <div class="sports-stat-lbl">State Level Sports</div>
+        </div>
+        <div class="sports-stat">
+          <div class="sports-stat-num">Kerala</div>
+          <div class="sports-stat-lbl">State Representation</div>
+        </div>
+        <div class="sports-stat">
+          <div class="sports-stat-num">Beatrice</div>
+          <div class="sports-stat-lbl">Sports Club, Thalassery</div>
+        </div>
+      </div>
+
+      <!-- ══ STATE ACHIEVEMENTS ══════════════════════════════ -->
+      <section class="sports-section" aria-label="State level achievements">
+        <div class="section-label reveal">Achievements</div>
+        <h2 class="section-title reveal reveal-delay-1">State Level Representation</h2>
+        <p style="color:var(--muted);margin-top:-0.5rem;margin-bottom:0;max-width:600px;line-height:1.75;font-size:0.95rem;" class="reveal reveal-delay-2">
+          Competing at the state level requires dedication that transcends the sport itself — discipline,
+          resilience, and a competitive spirit that carries over into every arena of life.
+        </p>
+
+        <div class="achievement-grid">
+
+          <div class="achievement-card ac-cricket reveal reveal-delay-1">
+            <span class="ac-sport-emoji" aria-hidden="true">🏏</span>
+            <div class="ac-level-badge">State Level</div>
+            <div class="ac-title">Kerala State U-13 Cricketer</div>
+            <div class="ac-org">Kerala Cricket Association</div>
+            <div class="ac-body">
+              Represented Kerala at the Under-13 state level — one of the most competitive age-group
+              cricket circuits in the country. Playing for Kerala instilled the values of teamwork,
+              strategy under pressure, and the pursuit of excellence from a young age.
+            </div>
+          </div>
+
+          <div class="achievement-card ac-tt reveal reveal-delay-2">
+            <span class="ac-sport-emoji" aria-hidden="true">🏓</span>
+            <div class="ac-level-badge">State Level</div>
+            <div class="ac-title">Kerala State U-14 Table Tennis Player</div>
+            <div class="ac-org">Table Tennis Federation of India — Kerala</div>
+            <div class="ac-body">
+              Represented Kerala at the Under-14 state level in table tennis — a sport demanding
+              lightning reflexes, tactical precision, and deep concentration. Competing across both
+              cricket and table tennis at state level reflects a versatile sporting background.
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ══ BEATRICE SPORTS CLUB ═══════════════════════════ -->
+      <section class="sports-section" aria-label="Beatrice Sports Club">
+        <div class="section-label reveal">Community</div>
+        <h2 class="section-title reveal reveal-delay-1">Beatrice Sports Club, Thalassery</h2>
+
+        <div class="beatrice-card reveal reveal-delay-2">
+          <div class="beatrice-emblem" aria-hidden="true">🏆</div>
+          <div>
+            <div class="beatrice-role">IT Director &amp; Executive Member</div>
+            <div class="beatrice-title">Beatrice Sports Club</div>
+            <div class="beatrice-loc">📍 Thalassery, Kerala</div>
+            <div class="beatrice-body">
+              Serving as IT Director and Executive Member of Beatrice Sports Club in Thalassery —
+              one of the established sporting institutions in northern Kerala. Contributing to the
+              club's digital initiatives, infrastructure, and governance while staying deeply
+              connected to the sporting community that shaped so much of early life.
+            </div>
+            <div class="beatrice-tags">
+              <span class="beatrice-tag">IT Director</span>
+              <span class="beatrice-tag">Executive Member</span>
+              <span class="beatrice-tag">Thalassery, Kerala</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ PHILOSOPHY / QUOTE ══════════════════════════════ -->
+      <section class="sports-section" aria-label="Sports philosophy">
+        <div class="sports-quote reveal">
+          <div class="sports-quote-text">
+            Sports taught me what no classroom could — how to win gracefully, lose strategically,
+            and always show up. The discipline from the cricket field and the focus from the
+            table tennis court have been quiet forces behind every professional achievement.
+          </div>
+          <div class="sports-quote-attr">Shammas Oliyath — Thalassery, Kerala</div>
+        </div>
+      </section>
+
     </div>
   </main>
 
   <footer class="site-footer" role="contentinfo">
+    <div class="footer-socials">
+      <a href="https://www.linkedin.com/in/shammas/" target="_blank" rel="noopener" class="footer-social-link" aria-label="LinkedIn">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" loading="lazy">
+      </a>
+      <a href="https://www.youtube.com/@mshammas" target="_blank" rel="noopener" class="footer-social-link" aria-label="YouTube">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" loading="lazy">
+      </a>
+      <a href="https://www.instagram.com/shammasoliyath" target="_blank" rel="noopener" class="footer-social-link" aria-label="Instagram">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" loading="lazy">
+      </a>
+      <a href="https://twitter.com/mshammas" target="_blank" rel="noopener" class="footer-social-link" aria-label="Twitter">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" loading="lazy">
+      </a>
+    </div>
     <p class="footer-copy">&copy; 2025 Shammas Oliyath. All rights reserved.</p>
   </footer>
 
