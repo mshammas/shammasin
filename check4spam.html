@@ -1,700 +1,777 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZNW1FKGM0"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-2ZNW1FKGM0');
-  </script>
-  <meta charset="UTF-8" />
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="/images/icon-192.png">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2ZNW1FKGM0');</script>
+  <script>(function(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Check4Spam | Fact-Checking – Check Before You Believe</title>
-  <meta name="robots" content="index, follow">
   <meta name="description" content="Check4Spam helps you verify viral messages and debunk fake news in India. Trusted by thousands and featured in major news outlets.">
   <meta name="author" content="Shammas Oliyath">
-  <link rel="canonical" href="https://shammas.in/check4spam.html">
-  <meta name="keywords" content="fake news, fact check India, Check4Spam, WhatsApp hoaxes, misinformation, viral message checker, truth detector India">
+  <meta name="robots" content="index, follow">
+  <meta name="keywords" content="fake news, fact check India, Check4Spam, WhatsApp hoaxes, misinformation, viral message checker">
   <meta property="og:title" content="Check4Spam | Fact-Checking – Check Before You Believe">
-  <meta property="og:description" content="Verify fake news, hoaxes, and misinformation. Trusted by the public. Featured in BuzzFeed, BBC, NPR and more.">
+  <meta property="og:description" content="Verify fake news, hoaxes, and misinformation. Featured in BuzzFeed, BBC, NPR and more.">
   <meta property="og:image" content="https://check4spam.com/wp-content/uploads/2017/04/Check4Spam-Logo-Title-Black-1.png">
   <meta property="og:url" content="https://shammas.in/check4spam.html">
   <meta name="twitter:card" content="summary_large_image">
-  <!-- Tailwind CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <!-- Google Fonts -->
+  <meta name="theme-color" content="#0a0a0f">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+  <link rel="apple-touch-icon" href="/images/icon-192.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="canonical" href="https://shammas.in/check4spam.html"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <!-- Font Awesome for Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
-      crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="/site.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"Check4Spam","url":"https://check4spam.com","sameAs":["https://www.facebook.com/check4spam","https://twitter.com/check4spam"],"founders":[{"@type":"Person","name":"Shammas Oliyath"},{"@type":"Person","name":"Bal Krishn Birla"}],"description":"Check4Spam is a fact-checking platform that verifies social media forwards and viral messages."}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"VideoObject","name":"TEDx Talk: The Story Behind Check4Spam","description":"Shammas Oliyath shares the journey behind building Check4Spam.","thumbnailUrl":"https://img.youtube.com/vi/bFPCWhMcY_g/maxresdefault.jpg","uploadDate":"2023-08-27","embedUrl":"https://www.youtube.com/embed/bFPCWhMcY_g","contentUrl":"https://www.youtube.com/watch?v=bFPCWhMcY_g"}
+  </script>
+
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
+    /* ── Page layout wrapper ── */
+    .c4s-layout {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ── HERO ── */
+    .c4s-hero {
+      position: relative;
+      padding: 5rem 2rem 5rem;
+      text-align: center;
+      overflow: hidden;
+    }
+    .c4s-hero-bg {
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse at 15% 40%, rgba(239,68,68,0.18) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 20%, rgba(79,142,247,0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 60% 80%, rgba(240,165,0,0.08) 0%, transparent 45%);
+    }
+    .c4s-hero-bg::after {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 55px 55px;
+    }
+    [data-theme="light"] .c4s-hero-bg {
+      background:
+        radial-gradient(ellipse at 15% 40%, rgba(239,68,68,0.08) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 20%, rgba(79,142,247,0.06) 0%, transparent 50%);
+    }
+    [data-theme="light"] .c4s-hero-bg::after {
+      background-image:
+        linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+    }
+
+    .c4s-hero-inner {
+      position: relative; z-index: 1;
+      max-width: 700px; margin: 0 auto;
+    }
+
+    .c4s-logo {
+      height: 56px;
+      object-fit: contain;
+      margin: 0 auto 1.5rem;
+      display: block;
+      filter: brightness(0) invert(1);
+      opacity: 0.9;
+    }
+    [data-theme="light"] .c4s-logo { filter: none; opacity: 1; }
+
+    .c4s-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.875rem;
+      border-radius: 99px;
+      background: rgba(239,68,68,0.1);
+      border: 1px solid rgba(239,68,68,0.25);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 1.5rem;
+    }
+    .c4s-badge::before {
+      content: ''; width: 6px; height: 6px;
+      border-radius: 50%; background: var(--red);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .c4s-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 7vw, 4.5rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      background: linear-gradient(135deg, #fff 0%, rgba(239,68,68,0.9) 70%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+    }
+    [data-theme="light"] .c4s-title {
+      background: linear-gradient(135deg, var(--text) 0%, var(--red) 70%);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    .c4s-subtitle {
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+      max-width: 520px;
+      margin-left: auto; margin-right: auto;
+    }
+
+    .verify-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.875rem 2rem;
+      border-radius: 12px;
+      background: var(--red);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: all var(--t);
+      border: 1px solid transparent;
+    }
+    .verify-btn:hover {
+      background: #dc2626;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(239,68,68,0.35);
+    }
+
+    /* ── Stats strip ── */
+    .c4s-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin: 3rem 0;
+    }
+    .c4s-stat {
+      background: var(--card);
+      padding: 1.75rem 1rem;
+      text-align: center;
+      transition: background var(--t);
+    }
+    .c4s-stat:hover { background: var(--card-hover); }
+    .c4s-stat-num {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 4vw, 2.25rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      color: var(--red);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .c4s-stat-lbl { font-size: 0.8rem; font-weight: 500; color: var(--muted); }
+
+    /* ── Generic section spacing ── */
+    .c4s-section { margin-bottom: 5rem; }
+
+    /* ── About card ── */
+    .about-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--red);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+    }
+    .about-card p { color: var(--muted); line-height: 1.85; margin-bottom: 1rem; }
+    .about-card p:last-child { margin-bottom: 0; }
+    .about-card strong { color: var(--text); }
+
+    /* ── TEDx video ── */
+    .tedx-meta {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .tedx-meta a { color: var(--blue); }
+    .video-wrap {
+      background: var(--card);
+      border: 1px solid rgba(239,68,68,0.2);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      transition: box-shadow var(--t);
+    }
+    .video-wrap:hover { box-shadow: 0 24px 80px rgba(0,0,0,0.5), 0 0 40px rgba(239,68,68,0.1); }
+    .video-ratio { position: relative; width: 100%; padding-top: 56.25%; }
+    .video-ratio iframe { position: absolute; top:0; left:0; width:100%; height:100%; border:none; }
+    .video-bar {
+      padding: 1.25rem 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .video-bar-title { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; color: var(--text); }
+    .video-bar-sub { font-size: 0.8rem; color: var(--muted); }
+    .video-bar-link { font-size: 0.82rem; color: var(--red); font-weight: 600; white-space: nowrap; }
+
+    /* ── How it works ── */
+    .steps-track {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    .step-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      transition: all var(--t);
+      position: relative;
+      overflow: hidden;
+    }
+    .step-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at top left, rgba(239,68,68,0.06), transparent 60%);
+      opacity: 0; transition: opacity var(--t);
+      border-radius: var(--radius-lg);
+    }
+    .step-card:hover { border-color: rgba(239,68,68,0.35); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(239,68,68,0.1); }
+    .step-card:hover::before { opacity: 1; }
+    .step-num {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: rgba(239,68,68,0.2);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.04em;
+    }
+    .step-title { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
+    .step-desc { font-size: 0.875rem; color: var(--muted); line-height: 1.7; }
+
+    /* ── Features ── */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    .feat-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      transition: all var(--t);
+    }
+    .feat-card:hover { background: var(--card-hover); border-color: var(--border-hover); transform: translateY(-3px); }
+    .feat-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+    .feat-title { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
+    .feat-desc { font-size: 0.875rem; color: var(--muted); line-height: 1.7; }
+
+    /* ── Origin story ── */
+    .origin-card {
+      background: linear-gradient(135deg, rgba(240,165,0,0.05), rgba(79,142,247,0.04));
+      border: 1px solid rgba(240,165,0,0.2);
+      border-left: 4px solid var(--gold);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    .origin-text p { color: var(--muted); line-height: 1.8; margin-bottom: 1rem; }
+    .origin-img {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
+    .origin-img img { width: 100%; display: block; border-radius: var(--radius); }
+
+    /* ── KSP Gallery ── */
+    .ksp-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .ksp-photo-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: all var(--t);
+    }
+    .ksp-photo-card:hover { border-color: var(--border-hover); transform: translateY(-4px); box-shadow: var(--glow-blue); }
+    .ksp-photo-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+    .ksp-photo-cap { padding: 0.875rem 1rem; font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
+
+    /* ── Media coverage ── */
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .media-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: all var(--t);
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+    }
+    .media-card:hover { background: var(--card-hover); border-color: var(--border-hover); transform: translateY(-4px); box-shadow: var(--glow-blue); }
+    .media-thumb {
+      width: 100%; aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      background: var(--bg-3, #1a1a26);
+    }
+    .media-body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; }
+    .media-outlet {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 0.5rem;
+    }
+    .media-headline {
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.4;
+      margin-bottom: 0.5rem;
+      flex: 1;
+    }
+    .media-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.6; margin-bottom: 0.75rem; }
+    .media-date { font-size: 0.72rem; color: var(--muted); }
+
+    /* ── CTA band ── */
+    .cta-band {
+      background: linear-gradient(135deg, rgba(239,68,68,0.08), rgba(79,142,247,0.05));
+      border: 1px solid rgba(239,68,68,0.2);
+      border-radius: var(--radius-lg);
+      padding: 3rem 2.5rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-band::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at center, rgba(239,68,68,0.06), transparent 70%);
+      pointer-events: none;
+    }
+    .cta-band h2 { font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; letter-spacing: -0.03em; margin-bottom: 0.75rem; }
+    .cta-band p { color: var(--muted); max-width: 480px; margin: 0 auto 2rem; line-height: 1.7; }
+    .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .c4s-stats { grid-template-columns: repeat(2, 1fr); }
+      .steps-track { grid-template-columns: 1fr; }
+      .features-grid { grid-template-columns: 1fr; }
+      .origin-card { grid-template-columns: 1fr; }
+      .ksp-grid { grid-template-columns: 1fr; }
+      .media-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .c4s-stats { grid-template-columns: repeat(2, 1fr); }
+      .media-grid { grid-template-columns: 1fr; }
     }
   </style>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Check4Spam",
-    "url": "https://check4spam.com",
-    "logo": "https://check4spam.com/wp-content/uploads/2017/04/Check4Spam-Logo-Title-Black-1.png",
-    "sameAs": [
-      "https://www.facebook.com/check4spam",
-      "https://twitter.com/check4spam",
-      "https://www.instagram.com/check4spam"
-    ],
-    "founders": [
-      {
-        "@type": "Person",
-        "name": "Shammas Oliyath"
-      },
-      {
-        "@type": "Person",
-        "name": "Bal Krishn Birla"
-      }
-    ],
-    "description": "Check4Spam is a fact-checking platform that verifies social media forwards and viral messages to prevent the spread of misinformation.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Bengaluru",
-      "addressCountry": "India"
-    }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "VideoObject",
-    "name": "TEDx Talk: The Story Behind Check4Spam",
-    "description": "In this TEDx talk, Shammas Oliyath shares the journey, challenges, and philosophy behind building Check4Spam — a community-driven effort to fight fake news and misinformation.",
-    "thumbnailUrl": "https://img.youtube.com/vi/bFPCWhMcY_g/maxresdefault.jpg",
-    "uploadDate": "2023-08-27",
-    "duration": "PT10M25S",
-    "embedUrl": "https://www.youtube.com/embed/bFPCWhMcY_g",
-    "contentUrl": "https://www.youtube.com/watch?v=bFPCWhMcY_g",
-    "interactionStatistic": {
-      "@type": "InteractionCounter",
-      "interactionType": {
-        "@type": "WatchAction"
-      },
-      "userInteractionCount": 1000
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "TEDx Talks",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://yt3.googleusercontent.com/ytc/AGIKgqO8K9t0PtOo-_JtSDkI9yQsKXOlGmA2UJ7XYxfO=s88-c-k-c0x00ffffff-no-rj"
-      }
-    },
-    "creator": {
-      "@type": "Person",
-      "name": "Shammas Oliyath",
-      "url": "https://shammas.in",
-      "sameAs": [
-        "https://www.linkedin.com/in/shammas/",
-        "https://twitter.com/mshammas",
-        "https://www.instagram.com/shammasoliyath",
-        "https://www.youtube.com/@mshammas"
-      ],
-      "jobTitle": "Founder, Check4Spam"
-    },
-    "productionCompany": {
-      "@type": "Organization",
-      "name": "TEDxIBABangalore",
-      "url": "https://www.ted.com/tedx/events/23595"
-    },
-    "transcript": "In this TEDx talk, Shammas Oliyath discusses how misinformation spreads and why community-powered tools like Check4Spam are essential for truth and trust in the digital age."
-  }
-  </script>
 </head>
-<body id="top" class="bg-white text-gray-800">  
-  
-  <!-- Header & Navigation (same as index) -->
+<body>
   <div id="header-placeholder"></div>
   <script>
     fetch('/header.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('header-placeholder').innerHTML = data;
-  
-        // Optional: reinitialize any event listeners here
-        const toggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (toggle && mobileMenu) {
-          toggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-          });
-        }
+      .then(function(r){ return r.text(); })
+      .then(function(html){
+        document.getElementById('header-placeholder').innerHTML = html;
+        if (typeof window.initHeader === 'function') window.initHeader();
       });
   </script>
 
-  <!-- Hero Section -->
-  <section id="hero" class="bg-white py-16">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <!-- Check4Spam Logo -->
-      <div class="mb-4">
-        <a href="https://check4spam.com" target="_blank">
-          <img src="https://check4spam.com/wp-content/uploads/2017/04/Check4Spam-Logo-Title-Black-1.png" alt="Check4Spam Logo" class="mx-auto h-16" loading="lazy">
-        </a>
-      </div>
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">Check Before You Believe</h1>
-      <p class="text-lg text-gray-700 mb-8">
-        Got a suspicious message? Check4Spam is here to help you separate facts from fakes.
-      </p>
-      <a href="https://chatgpt.com/g/g-HdFQB78An-check4spam" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-8 rounded-full font-medium transition">
-        Verify Now
-      </a>
-    </div>
-  </section>
+  <main id="main-content">
 
-  <!-- About Section -->
-  <section id="about" class="bg-gray-100 py-16">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-3xl font-semibold text-center mb-6">What is Check4Spam?</h2>
-      <p class="text-gray-700 leading-relaxed mb-4">
-        Check4Spam is a free fact-checking service dedicated to identifying and exposing fake news, hoaxes, and misinformation circulating on social media. Founded in 2015 in Bengaluru, India, our mission is simple – make life easy for everyone and make life tough for spammers.
-      </p>
-      <p class="text-gray-700 leading-relaxed">
-        Created by tech enthusiasts Shammas Oliyath and Bal Krishn Birla, Check4Spam has grown into a trusted, community-driven platform that helps you decide if a viral message is true or false.
-      </p>
-    </div>
-  </section>
-  
-  <!-- TEDx Talk Video -->
-  <section id="tedx-talk" class="bg-white py-16">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-3xl font-semibold mb-6">TEDx Talk: The Story Behind Check4Spam</h2>
-      <p class="text-gray-800 mb-4">
-        In this TEDx talk, Shammas Oliyath shares the journey, challenges, and philosophy behind building Check4Spam — a community-driven effort to fight fake news and misinformation.
-      </p>
-      
-      <p class="text-gray-900 text-sm italic mb-6">
-        This talk was presented at 
-        <a href="https://www.ted.com/tedx/events/23595" target="_blank" class="text-blue-1000 hover:underline">TEDxIBABangalore</a>, 
-        an independently organized TED event hosted at 
-        <a href="https://www.iba.ac.in/" target="_blank" class="text-blue-1000 hover:underline">Indus Business Academy</a>, Bengaluru.
-      </p>
-      <div class="relative w-full" style="padding-bottom: 56.25%;">
-        <iframe
-          class="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
-          src="https://www.youtube.com/embed/bFPCWhMcY_g?rel=0"
-          title="TEDx Talk - Shammas Oliyath - Check4Spam"
-          loading="lazy"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </div>
-    </div>
-    </section>
-  
-    <!-- Origin Story Section -->
-    <section id="origin-story" class="bg-gray-100 py-16">
-      <div class="max-w-4xl mx-auto px-6 text-center">
-        <h2 class="text-3xl font-semibold mb-6">How Elections 2014 Inspired Check4Spam</h2>
-        <p class="text-gray-900 mb-6">
-          In 2014, during the Indian General Elections, I witnessed firsthand how misinformation and viral messages influenced public opinion. This was one of the experiences that led me to start <strong>Check4Spam</strong> — a platform dedicated to fact-checking and helping people separate truth from fake forwards.
-        </p>
-        <p class="text-gray-900 mb-8">
-          I’ve written about this personal journey on Medium, sharing how a sense of social responsibility combined with a passion for technology sparked the idea.
-        </p>
-        <a href="https://medium.com/@shammas/how-elections-2014-was-an-influence-on-me-to-start-check4spam-com-in-india-c2b5c0b2408e" target="_blank">
-          <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*KEg4mceLGEVkhmzVcnfWOQ.png" alt="How Elections 2014 Inspired Check4Spam - Article Cover" class="mx-auto rounded-lg shadow-lg mb-6 w-full max-w-2xl h-auto" loading="lazy">
+    <!-- ══ HERO ══════════════════════════════════════════════ -->
+    <section class="c4s-hero">
+      <div class="c4s-hero-bg"></div>
+      <div class="c4s-hero-inner">
+        <a href="https://check4spam.com" target="_blank" rel="noopener">
+          <img src="https://check4spam.com/wp-content/uploads/2017/04/Check4Spam-Logo-Title-Black-1.png"
+               alt="Check4Spam" class="c4s-logo" loading="eager">
         </a>
-        <a href="https://medium.com/@shammas/how-elections-2014-was-an-influence-on-me-to-start-check4spam-com-in-india-c2b5c0b2408e" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-full font-medium transition">
-          Read the Full Story on Medium
-        </a>
-      </div>
-    </section>
-  
-    <!-- Collaboration with Karnataka State Police Department -->
-    <section id="ksp-factcheck" class="bg-white py-16">
-      <div class="max-w-5xl mx-auto px-6 text-center">
-        <h2 class="text-3xl font-semibold mb-4">Partnering with Karnataka Police</h2>
-        <p class="text-gray-900 mb-8">
-          Team Check4Spam proudly collaborated with the 
-          <a href="https://ksp.karnataka.gov.in" class="text-blue-600 hover:underline" target="_blank">Karnataka State Police</a> 
-          to build and launch their official fact-checking portal: <br>
-          <a href="https://factcheck.ksp.gov.in" class="text-blue-600 font-medium hover:underline" target="_blank">factcheck.ksp.gov.in</a>.
+        <div class="c4s-badge">Fighting Misinformation Since 2016</div>
+        <h1 class="c4s-title">Check Before<br>You Believe</h1>
+        <p class="c4s-subtitle">
+          Got a suspicious message? Check4Spam is India's community-driven fact-checking platform —
+          separating facts from fakes since 2016. Featured in BuzzFeed, BBC, NPR, and more.
         </p>
-    
-        <!-- Responsive Gallery with Lightbox -->
-        <div class="overflow-x-auto sm:overflow-visible">
-          <div class="flex sm:grid sm:grid-cols-3 gap-4 snap-x snap-mandatory scroll-smooth">
-            <a href="images/kspfactcheck-launch-1.jpg" target="_blank" class="block w-80 sm:w-full flex-shrink-0 snap-center">
-              <img src="images/kspfactcheck-launch-1.jpg" alt="Check4Spam Presentation" class="rounded-lg shadow-md w-full h-auto">
-              <p class="text-sm text-gray-600 mt-2">Shammas presenting on misinformation awareness</p>
-            </a>
-            <a href="images/kspfactcheck-launch-2.jpg" target="_blank" class="block w-80 sm:w-full flex-shrink-0 snap-center">
-              <img src="images/kspfactcheck-launch-2.jpg" alt="Police HQ Visit" class="rounded-lg shadow-md w-full h-auto">
-              <p class="text-sm text-gray-600 mt-2">Team at the Karnataka Police Headquarters</p>
-            </a>
-            <a href="images/kspfactcheck-launch-3.jpg" target="_blank" class="block w-80 sm:w-full flex-shrink-0 snap-center">
-              <img src="images/kspfactcheck-launch-3.jpg" alt="CID Meeting" class="rounded-lg shadow-md w-full h-auto">
-              <p class="text-sm text-gray-600 mt-2">Meeting with CID officials on fact-checking collaboration</p>
-            </a>
-          </div>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+          <a href="https://chatgpt.com/g/g-HdFQB78An-check4spam" target="_blank" rel="noopener" class="verify-btn">
+            🔍 Verify Now with AI
+          </a>
+          <a href="https://check4spam.com" target="_blank" rel="noopener" class="btn-secondary">
+            Visit Website ↗
+          </a>
         </div>
       </div>
     </section>
-      
-  <!-- How It Works Section -->
-  <section id="how-it-works" class="bg-gray-100 py-16">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-3xl font-semibold text-center mb-8">How It Works</h2>
-      <ol class="list-decimal list-inside text-gray-700 space-y-4">
-        <li>
-          <span class="font-semibold">Submit a Forward or Claim:</span>
-          Send the suspicious message to our WhatsApp number or via our online submission form.
-        </li>
-        <li>
-          <span class="font-semibold">We Investigate:</span>
-          Our team conducts thorough research by verifying data with trusted sources and through detailed online searches.
-        </li>
-        <li>
-          <span class="font-semibold">Spam or Not Spam?</span>
-          We clearly label the claim as <em>NOT SPAM (true)</em> or <em>SPAM (false)</em> and provide a detailed report.
-        </li>
-        <li>
-          <span class="font-semibold">See the Proof:</span>
-          Every verification post includes evidence like source links, images, and official statements with regular updates.
-        </li>
-      </ol>
-    </div>
-  </section>
 
-  <!-- Features & Tools Section -->
-  <section id="features" class="bg-white py-16">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-semibold text-center mb-8">Key Features & Tools</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- Feature Card 1: Easy Submission -->
-        <div class="bg-white p-6 shadow rounded-lg hover:shadow-lg transition text-center">
-          <div class="text-blue-500 mb-4">
-            <i class="fab fa-whatsapp text-6xl"></i>
-          </div>
-          <h3 class="text-xl font-semibold mb-2">Easy Submission</h3>
-          <p class="text-gray-600">
-            Forward any suspicious message via WhatsApp or submit it online. Fast, simple, and accessible to everyone.
-          </p>
+    <div class="c4s-layout">
+
+      <!-- Stats -->
+      <div class="c4s-stats reveal">
+        <div class="c4s-stat">
+          <div class="c4s-stat-num">2016</div>
+          <div class="c4s-stat-lbl">Founded</div>
         </div>
-        <!-- Feature Card 2: Detailed Investigation -->
-        <div class="bg-white p-6 shadow rounded-lg hover:shadow-lg transition text-center">
-          <div class="text-blue-500 mb-4">
-            <i class="fas fa-search text-6xl"></i>
-          </div>
-          <h3 class="text-xl font-semibold mb-2">Detailed Investigation</h3>
-          <p class="text-gray-600">
-            Our team digs deep, verifying facts with trusted sources to debunk fake news and expose hoaxes.
-          </p>
+        <div class="c4s-stat">
+          <div class="c4s-stat-num">9+</div>
+          <div class="c4s-stat-lbl">Media Features</div>
         </div>
-        <!-- Feature Card 3: Fact Search Engine -->
-        <div class="bg-white p-6 shadow rounded-lg hover:shadow-lg transition text-center">
-          <div class="text-blue-500 mb-4">
-            <i class="fas fa-search-plus text-6xl"></i>
-          </div>
-          <h3 class="text-xl font-semibold mb-2">Fact Search Engine</h3>
-          <p class="text-gray-600">
-            Use our dedicated search tool to check if a rumor has been debunked before – your personal truth detector.
-          </p>
+        <div class="c4s-stat">
+          <div class="c4s-stat-num">BBC</div>
+          <div class="c4s-stat-lbl">NPR · BuzzFeed</div>
         </div>
-        <!-- Feature Card 4: Multi-Language Support -->
-        <div class="bg-white p-6 shadow rounded-lg hover:shadow-lg transition text-center">
-          <div class="text-blue-500 mb-4">
-            <i class="fas fa-language text-6xl"></i>
-          </div>
-          <h3 class="text-xl font-semibold mb-2">Multi-Language Support</h3>
-          <p class="text-gray-600">
-            Explanations are provided in several languages, ensuring truth is accessible to everyone.
-          </p>
+        <div class="c4s-stat">
+          <div class="c4s-stat-num">KSP</div>
+          <div class="c4s-stat-lbl">Govt. Partner</div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Media Coverage Section -->
-  <section id="media" class="bg-gray-100 py-16">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-semibold text-center mb-8">Media Coverage</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Media Card 1 -->
-        <div class="bg-white p-6 shadow rounded-lg hover:shadow-lg transition">
-          <img src="https://img.buzzfeed.com/buzzfeed-static/static/2017-02/3/8/asset/buzzfeed-prod-web-02/anigif_sub-buzz-23082-1486128929-2_preview.gif" alt="BuzzFeed article about Check4Spam" class="w-full h-auto rounded mb-4" loading="lazy">
-          <h3 class="text-xl font-semibold mb-2">
-            <a href="https://www.buzzfeed.com/pranavdixit/this-website-wants-to-be-the-snopes-of-whatsapp-hoaxes-in-in" class="hover:text-blue-500">
-              This Website Wants To Be The Snopes Of WhatsApp Hoaxes In India
-            </a>
-          </h3>
-          <p class="text-gray-600 mb-2">
-            BuzzFeed News profiled our founders, dubbing us the “Snopes of India” for fighting fake news.
+      <!-- ══ ABOUT ══════════════════════════════════════════════ -->
+      <section class="c4s-section reveal">
+        <div class="section-label">About</div>
+        <h2 class="section-title">What is Check4Spam?</h2>
+        <div class="about-card">
+          <p>
+            <strong>Check4Spam</strong> is a free fact-checking service dedicated to identifying and exposing
+            fake news, hoaxes, and misinformation circulating on social media. Founded in Bengaluru, India,
+            our mission is simple — make life easy for everyone, and make life tough for spammers.
           </p>
-          <div class="text-gray-500 text-sm">BuzzFeed News | Feb 4, 2017</div>
+          <p>
+            Created by tech enthusiasts <strong>Shammas Oliyath</strong> and <strong>Bal Krishn Birla</strong>,
+            Check4Spam has grown into a trusted, community-driven platform that helps you decide if a viral
+            message is true or false. We respond to hundreds of verification requests every day.
+          </p>
         </div>
-        <!-- Media Card 2 -->
-        <div class="bg-white p-6 shadow rounded-lg hover:shadow-lg transition">
-          <img src="https://img.etimg.com/thumb/msid-57287228,width-650,height-488,imgsize-20704,resizemode-75/.jpg" alt="Economic Times" class="w-full h-auto rounded mb-4" loading="lazy">
-          <h3 class="text-xl font-semibold mb-2">
-            <a href="https://economictimes.indiatimes.com/magazines/panache/in-a-post-truth-world-check4spam-can-help-you-sift-fake-news/articleshow/57287228.cms" class="hover:text-blue-500">
-              In a post-truth world, ‘Check4Spam’ can help you sift fake news
-            </a>
-          </h3>
-          <p class="text-gray-600 mb-2">
-            The Economic Times highlights our approach and our response to over 100 verification requests daily.
-          </p>
-          <div class="text-gray-500 text-sm">The Economic Times (Panache) | Feb 23, 2017</div>
+      </section>
+
+      <!-- ══ TEDX ══════════════════════════════════════════════ -->
+      <section class="c4s-section reveal">
+        <div class="section-label" style="color:var(--red)">TEDx Talk</div>
+        <h2 class="section-title">The Story Behind Check4Spam</h2>
+        <p class="tedx-meta">
+          Presented at <a href="https://www.ted.com/tedx/events/23595" target="_blank" rel="noopener">TEDxIBABangalore</a>
+          · Indus Business Academy, Bengaluru
+        </p>
+        <div class="video-wrap">
+          <div class="video-ratio">
+            <iframe src="https://www.youtube.com/embed/bFPCWhMcY_g?rel=0"
+              title="TEDx Talk – Shammas Oliyath – Check4Spam"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+          <div class="video-bar">
+            <div>
+              <div class="video-bar-title">TEDxIBABangalore Talk</div>
+              <div class="video-bar-sub">Shammas Oliyath shares the journey, challenges, and philosophy</div>
+            </div>
+            <a href="https://www.youtube.com/watch?v=bFPCWhMcY_g" target="_blank" rel="noopener" class="video-bar-link">Watch on YouTube ↗</a>
+          </div>
         </div>
-        <!-- Media Card 3 -->
-        <div class="bg-white p-6 shadow rounded-lg hover:shadow-lg transition">
-          <img src="https://media.assettype.com/thenewsminute%2Fimport%2Fsites%2Fdefault%2Ffiles%2FCheck4spam_Shammas%252C_Birla.jpg?w=768&auto=format%2Ccompress&fit=max" alt="The News Minute" class="w-full h-auto rounded mb-4" loading="lazy">
-          <h3 class="text-xl font-semibold mb-2">
-            <a href="https://www.thenewsminute.com/karnataka/meet-bengaluru-duo-cross-checking-social-media-forwards-and-fighting-fake-news-57222" class="hover:text-blue-500">
-              Meet the Bengaluru duo cross-checking social media forwards and fighting fake news
+      </section>
+
+      <!-- ══ ORIGIN STORY ══════════════════════════════════════ -->
+      <section class="c4s-section reveal">
+        <div class="section-label" style="color:var(--gold)">Origin Story</div>
+        <h2 class="section-title">How Elections 2014 Inspired It All</h2>
+        <div class="origin-card">
+          <div class="origin-text">
+            <p>
+              In 2014, during the Indian General Elections, witnessing firsthand how misinformation and
+              viral messages influenced public opinion sparked the idea for Check4Spam — a platform
+              dedicated to fact-checking and helping people separate truth from fake forwards.
+            </p>
+            <p>
+              A sense of social responsibility combined with a passion for technology was the catalyst.
+              Read the full personal journey on Medium.
+            </p>
+            <a href="https://medium.com/@shammas/how-elections-2014-was-an-influence-on-me-to-start-check4spam-com-in-india-c2b5c0b2408e"
+               target="_blank" rel="noopener" class="btn-primary" style="margin-top:0.5rem;width:fit-content">
+              Read on Medium ↗
             </a>
-          </h3>
-          <p class="text-gray-600 mb-2">
-            An early profile showcasing how our team verifies suspicious claims from viral posts.
-          </p>
-          <div class="text-gray-500 text-sm">The News Minute | Feb 13, 2017</div>
+          </div>
+          <div class="origin-img">
+            <a href="https://medium.com/@shammas/how-elections-2014-was-an-influence-on-me-to-start-check4spam-com-in-india-c2b5c0b2408e"
+               target="_blank" rel="noopener">
+              <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*KEg4mceLGEVkhmzVcnfWOQ.png"
+                   alt="How Elections 2014 inspired Check4Spam" loading="lazy">
+            </a>
+          </div>
         </div>
-        <!-- Media Card 4 -->
-        <div class="bg-white p-6 shadow rounded-lg hover:shadow-lg transition">
-          <img src="https://en-media.thebetterindia.com/uploads/2017/02/Check4Spam-2.jpeg" alt="The Better India" class="w-full h-auto rounded mb-4" loading="lazy">
-          <h3 class="text-xl font-semibold mb-2">
-            <a href="https://thebetterindia.com/87670/check4spam-techies-bengaluru-fake-news-internet-spam/" class="hover:text-blue-500">
-              These Two Techies From Bengaluru Are Busting Fake News and Exposing Spam on the Internet
-            </a>
-          </h3>
-          <p class="text-gray-600 mb-2">
-            The Better India shares our story of tackling over 100+ verification requests daily.
-          </p>
-          <div class="text-gray-500 text-sm">The Better India | Feb 18, 2017</div>
+      </section>
+
+      <!-- ══ KSP COLLABORATION ══════════════════════════════════ -->
+      <section class="c4s-section reveal">
+        <div class="section-label">Government Partnership</div>
+        <h2 class="section-title">Partnering with Karnataka Police</h2>
+        <p style="color:var(--muted);margin-bottom:1.75rem;max-width:620px;line-height:1.75">
+          Team Check4Spam proudly collaborated with the
+          <a href="https://ksp.karnataka.gov.in" target="_blank" rel="noopener" style="color:var(--blue)">Karnataka State Police</a>
+          to build and launch their official fact-checking portal:
+          <a href="https://factcheck.ksp.gov.in" target="_blank" rel="noopener" style="color:var(--blue);font-weight:600"> factcheck.ksp.gov.in</a>.
+        </p>
+        <div class="ksp-grid">
+          <a href="images/kspfactcheck-launch-1.jpg" target="_blank" class="ksp-photo-card">
+            <img src="images/kspfactcheck-launch-1.jpg" alt="Shammas presenting on misinformation awareness" loading="lazy">
+            <div class="ksp-photo-cap">Shammas presenting on misinformation awareness</div>
+          </a>
+          <a href="images/kspfactcheck-launch-2.jpg" target="_blank" class="ksp-photo-card">
+            <img src="images/kspfactcheck-launch-2.jpg" alt="Team at Karnataka Police Headquarters" loading="lazy">
+            <div class="ksp-photo-cap">Team at the Karnataka Police Headquarters</div>
+          </a>
+          <a href="images/kspfactcheck-launch-3.jpg" target="_blank" class="ksp-photo-card">
+            <img src="images/kspfactcheck-launch-3.jpg" alt="Meeting with CID officials" loading="lazy">
+            <div class="ksp-photo-cap">Meeting with CID officials on fact-checking collaboration</div>
+          </a>
         </div>
-        <!-- Media Card 5 -->
-        <div class="bg-white p-6 shadow rounded-lg hover:shadow-lg transition">
-          <img src="https://media.npr.org/assets/img/2017/05/03/snakeinfridge_wide-4a2997a5a6bf2e871996cf5a4f6ff9fa0db76470.jpg?s=800&c=85&f=webp" alt="NPR" class="w-full h-auto rounded mb-4" loading="lazy">
-          <h3 class="text-xl font-semibold mb-2">
-            <a href="https://www.npr.org/sections/goatsandsoda/2017/05/12/526687362/fake-medical-news-can-now-be-fact-checked-in-india" class="hover:text-blue-500">
-              Fake Medical News Can Now Be Fact-Checked In India
-            </a>
-          </h3>
-          <p class="text-gray-600 mb-2">
-            NPR features our work in debunking dangerous health misinformation.
-          </p>
-          <div class="text-gray-500 text-sm">NPR – Goats and Soda | May 12, 2017</div>
+      </section>
+
+      <!-- ══ HOW IT WORKS ══════════════════════════════════════ -->
+      <section class="c4s-section reveal">
+        <div class="section-label">Process</div>
+        <h2 class="section-title">How It Works</h2>
+        <div class="steps-track" style="margin-top:1.5rem">
+          <div class="step-card reveal reveal-delay-1">
+            <div class="step-num">01</div>
+            <div class="step-title">Submit a Forward or Claim</div>
+            <div class="step-desc">Send the suspicious message to our WhatsApp number or via our online submission form. Fast, simple, and accessible to everyone.</div>
+          </div>
+          <div class="step-card reveal reveal-delay-2">
+            <div class="step-num">02</div>
+            <div class="step-title">We Investigate</div>
+            <div class="step-desc">Our team conducts thorough research, verifying data with trusted sources and through detailed fact-checking methodology.</div>
+          </div>
+          <div class="step-card reveal reveal-delay-3">
+            <div class="step-num">03</div>
+            <div class="step-title">Spam or Not Spam?</div>
+            <div class="step-desc">We clearly label the claim as <em>NOT SPAM (true)</em> or <em>SPAM (false)</em> and provide a detailed, evidence-backed report.</div>
+          </div>
+          <div class="step-card reveal reveal-delay-4">
+            <div class="step-num">04</div>
+            <div class="step-title">See the Proof</div>
+            <div class="step-desc">Every verification post includes evidence: source links, images, and official statements — with regular updates as new info emerges.</div>
+          </div>
         </div>
-        <!-- Media Card 6 (Non-English) -->
-        <div class="bg-white p-6 shadow rounded-lg hover:shadow-lg transition">
-          <img src="https://i.ndtvimg.com/i/2017-04/check4spam_650x400_41491461837.jpg?downsize=773:435" alt="NDTV Khabar" class="w-full h-auto rounded mb-4" loading="lazy">
-          <h3 class="text-xl font-semibold mb-2">
-            <a href="https://ndtv.in/india/check4spam-verification-of-social-media-posts-1678003" class="hover:text-blue-500">
-              वायरल वीडियो की सच्चाई बताएगी Check4Spam वेबसाइट
-            </a>
-          </h3>
-          <p class="text-gray-600 mb-2">
-            (Translation: "Check4Spam website will tell you the truth of viral videos.") NDTV Khabar brings our service to non-English audiences.
-          </p>
-          <div class="text-gray-500 text-sm">NDTV Khabar (Hindi) | Apr 6, 2017</div>
+      </section>
+
+      <!-- ══ FEATURES ══════════════════════════════════════════ -->
+      <section class="c4s-section reveal">
+        <div class="section-label">Capabilities</div>
+        <h2 class="section-title">Key Features &amp; Tools</h2>
+        <div class="features-grid" style="margin-top:1.5rem">
+          <div class="feat-card reveal reveal-delay-1">
+            <div class="feat-icon">💬</div>
+            <div class="feat-title">Easy Submission</div>
+            <div class="feat-desc">Forward any suspicious message via WhatsApp or submit online. Fast, simple, and accessible to everyone.</div>
+          </div>
+          <div class="feat-card reveal reveal-delay-2">
+            <div class="feat-icon">🔍</div>
+            <div class="feat-title">Detailed Investigation</div>
+            <div class="feat-desc">Our team digs deep, verifying facts with trusted sources to debunk fake news and expose hoaxes.</div>
+          </div>
+          <div class="feat-card reveal reveal-delay-3">
+            <div class="feat-icon">🧠</div>
+            <div class="feat-title">AI-Powered Checker</div>
+            <div class="feat-desc">Use our custom GPT on ChatGPT to instantly verify suspicious claims with AI assistance.</div>
+          </div>
+          <div class="feat-card reveal reveal-delay-4">
+            <div class="feat-icon">🌐</div>
+            <div class="feat-title">Multi-Language Support</div>
+            <div class="feat-desc">Explanations in several languages — ensuring truth is accessible to everyone, not just English speakers.</div>
+          </div>
         </div>
-        <!-- Media Card 7 -->
-        <!-- Media Card 8 -->
-        <!-- Media Card 9 -->
-        <div class="bg-white p-6 shadow rounded-lg hover:shadow-lg transition">
-          <img src="https://ichef.bbci.co.uk/news/800/cpsprodpb/32E6/production/_97003031_gettyimages-630719064.jpg.webp" alt="BBC News" class="w-full h-auto rounded mb-4" loading="lazy">
-          <h3 class="text-xl font-semibold mb-2">
-            <a href="https://www.bbc.com/news/world-asia-india-40657074" class="hover:text-blue-500">
-              The people trying to fight fake news in India
-            </a>
-          </h3>
-          <p class="text-gray-600 mb-2">
-            BBC News profiles India’s emerging fact-checking community, featuring Check4Spam.
-          </p>
-          <div class="text-gray-500 text-sm">BBC News | Jul 24, 2017</div>
+      </section>
+
+      <!-- ══ MEDIA COVERAGE ════════════════════════════════════ -->
+      <section class="c4s-section reveal">
+        <div class="section-label">Recognition</div>
+        <h2 class="section-title">Media Coverage</h2>
+        <div class="media-grid" style="margin-top:1.5rem">
+
+          <a href="https://www.buzzfeed.com/pranavdixit/this-website-wants-to-be-the-snopes-of-whatsapp-hoaxes-in-in"
+             target="_blank" rel="noopener" class="media-card reveal reveal-delay-1">
+            <img src="https://img.buzzfeed.com/buzzfeed-static/static/2017-02/3/8/asset/buzzfeed-prod-web-02/anigif_sub-buzz-23082-1486128929-2_preview.gif"
+                 alt="BuzzFeed" class="media-thumb" loading="lazy">
+            <div class="media-body">
+              <div class="media-outlet">BuzzFeed News</div>
+              <div class="media-headline">"The Snopes of WhatsApp Hoaxes in India"</div>
+              <div class="media-desc">BuzzFeed profiled our founders, calling us India's premier fake-news buster.</div>
+              <div class="media-date">Feb 4, 2017</div>
+            </div>
+          </a>
+
+          <a href="https://www.bbc.com/news/world-asia-india-40657074"
+             target="_blank" rel="noopener" class="media-card reveal reveal-delay-2">
+            <img src="https://ichef.bbci.co.uk/news/800/cpsprodpb/32E6/production/_97003031_gettyimages-630719064.jpg.webp"
+                 alt="BBC News" class="media-thumb" loading="lazy">
+            <div class="media-body">
+              <div class="media-outlet">BBC News</div>
+              <div class="media-headline">The people trying to fight fake news in India</div>
+              <div class="media-desc">BBC profiles India's emerging fact-checking community, featuring Check4Spam.</div>
+              <div class="media-date">Jul 24, 2017</div>
+            </div>
+          </a>
+
+          <a href="https://www.npr.org/sections/goatsandsoda/2017/05/12/526687362/fake-medical-news-can-now-be-fact-checked-in-india"
+             target="_blank" rel="noopener" class="media-card reveal reveal-delay-3">
+            <img src="https://media.npr.org/assets/img/2017/05/03/snakeinfridge_wide-4a2997a5a6bf2e871996cf5a4f6ff9fa0db76470.jpg?s=800&c=85&f=webp"
+                 alt="NPR" class="media-thumb" loading="lazy">
+            <div class="media-body">
+              <div class="media-outlet">NPR</div>
+              <div class="media-headline">Fake Medical News Can Now Be Fact-Checked In India</div>
+              <div class="media-desc">NPR features our work debunking dangerous health misinformation.</div>
+              <div class="media-date">May 12, 2017</div>
+            </div>
+          </a>
+
+          <a href="https://economictimes.indiatimes.com/magazines/panache/in-a-post-truth-world-check4spam-can-help-you-sift-fake-news/articleshow/57287228.cms"
+             target="_blank" rel="noopener" class="media-card reveal reveal-delay-1">
+            <img src="https://img.etimg.com/thumb/msid-57287228,width-650,height-488,imgsize-20704,resizemode-75/.jpg"
+                 alt="Economic Times" class="media-thumb" loading="lazy">
+            <div class="media-body">
+              <div class="media-outlet">The Economic Times</div>
+              <div class="media-headline">In a post-truth world, Check4Spam can help you sift fake news</div>
+              <div class="media-desc">ET highlights our approach and response to 100+ verification requests daily.</div>
+              <div class="media-date">Feb 23, 2017</div>
+            </div>
+          </a>
+
+          <a href="https://www.thenewsminute.com/karnataka/meet-bengaluru-duo-cross-checking-social-media-forwards-and-fighting-fake-news-57222"
+             target="_blank" rel="noopener" class="media-card reveal reveal-delay-2">
+            <img src="https://media.assettype.com/thenewsminute%2Fimport%2Fsites%2Fdefault%2Ffiles%2FCheck4spam_Shammas%252C_Birla.jpg?w=768&auto=format%2Ccompress&fit=max"
+                 alt="The News Minute" class="media-thumb" loading="lazy">
+            <div class="media-body">
+              <div class="media-outlet">The News Minute</div>
+              <div class="media-headline">Meet the Bengaluru duo fighting fake news</div>
+              <div class="media-desc">An early profile showcasing how our team verifies suspicious claims.</div>
+              <div class="media-date">Feb 13, 2017</div>
+            </div>
+          </a>
+
+          <a href="https://thebetterindia.com/87670/check4spam-techies-bengaluru-fake-news-internet-spam/"
+             target="_blank" rel="noopener" class="media-card reveal reveal-delay-3">
+            <img src="https://en-media.thebetterindia.com/uploads/2017/02/Check4Spam-2.jpeg"
+                 alt="The Better India" class="media-thumb" loading="lazy">
+            <div class="media-body">
+              <div class="media-outlet">The Better India</div>
+              <div class="media-headline">Two Techies From Bengaluru Busting Fake News</div>
+              <div class="media-desc">Covers how Check4Spam empowers citizens against misinformation daily.</div>
+              <div class="media-date">Feb 18, 2017</div>
+            </div>
+          </a>
+
+          <a href="https://ndtv.in/india/check4spam-verification-of-social-media-posts-1678003"
+             target="_blank" rel="noopener" class="media-card reveal reveal-delay-1">
+            <img src="https://i.ndtvimg.com/i/2017-04/check4spam_650x400_41491461837.jpg?downsize=773:435"
+                 alt="NDTV Khabar" class="media-thumb" loading="lazy">
+            <div class="media-body">
+              <div class="media-outlet">NDTV Khabar (Hindi)</div>
+              <div class="media-headline">वायरल वीडियो की सच्चाई बताएगी Check4Spam</div>
+              <div class="media-desc">NDTV Khabar brings the Check4Spam story to non-English audiences.</div>
+              <div class="media-date">Apr 6, 2017</div>
+            </div>
+          </a>
+
+          <a href="https://sundayguardianlive.com/news/9583-social-entrepreneurs-launch-websites-bust-fake-news"
+             target="_blank" rel="noopener" class="media-card reveal reveal-delay-2">
+            <img src="https://sundayguardianlive.com/wp-content/uploads/2018/02/social-entrepreneur-word-cloud-1.jpg"
+                 alt="Sunday Guardian" class="media-thumb" loading="lazy">
+            <div class="media-body">
+              <div class="media-outlet">Sunday Guardian</div>
+              <div class="media-headline">Social entrepreneurs launch sites to bust fake news</div>
+              <div class="media-desc">Covers how fact-checkers like Check4Spam are empowering citizens.</div>
+              <div class="media-date">May 28, 2017</div>
+            </div>
+          </a>
+
+          <a href="http://www.scmp.com/week-asia/society/article/2092361/truth-vigilantes-fighting-indias-fake-news"
+             target="_blank" rel="noopener" class="media-card reveal reveal-delay-3">
+            <img src="https://cdn.i-scmp.com/sites/default/files/styles/1200x800/public/images/methode/2017/05/03/d4c9c47a-2f23-11e7-8928-05b245c57f03_1280x720_121354.JPG?itok=x7Tm18jy"
+                 alt="SCMP" class="media-thumb" loading="lazy">
+            <div class="media-body">
+              <div class="media-outlet">South China Morning Post</div>
+              <div class="media-headline">The truth-vigilantes fighting India's fake news</div>
+              <div class="media-desc">SCMP highlights Check4Spam's role among India's digital truth warriors.</div>
+              <div class="media-date">May 2017</div>
+            </div>
+          </a>
+
         </div>
-        <!-- Media Card 10 -->
-        <div class="bg-white p-6 shadow rounded-lg hover:shadow-lg transition">
-          <img src="https://sundayguardianlive.com/wp-content/uploads/2018/02/social-entrepreneur-word-cloud-1.jpg" alt="Sunday Guardian" class="w-full h-auto rounded mb-4" loading="lazy">
-          <h3 class="text-xl font-semibold mb-2">
-            <a href="https://sundayguardianlive.com/news/9583-social-entrepreneurs-launch-websites-bust-fake-news#google_vignette" class="hover:text-blue-500">
-              Social entrepreneurs launch websites to bust fake news
-            </a>
-          </h3>
-          <p class="text-gray-600 mb-2">
-            The Sunday Guardian covers how fact-checkers like Check4Spam are empowering citizens against misinformation.
-          </p>
-          <div class="text-gray-500 text-sm">The Sunday Guardian | May 28, 2017</div>
+      </section>
+
+      <!-- ══ CTA BAND ════════════════════════════════════════ -->
+      <div class="cta-band reveal">
+        <h2>Ready to fight misinformation?</h2>
+        <p>Submit a suspicious message and our team will verify it — free, fast, and community-powered.</p>
+        <div class="cta-actions">
+          <a href="https://chatgpt.com/g/g-HdFQB78An-check4spam" target="_blank" rel="noopener" class="verify-btn">🔍 Verify with AI</a>
+          <a href="https://check4spam.com" target="_blank" rel="noopener" class="btn-secondary">Visit Check4Spam ↗</a>
         </div>
-        <!-- Media Card 11 -->
-        <div class="bg-white p-6 shadow rounded-lg hover:shadow-lg transition">
-          <img src="https://cdn.i-scmp.com/sites/default/files/styles/1200x800/public/images/methode/2017/05/03/d4c9c47a-2f23-11e7-8928-05b245c57f03_1280x720_121354.JPG?itok=x7Tm18jy" alt="SCMP" class="w-full h-auto rounded mb-4" loading="lazy">
-          <h3 class="text-xl font-semibold mb-2">
-            <a href="http://www.scmp.com/week-asia/society/article/2092361/truth-vigilantes-fighting-indias-fake-news" class="hover:text-blue-500">
-              The truth-vigilantes fighting India’s fake news
-            </a>
-          </h3>
-          <p class="text-gray-600 mb-2">
-            South China Morning Post highlights Check4Spam’s role among India’s digital truth warriors.
-          </p>
-          <div class="text-gray-500 text-sm">SCMP | May 3, 2017</div>
-        </div>
-        <!-- Media Card 12 -->
-        <div class="bg-white p-6 shadow rounded-lg hover:shadow-lg transition">
-          <img src="https://s.rfi.fr/media/display/db89d0a0-10af-11ea-8cea-005056bf7c53/w:1280/p:16x9/gettyimages-478186613_0_0.jpg" alt="RFI" class="w-full h-auto rounded mb-4" loading="lazy">
-          <h3 class="text-xl font-semibold mb-2">
-            <a href="https://www.rfi.fr/fr/hebdo/20170421-reseaux-sociaux-internet-coupure-solution-controle-information" class="hover:text-blue-500">
-              Couper Internet: solution bien-aimée pour contrôler l’information
-            </a>
-          </h3>
-          <p class="text-gray-600 mb-2">
-            RFI features Check4Spam as an innovative approach to debunking fake news in a diverse media landscape.
-          </p>
-          <div class="text-gray-500 text-sm">RFI | Apr 21, 2017</div>
-        </div>
-        <!-- Media Card 13 -->
-        <div class="bg-white p-6 shadow rounded-lg hover:shadow-lg transition">
-          <img src="https://www.poynter.org/wp-content/uploads/2019/11/Screen-Shot-2019-11-11-at-3.12.41-PM.png" alt="Poynter Institute" class="w-full h-auto rounded mb-4" loading="lazy">
-          <h3 class="text-xl font-semibold mb-2">
-            <a href="https://www.poynter.org/fact-checking/2019/there-is-a-growing-tribe-of-truth-warriors-fighting-false-news-in-india/" class="hover:text-blue-500">
-              Truth Warriors in India
-            </a>
-          </h3>
-          <p class="text-gray-600 mb-2">
-            The Poynter Institute recognizes Check4Spam as a pioneer among India’s fact-checking initiatives.
-          </p>
-          <div class="text-gray-500 text-sm">Poynter Institute | Nov 12, 2018</div>
-        </div>
-        <!-- Media Card 14 -->
-        <div class="bg-white p-6 shadow rounded-lg hover:shadow-lg transition">
-          <img src="https://static.toiimg.com/thumb/msid-57982618,imgsize-29935,width-400,height-225,resizemode-72/57982618.jpg" alt="Times of India" class="w-full h-auto rounded mb-4" loading="lazy">
-          <h3 class="text-xl font-semibold mb-2">
-            <a href="https://timesofindia.indiatimes.com/city/bengaluru/smart-vetting-techies-will-help-you-spot-fake-messages-on-social-media/articleshow/57982614.cms" class="hover:text-blue-500">
-              Smart vetting: Techies will help you spot fake messages on social media
-            </a>
-          </h3>
-          <p class="text-gray-600 mb-2">
-            The Times of India explains how tech experts, including Check4Spam, are empowering users to verify information.
-          </p>
-          <div class="text-gray-500 text-sm">The Times of India | Apr 3, 2017</div>
-        </div>
-        <!-- Media Card 15 -->
-        <!-- Media Card: Wired -->
-        <div class="bg-white p-6 shadow rounded-lg hover:shadow-lg transition">
-          <img src="https://media.wired.com/photos/5c104410d4c0d42d794b0c8e/master/w_1600,c_limit/Prarthna-Singh_IndiaWhatsApp_wired8.jpg" alt="Wired" class="w-full h-auto rounded mb-4" loading="lazy">
-          <h3 class="text-xl font-semibold mb-2">
-            <a href="https://www.wired.com/story/how-whatsapp-fuels-fake-news-and-violence-in-india/" class="hover:text-blue-500" target="_blank">
-              How WhatsApp fuels fake news and violence in India
-            </a>
-          </h3>
-          <p class="text-gray-600 mb-2">
-            Wired examines the role of WhatsApp in amplifying fake news and inciting violence in India.
-          </p>
-          <div class="text-gray-500 text-sm">Wired | Dec 12, 2018</div>
-        </div>
-        
-        <!-- Media Card: The Hindu -->
-        <div class="bg-white p-6 shadow rounded-lg hover:shadow-lg transition">
-          <img src="https://th-i.thgim.com/public/sci-tech/technology/internet/article17527974.ece/alternates/LANDSCAPE_1200/19SM1spamjpg" alt="The Hindu" class="w-full h-auto rounded mb-4" loading="lazy">
-          <h3 class="text-xl font-semibold mb-2">
-            <a href="https://www.thehindu.com/sci-tech/technology/internet/finding-truth-in-the-haystack-of-forwards/article17527976.ece" class="hover:text-blue-500" target="_blank">
-              Finding truth in the haystack of forwards
-            </a>
-          </h3>
-          <p class="text-gray-600 mb-2">
-            The Hindu explores methods to sift through viral forwards and uncover the facts behind the claims.
-          </p>
-          <div class="text-gray-500 text-sm">The Hindu | Mar 20, 2017</div>
-        </div>
-        <!-- Media Card: Economic Times – 2019 The Year of Fake News -->
-        <div class="bg-white p-6 shadow rounded-lg hover:shadow-lg transition">
-          <img src="https://img.etimg.com/thumb/msid-72895486,width-300,height-225,imgsize-558250,resizemode-75/12.jpg" alt="Economic Times" class="w-full h-auto rounded mb-4" loading="lazy">
-          <h3 class="text-xl font-semibold mb-2">
-            <a href="https://economictimes.indiatimes.com/news/politics-and-nation/2019-the-year-of-fake-news/articleshow/72895472.cms" class="hover:text-blue-500" target="_blank">
-              2019 – The Year of Fake News
-            </a>
-          </h3>
-          <p class="text-gray-600 mb-2">
-            Economic Times examines the surge of fake news in 2019 and highlights how fact-checkers stepped up to combat misinformation.
-          </p>
-          <div class="text-gray-500 text-sm">Economic Times | Dec 20, 2019</div>
-        </div>
-        
-        <!-- Media Card: Hindustan Times Tech – Karnataka Police Launch Fake News Busting Website -->
-        <div class="bg-white p-6 shadow rounded-lg hover:shadow-lg transition">
-          <img src="https://images.hindustantimes.com/tech/rf/image_size_960x540/HT/p2/2020/04/10/Pictures/fake-news-on-internet_e9a24766-7ad2-11ea-b578-8bb50559d90e.jpg" alt="Hindustan Times Tech" class="w-full h-auto rounded mb-4" loading="lazy">
-          <h3 class="text-xl font-semibold mb-2">
-            <a href="https://tech.hindustantimes.com/tech/news/karnataka-police-launch-fake-news-busting-website-story-UF16IITxSBv7r0NmhypV2J.html" class="hover:text-blue-500" target="_blank">
-              Karnataka Police Launch Fake News Busting Website
-            </a>
-          </h3>
-          <p class="text-gray-600 mb-2">
-            Hindustan Times Tech reports on Karnataka police’s initiative to counter fake news with a dedicated busting website.
-          </p>
-          <div class="text-gray-500 text-sm">Hindustan Times Tech | Aug 19, 2022</div>
-        </div>
-        
-        <!-- Media Card: Inc42 – Amid Indo-Pak Tensions, Fact-Checkers Struggle With Social Media Battles -->
-        <div class="bg-white p-6 shadow rounded-lg hover:shadow-lg transition">
-          <img src="https://inc42.com/cdn-cgi/image/quality=75/https://asset.inc42.com/2019/02/FAKE-NEWS-F.jpg" alt="Inc42" class="w-full h-auto rounded mb-4" loading="lazy">
-          <h3 class="text-xl font-semibold mb-2">
-            <a href="https://inc42.com/buzz/amid-indo-pak-tensions-fact-checkers-struggle-with-social-media-battles" class="hover:text-blue-500" target="_blank">
-              Amid Indo-Pak Tensions, Fact-Checkers Struggle With Social Media Battles
-            </a>
-          </h3>
-          <p class="text-gray-600 mb-2">
-            Inc42 explores the challenges fact-checkers face in the midst of escalating tensions and widespread social media misinformation.
-          </p>
-          <div class="text-gray-500 text-sm">Inc42 | Feb 29, 2019</div>
-        </div>
-        
-        <!-- Media Card: Livemint – 8 Ways to Spot Fake News -->
-        <div class="bg-white p-6 shadow rounded-lg hover:shadow-lg transition">
-          <img src="https://images.livemint.com/rf/Image-621x414/LiveMint/Period2/2017/11/08/Photos/Processed/fakenews-kb5H--621x414@LiveMint.jpg" alt="Livemint" class="w-full h-auto rounded mb-4" loading="lazy">
-          <h3 class="text-xl font-semibold mb-2">
-            <a href="https://www.livemint.com/Technology/aut4lb3oGkqrc4ZGgDoerO/8-ways-to-spot-fake-news.html" class="hover:text-blue-500" target="_blank">
-              8 Ways to Spot Fake News
-            </a>
-          </h3>
-          <p class="text-gray-600 mb-2">
-            Livemint offers practical tips on identifying fake news, empowering readers to safeguard themselves against misinformation.
-          </p>
-          <div class="text-gray-500 text-sm">Livemint | Nov 7, 2017</div>
-        </div>      
       </div>
-    </div>
-  </section>
-  <!-- Social Media Links -->
-  <div class="mt-16 text-center">
-    <h4 class="text-xl font-semibold mb-4 text-blue-600">Follow Check4Spam</h4>
-    <div class="flex justify-center space-x-6">
-      <!-- Website -->
-      <a href="https://check4spam.com" target="_blank" aria-label="Website">
-        <img src="https://cdn-icons-png.flaticon.com/512/535/535239.png" alt="Website" class="h-8 w-8 hover:opacity-80 transition" loading="lazy">
+
+    </div><!-- /.c4s-layout -->
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-socials">
+      <a href="https://www.linkedin.com/in/shammas/" target="_blank" rel="noopener" class="footer-social-link" aria-label="LinkedIn">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" loading="lazy">
       </a>
-      <!-- Facebook -->
-      <a href="https://www.facebook.com/check4spam" target="_blank" aria-label="Facebook">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" class="h-8 w-8 hover:opacity-80 transition" loading="lazy">
+      <a href="https://www.youtube.com/@mshammas" target="_blank" rel="noopener" class="footer-social-link" aria-label="YouTube">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" loading="lazy">
       </a>
-      <!-- Instagram -->
-      <a href="https://www.instagram.com/check4spam" target="_blank" aria-label="Instagram">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" class="h-8 w-8 hover:opacity-80 transition" loading="lazy">
+      <a href="https://www.instagram.com/shammasoliyath" target="_blank" rel="noopener" class="footer-social-link" aria-label="Instagram">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" loading="lazy">
       </a>
-      <!-- Twitter -->
-      <a href="https://twitter.com/check4spam" target="_blank" aria-label="Twitter">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" class="h-8 w-8 hover:opacity-80 transition" loading="lazy">
+      <a href="https://twitter.com/mshammas" target="_blank" rel="noopener" class="footer-social-link" aria-label="Twitter">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" loading="lazy">
       </a>
     </div>
-  </div>
-  <!-- Footer -->
-  <footer class="mt-16 py-6 bg-gray-50 text-center text-gray-500 text-sm">
-    &copy; 2025 Shammas Oliyath. All rights reserved.
+    <p class="footer-copy">&copy; 2025 Shammas Oliyath. All rights reserved.</p>
   </footer>
-  
-    <!-- Floating Go to Top Button -->
-  <a href="#top" id="scrollTopBtn"
-     class="hidden fixed bottom-4 left-4 bg-blue-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition z-50">
-    ↑ Top
-  </a>
-  
-  <script defer>
-  const toggle = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  
-  if (toggle && mobileMenu) {
-    toggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-  }
-  
-    // Scroll-to-top button with idle detection
-    const scrollTopBtn = document.getElementById("scrollTopBtn");
-    let scrollTimeout;
-  
-    window.addEventListener("scroll", () => {
-      // Show button if user scrolls beyond 300px
-      if (window.scrollY > 300) {
-        scrollTopBtn.classList.remove("hidden");
-  
-        // Clear any previous timeout
-        clearTimeout(scrollTimeout);
-  
-        // Hide button after 3 seconds of no scroll activity
-        scrollTimeout = setTimeout(() => {
-          scrollTopBtn.classList.add("hidden");
-        }, 3000);
-      } else {
-        scrollTopBtn.classList.add("hidden");
-      }
-    });
-  </script>
+
   <script>
-    const images = Array.from(document.querySelectorAll('[onclick^="openLightbox"]'));
-    let currentIndex = 0;
-  
-    function openLightbox(img) {
-      currentIndex = parseInt(img.dataset.index);
-      updateLightbox();
-      document.getElementById("lightbox").classList.remove("hidden");
-      document.body.classList.add("overflow-hidden");
-    }
-  
-    function closeLightbox() {
-      document.getElementById("lightbox").classList.add("hidden");
-      document.body.classList.remove("overflow-hidden");
-    }
-  
-    function updateLightbox() {
-      const imgElement = document.getElementById("lightbox-img");
-      imgElement.src = images[currentIndex].src;
-    }
-  
-    function prevImage() {
-      currentIndex = (currentIndex - 1 + images.length) % images.length;
-      updateLightbox();
-    }
-  
-    function nextImage() {
-      currentIndex = (currentIndex + 1) % images.length;
-      updateLightbox();
-    }
-
-    if (toggle && mobileMenu) {   
-        document.getElementById("lightbox").addEventListener("click", (e) => {
-          if (e.target.id === "lightbox") closeLightbox();
-        });
-    }
-    document.addEventListener("keydown", (e) => {
-      if (document.getElementById("lightbox").classList.contains("hidden")) return;
-      if (e.key === "ArrowLeft") prevImage();
-      else if (e.key === "ArrowRight") nextImage();
-      else if (e.key === "Escape") closeLightbox();
-    });
-  
-    // Swipe Support
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    if (toggle && mobileMenu) {   
-      document.getElementById("lightbox").addEventListener("touchstart", e => {
-        touchStartX = e.changedTouches[0].screenX;
-      });
-    }
-
-    if (toggle && mobileMenu) {       
-      document.getElementById("lightbox").addEventListener("touchend", e => {
-        touchEndX = e.changedTouches[0].screenX;
-        if (touchEndX < touchStartX - 50) nextImage();
-        if (touchEndX > touchStartX + 50) prevImage();
-      });
-    }
+    if ('serviceWorker' in navigator) navigator.serviceWorker.register('/service-worker.js');
   </script>
 </body>
 </html>

@@ -1,92 +1,295 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZNW1FKGM0"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2ZNW1FKGM0');</script>
+  <script>(function(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Me - Shammas Oliyath</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <title>Contact | Shammas Oliyath</title>
+  <meta name="description" content="Get in touch with Shammas Oliyath — technologist, musician, and community builder.">
+  <meta name="theme-color" content="#0a0a0f">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+  <link rel="apple-touch-icon" href="/images/icon-192.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="canonical" href="https://shammas.in/contact.html"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="/site.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
+    .contact-layout {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 4rem 2rem 0;
+      display: grid;
+      grid-template-columns: 1fr 1.8fr;
+      gap: 3rem;
+      align-items: start;
     }
 
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
+    /* ── Left column ── */
+    .contact-info { position: sticky; top: calc(var(--header-h) + 2rem); }
+
+    .contact-greeting {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      background: linear-gradient(135deg, var(--text) 0%, var(--muted) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+    }
+
+    .contact-sub {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-methods { display: flex; flex-direction: column; gap: 0.75rem; }
+
+    .contact-method {
       display: flex;
-      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: all var(--t);
+      color: var(--text);
+    }
+    .contact-method:hover {
+      background: var(--card-hover);
+      border-color: var(--border-hover);
+      transform: translateX(4px);
     }
 
-    main {
-      flex: 1;
+    .method-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
       display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
     }
 
-    iframe {
+    .method-icon.li  { background: rgba(10,102,194,0.15);  }
+    .method-icon.yt  { background: rgba(255,0,0,0.12);     }
+    .method-icon.tw  { background: rgba(29,161,242,0.12);  }
+    .method-icon.ig  { background: rgba(228,64,95,0.12);   }
+
+    .method-text { flex: 1; }
+    .method-label  { font-size: 0.75rem; font-weight: 600; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
+    .method-handle { font-size: 0.9rem; font-weight: 600; color: var(--text); }
+
+    /* ── Form column ── */
+    .form-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .form-card-header {
+      padding: 1.5rem 2rem 0;
+    }
+
+    .form-card-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.25rem;
+    }
+    .form-card-sub { font-size: 0.85rem; color: var(--muted); margin-bottom: 1.5rem; }
+
+    .form-iframe-wrap {
+      position: relative;
       width: 100%;
-      height: 100%;
-      border: none;
-      flex-grow: 1;
+      min-height: 700px;
     }
 
-    footer {
+    .form-iframe-wrap iframe {
+      width: 100%;
+      min-height: 700px;
+      border: none;
+      display: block;
+      /* Invert iframe colors in dark mode using CSS filter */
+      filter: none;
+      transition: filter var(--t);
+    }
+
+    /* Dark mode: invert Google Form to match dark theme */
+    [data-theme="dark"] .form-iframe-wrap iframe {
+      filter: invert(0.92) hue-rotate(180deg);
+    }
+
+    /* Page hero */
+    .page-hero {
+      position: relative;
+      padding: 4rem 2rem 2rem;
       text-align: center;
-      padding: 15px;
-      background-color: #eee;
-      font-size: 14px;
+      overflow: hidden;
+    }
+    .page-hero-bg {
+      position: absolute; inset: 0; pointer-events: none;
+    }
+    .page-hero-bg::after {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 55px 55px;
+    }
+    [data-theme="light"] .page-hero-bg::after {
+      background-image:
+        linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+    }
+    .hero-orb {
+      position: absolute; border-radius: 50%; filter: blur(90px); pointer-events: none;
+    }
+    .ho-1 { width: 400px; height: 300px; background: radial-gradient(circle, rgba(79,142,247,0.3), transparent 70%); top: -80px; left: -80px; }
+    .ho-2 { width: 350px; height: 250px; background: radial-gradient(circle, rgba(16,185,129,0.2), transparent 70%); bottom: -60px; right: -60px; }
+    [data-theme="light"] .hero-orb { opacity: 0.4; }
+
+    .page-hero-inner { position: relative; z-index: 1; max-width: 600px; margin: 0 auto; }
+    .page-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 6vw, 3.8rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      background: linear-gradient(135deg, var(--text), var(--muted));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      margin-bottom: 0.75rem;
+    }
+    .page-subtitle { color: var(--muted); font-size: 1rem; line-height: 1.7; }
+
+    @media (max-width: 900px) {
+      .contact-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .contact-info { position: static; }
     }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-
-  <!-- Header (same as career.html) -->
+<body>
   <div id="header-placeholder"></div>
   <script>
     fetch('/header.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('header-placeholder').innerHTML = data;
-  
-        // Optional: reinitialize any event listeners here
-        const toggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (toggle && mobileMenu) {
-          toggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-          });
-        }
+      .then(function(r){ return r.text(); })
+      .then(function(html){
+        document.getElementById('header-placeholder').innerHTML = html;
+        if (typeof window.initHeader === 'function') window.initHeader();
       });
   </script>
 
-  <!-- Contact Intro -->
-  <section class="text-center mt-10 px-4">
-    <h1 class="text-3xl font-bold text-blue-600 mb-2">Contact Me</h1>
-    <p class="text-gray-600 text-base">I would love to hear from you. Please fill out the form below.</p>
-  </section>
+  <main id="main-content">
+    <div class="page-hero">
+      <div class="page-hero-bg">
+        <div class="hero-orb ho-1"></div>
+        <div class="hero-orb ho-2"></div>
+      </div>
+      <div class="page-hero-inner">
+        <div class="section-label" style="justify-content:center;margin-bottom:1rem;">Let's Talk</div>
+        <h1 class="page-title">Get in Touch</h1>
+        <p class="page-subtitle">Have a question, collaboration idea, or just want to say hello? I'd love to hear from you.</p>
+      </div>
+    </div>
 
-  <!-- Google Form Embed -->
-  <main class="mt-6 px-4 pb-10">
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScDj3VDCVJ7mEqTS_123uECl9qFQQuarT5KTG0c3AYZP5nnLw/viewform?embedded=true"
-      frameborder="0" marginheight="0" marginwidth="0">
-      Loading…
-    </iframe>
+    <div class="contact-layout">
+
+      <!-- Left: Info -->
+      <aside class="contact-info reveal">
+        <p class="contact-greeting">I'd love to<br>hear from you.</p>
+        <p class="contact-sub">
+          Whether it's about technology, music, Check4Spam, or anything else —
+          fill out the form or find me on any of these platforms.
+        </p>
+
+        <div class="contact-methods">
+          <a href="https://www.linkedin.com/in/shammas/" target="_blank" rel="noopener" class="contact-method">
+            <div class="method-icon li">💼</div>
+            <div class="method-text">
+              <div class="method-label">LinkedIn</div>
+              <div class="method-handle">linkedin.com/in/shammas</div>
+            </div>
+            <span style="color:var(--muted)">↗</span>
+          </a>
+          <a href="https://www.youtube.com/@mshammas" target="_blank" rel="noopener" class="contact-method">
+            <div class="method-icon yt">▶️</div>
+            <div class="method-text">
+              <div class="method-label">YouTube</div>
+              <div class="method-handle">@mshammas</div>
+            </div>
+            <span style="color:var(--muted)">↗</span>
+          </a>
+          <a href="https://twitter.com/mshammas" target="_blank" rel="noopener" class="contact-method">
+            <div class="method-icon tw">🐦</div>
+            <div class="method-text">
+              <div class="method-label">Twitter / X</div>
+              <div class="method-handle">@mshammas</div>
+            </div>
+            <span style="color:var(--muted)">↗</span>
+          </a>
+          <a href="https://www.instagram.com/shammasoliyath" target="_blank" rel="noopener" class="contact-method">
+            <div class="method-icon ig">📸</div>
+            <div class="method-text">
+              <div class="method-label">Instagram</div>
+              <div class="method-handle">@shammasoliyath</div>
+            </div>
+            <span style="color:var(--muted)">↗</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- Right: Google Form -->
+      <div class="form-card reveal reveal-delay-2">
+        <div class="form-card-header">
+          <div class="form-card-title">Send a Message</div>
+          <div class="form-card-sub">Powered by Google Forms · Usually responds within 24–48 hours</div>
+        </div>
+        <div class="form-iframe-wrap">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLScDj3VDCVJ7mEqTS_123uECl9qFQQuarT5KTG0c3AYZP5nnLw/viewform?embedded=true"
+            title="Contact form"
+            loading="lazy"
+            marginheight="0"
+            marginwidth="0">
+            Loading…
+          </iframe>
+        </div>
+      </div>
+
+    </div>
   </main>
 
-  <!-- Footer -->
-  <footer>
-    &copy; 2025 Shammas Oliyath. All rights reserved.
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-socials">
+      <a href="https://www.linkedin.com/in/shammas/" target="_blank" rel="noopener" class="footer-social-link" aria-label="LinkedIn">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" loading="lazy">
+      </a>
+      <a href="https://www.youtube.com/@mshammas" target="_blank" rel="noopener" class="footer-social-link" aria-label="YouTube">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" loading="lazy">
+      </a>
+      <a href="https://www.instagram.com/shammasoliyath" target="_blank" rel="noopener" class="footer-social-link" aria-label="Instagram">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" loading="lazy">
+      </a>
+      <a href="https://twitter.com/mshammas" target="_blank" rel="noopener" class="footer-social-link" aria-label="Twitter">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" loading="lazy">
+      </a>
+    </div>
+    <p class="footer-copy">&copy; 2025 Shammas Oliyath. All rights reserved.</p>
   </footer>
 
-  <!-- Mobile menu toggle -->
   <script>
-    const toggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    toggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
+    if ('serviceWorker' in navigator) navigator.serviceWorker.register('/service-worker.js');
   </script>
 </body>
 </html>
