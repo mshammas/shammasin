@@ -1,25 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-  <!-- Google tag (gtag.js) -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZNW1FKGM0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-2ZNW1FKGM0');
-  </script>  
-  <meta charset="UTF-8" />
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-  <link rel="manifest" href="/manifest.json">
-  <link rel="apple-touch-icon" href="/images/icon-192.png">
-  <meta name="theme-color" content="#ffffff">
+  </script>
+  <!-- Flash-free theme -->
+  <script>(function(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
+
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Career & Education | Shammas Oliyath</title>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="canonical" href="https://shammas.in/career.html" />
+  <title>Career &amp; Education | Shammas Oliyath</title>
+  <meta name="description" content="Discover Shammas Oliyath's rich career across IBM, Mindtree, Check4Spam, and his academic milestones.">
+  <meta name="author" content="Shammas Oliyath">
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Career & Education | Shammas Oliyath">
@@ -27,307 +24,671 @@
   <meta property="og:image" content="https://shammas.in/images/profile.jpg">
   <meta property="og:url" content="https://shammas.in/career.html">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="description" content="Discover Shammas Oliyath’s rich career across IBM, Mindtree, Check4Spam, and his academic milestones.">
-  <meta name="author" content="Shammas Oliyath">  
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }    
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-  </style>
+  <meta name="theme-color" content="#0a0a0f">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+  <link rel="apple-touch-icon" href="/images/icon-192.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="canonical" href="https://shammas.in/career.html"/>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Career & Education | Shammas Oliyath",
-    "url": "https://shammas.in/career.html",
-    "description": "Explore the career journey and academic achievements of Shammas Oliyath.",
-    "breadcrumb": {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://shammas.in"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Career & Education",
-          "item": "https://shammas.in/career.html"
-        }
-      ]
-    }
+    "@type": "Person",
+    "name": "Shammas Oliyath",
+    "url": "https://shammas.in",
+    "image": "https://shammas.in/images/profile.jpg",
+    "jobTitle": "System Engineer & Developer",
+    "worksFor": { "@type": "Organization", "name": "IBM" },
+    "sameAs": [
+      "https://www.linkedin.com/in/shammas/",
+      "https://twitter.com/mshammas",
+      "https://www.instagram.com/shammasoliyath",
+      "https://www.youtube.com/@mshammas"
+    ]
   }
-  </script>      
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Shammas Oliyath",
-      "url": "https://shammas.in",
-      "image": "https://shammas.in/images/profile.jpg",
-      "jobTitle": "System Engineer & Developer",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "IBM"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/in/shammas/",
-        "https://twitter.com/mshammas",
-        "https://www.instagram.com/shammasoliyath",
-        "https://www.youtube.com/@mshammas"
-      ]
-    }
-  </script>  
-</head>
-<body id="top" class="bg-white text-gray-800">  
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded">
-    Skip to main content
-  </a>  
-  <!-- Header -->
-  <div id="header-placeholder"></div>
-  
-  <script>
-    fetch('/header.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('header-placeholder').innerHTML = data;
-  
-        // Optional: reinitialize any event listeners here
-        const toggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (toggle && mobileMenu) {
-          toggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-          });
-        }
-      });
   </script>
 
-  <!-- Main Content -->
-  <main id="main-content" class="max-w-4xl mx-auto p-6 mt-10">
-    <h2 class="text-3xl font-semibold mb-6">Career & Education</h2>
+  <style>
+    /* ============================================================
+       PAGE HERO BANNER
+       ============================================================ */
+    .page-hero {
+      position: relative;
+      padding: 5rem 2rem 4rem;
+      overflow: hidden;
+      text-align: center;
+    }
+    .page-hero-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    .page-hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+    [data-theme="light"] .page-hero-bg::after {
+      background-image:
+        linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+    }
+    .page-hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+    }
+    .ph-orb-1 {
+      width: 500px; height: 300px;
+      background: radial-gradient(circle, rgba(79,142,247,0.4), transparent 70%);
+      top: -100px; left: -100px;
+    }
+    .ph-orb-2 {
+      width: 400px; height: 250px;
+      background: radial-gradient(circle, rgba(240,165,0,0.25), transparent 70%);
+      bottom: -80px; right: -80px;
+    }
+    [data-theme="light"] .page-hero-orb { opacity: 0.4; }
 
-  <!-- Career Section with Icons -->
-  <section class="mb-10">
-    <h3 class="text-2xl font-semibold mb-4 text-blue-600">Professional Journey</h3>
-    <div class="space-y-8">
-  
-      <div>
-        <h4 class="text-xl font-semibold flex items-center gap-2">
-          <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-3-3v6m7-8a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2l2-2h6l2 2h2z" />
-          </svg>
-          Senior Engineer & Developer
-        </h4>
-        <div class="flex items-center space-x-4 text-gray-600 mt-1">
-          <img src="https://www.ibm.com/brand/experience-guides/developer/b1db1ae501d522a1a4b49613fe07c9f1/01_8-bar-positive.svg" alt="IBM Logo" class="h-12 w-12 rounded">
-          <span class="text-lg">IBM System z • 2006 – Present</span>
-        </div>
-        <p class="mt-2 text-gray-700">
-          Near to two decades of experience in Enterprise Systems, Mainframes, and System Architectures.
-          Specialized in IBM System z CPU and IO Architectures.
-        </p>
+    .page-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    .page-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      background: linear-gradient(135deg, var(--text) 0%, var(--muted) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+    }
+
+    .page-subtitle {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ============================================================
+       LAYOUT
+       ============================================================ */
+    .career-layout {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 3rem 2rem 0;
+    }
+
+    /* ============================================================
+       TIMELINE
+       ============================================================ */
+    .timeline-section { margin-bottom: 5rem; }
+
+    .timeline-track {
+      position: relative;
+      padding-left: 2.5rem;
+    }
+
+    /* The glowing vertical line */
+    .timeline-track::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 12px;
+      bottom: 12px;
+      width: 2px;
+      background: linear-gradient(to bottom,
+        var(--blue) 0%,
+        var(--gold) 50%,
+        var(--purple) 100%);
+      border-radius: 2px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Glowing dot */
+    .timeline-dot {
+      position: absolute;
+      left: -2.5rem;
+      top: 1.6rem;
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: var(--dot-color, var(--blue));
+      border: 3px solid var(--bg);
+      box-shadow: 0 0 0 3px var(--dot-color, var(--blue)), 0 0 16px var(--dot-color, var(--blue));
+      z-index: 1;
+      transition: transform var(--t);
+    }
+    .timeline-item:hover .timeline-dot { transform: scale(1.3); }
+
+    .timeline-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      transition: all var(--t);
+      position: relative;
+      overflow: hidden;
+    }
+    .timeline-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at top left, rgba(79,142,247,0.05), transparent 60%);
+      opacity: 0;
+      transition: opacity var(--t);
+      border-radius: var(--radius-lg);
+    }
+    .timeline-item:hover .timeline-card {
+      border-color: var(--dot-color, var(--blue));
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      transform: translateX(6px);
+    }
+    .timeline-item:hover .timeline-card::before { opacity: 1; }
+
+    .timeline-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 0.875rem;
+      flex-wrap: wrap;
+    }
+
+    .timeline-logo {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      object-fit: contain;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--border);
+      padding: 6px;
+      flex-shrink: 0;
+    }
+
+    .timeline-meta { flex: 1; }
+
+    .timeline-role {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 0.2rem;
+    }
+
+    .timeline-company {
+      font-size: 0.875rem;
+      color: var(--dot-color, var(--blue));
+      font-weight: 600;
+    }
+
+    .timeline-period {
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-weight: 500;
+      padding: 0.25rem 0.75rem;
+      border-radius: 99px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      white-space: nowrap;
+      align-self: flex-start;
+      margin-top: 0.1rem;
+    }
+
+    .timeline-body {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    /* ============================================================
+       EDUCATION
+       ============================================================ */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .edu-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+      transition: all var(--t);
+    }
+    .edu-card:hover {
+      border-color: rgba(240,165,0,0.4);
+      background: var(--card-hover);
+      box-shadow: var(--glow-gold);
+      transform: translateY(-3px);
+    }
+
+    .edu-logo {
+      width: 52px; height: 52px;
+      border-radius: 12px;
+      object-fit: contain;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--border);
+      padding: 6px;
+      flex-shrink: 0;
+    }
+
+    .edu-degree {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      margin-bottom: 0.2rem;
+    }
+    .edu-school {
+      font-size: 0.85rem;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .edu-detail {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ============================================================
+       CERTIFICATIONS
+       ============================================================ */
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .cert-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: all var(--t);
+      text-decoration: none;
+      color: inherit;
+    }
+    .cert-card:hover {
+      background: var(--card-hover);
+      border-color: var(--border-hover);
+      transform: translateY(-5px);
+      box-shadow: var(--glow-blue);
+    }
+
+    .cert-badge-img {
+      width: 80px; height: 80px;
+      object-fit: contain;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+
+    .cert-name {
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.3rem;
+      line-height: 1.3;
+    }
+
+    .cert-issuer {
+      font-size: 0.78rem;
+      color: var(--blue);
+      font-weight: 600;
+    }
+
+    .cert-link {
+      margin-top: 0.75rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    /* ============================================================
+       CONNECT CTA
+       ============================================================ */
+    .connect-cta {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .connect-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at left, rgba(79,142,247,0.06), transparent 60%);
+      pointer-events: none;
+    }
+
+    .connect-text h3 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.35rem;
+    }
+    .connect-text p { color: var(--muted); font-size: 0.9rem; }
+
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
+    @media (max-width: 768px) {
+      .edu-grid   { grid-template-columns: 1fr; }
+      .certs-grid { grid-template-columns: repeat(2, 1fr); }
+      .connect-cta { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .certs-grid { grid-template-columns: 1fr; }
+      .timeline-card { padding: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" style="position:absolute;left:-9999px" class="sr-only">Skip to main content</a>
+
+  <div id="header-placeholder"></div>
+  <script>
+    fetch('/header.html')
+      .then(function(r){ return r.text(); })
+      .then(function(html){ document.getElementById('header-placeholder').innerHTML = html; });
+  </script>
+
+  <main id="main-content">
+
+    <!-- ══════════════════════════════════════════
+         PAGE HERO
+    ══════════════════════════════════════════ -->
+    <div class="page-hero">
+      <div class="page-hero-bg">
+        <div class="page-hero-orb ph-orb-1"></div>
+        <div class="page-hero-orb ph-orb-2"></div>
       </div>
-  
-      <div>
-        <h4 class="text-xl font-semibold flex items-center gap-2">
-          <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-3-3v6m10 6H5a2 2 0 01-2-2V7a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2z" />
-          </svg>
-          Founder, Check4Spam
-        </h4>
-        <div class="flex items-center space-x-4 text-gray-600 mt-1">
-          <img src="https://check4spam.com/wp-content/uploads/2016/07/check4spam-512x.png" alt="Check4Spam Logo" class="h-12 w-12 rounded">
-          <span class="text-lg">Check4Spam • 2016 – Present</span>
-        </div>
-        <p class="mt-2 text-gray-700">
-          Built a community-driven platform to identify and bust misinformation and fake news. 
-          Featured in top Indian news portals for its unique public service model.
-        </p>
-      </div>
-  
-      <div>
-        <h4 class="text-xl font-semibold flex items-center gap-2">
-          <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2a4 4 0 018 0v2m-4-6a4 4 0 100-8 4 4 0 000 8zm-4 2a4 4 0 00-4 4v2h4v-2a2 2 0 012-2h4a2 2 0 012 2v2h4v-2a4 4 0 00-4-4H9z" />
-          </svg>
-          Software Engineer, R&D Unit
-        </h4>
-        <div class="flex items-center space-x-4 text-gray-600 mt-1">
-          <img src="https://kikkidu.com/wp-content/uploads/2010/06/mindtree.jpg" alt="Mindtree Logo" class="h-12 w-12 rounded">
-          <span class="text-lg">Mindtree • 2004 – 2005</span>
-        </div>
-        <p class="mt-2 text-gray-700">
-          Developed SCSI layer integration for Linux Kernel for StorageTek’s Continuous Protection System.
-        </p>
-      </div>
-  
-      <div>
-        <h4 class="text-xl font-semibold flex items-center gap-2">
-          <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 01.88 7.88A5.5 5.5 0 112 9.5c0 .33.03.65.08.96a4.002 4.002 0 014.42 1.58A3.99 3.99 0 0112 9c1.66 0 3.09 1.01 3.71 2.44A4.992 4.992 0 0116 7z" />
-          </svg>
-          Software Engineer
-        </h4>
-        <div class="flex items-center space-x-4 text-gray-600 mt-1">
-          <img src="https://images.crunchbase.com/image/upload/c_pad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/v1397186198/1a8945f9fe6de4bee506adfd8404ac49.jpg" alt="Proteans Logo" class="h-12 w-12">
-          <span class="text-lg">Proteans • 2003 – 2004</span>
-        </div>
-        <p class="mt-2 text-gray-700">
-          Worked with DRDO on Real Time Operating Systems and RISC processors in Embedded Systems.
+      <div class="page-hero-inner">
+        <div class="section-label" style="justify-content:center;margin-bottom:1rem;">Professional Journey</div>
+        <h1 class="page-title">Career &amp; Education</h1>
+        <p class="page-subtitle">
+          Nearly two decades shaping enterprise technology, building community platforms,
+          and pushing the boundaries of what's possible on IBM System z.
         </p>
       </div>
     </div>
-  </section>
-  
-  <!-- Education Section with Icons -->
-  <section>
-    <h3 class="text-2xl font-semibold mb-4 text-blue-600">Education</h3>
-    <div class="space-y-6">
-      <div>
-        <div class="flex items-center space-x-4 text-gray-600 mt-1">
-          <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0v6m0 0H7m5 0h5" />
-          </svg>
-          <img src="https://staloysius.edu.in/storage/files/images/New%20College%20Logo%20ESTD.jpg" alt="Aloysius" class="h-12 w-12 object-contain rounded">
-          <div>
-            <h4 class="text-xl font-semibold">St. Aloysius College, Mangalore</h4>
-            <p class="text-gray-600">MCA – Master of Computer Applications</p>
-          </div>
-        </div>
-        <p class="mt-2 text-gray-700">
-          Deepened expertise in software development, systems management, and computing frameworks. Flexible, self-driven program enabling growth alongside full-time career.
-        </p>
-      </div>
-      <div>
-        <div class="flex items-center space-x-4 text-gray-600 mt-1">
-          <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0v6m0 0H7m5 0h5" />
-          </svg>
-          <img src="https://staloysius.edu.in/storage/files/images/New%20College%20Logo%20ESTD.jpg" alt="Aloysius" class="h-12 w-12 object-contain rounded">
-          <div>
-            <h4 class="text-xl font-semibold">St. Aloysius College, Mangalore</h4>
-            <p class="text-gray-600">BSc (Computer Science)</p>
-          </div>
-        </div>
-        <p class="mt-2 text-gray-700">
-          Built a strong foundation in programming, systems thinking, and computer science. Active in tech clubs and music performances.
-        </p>
-      </div>
-    </div>
-  </section>
 
-    <!-- Certifications / Badges -->
-    <!-- Credly Badge -->
-    <div class="mt-10">
-      <h4 class="text-xl font-semibold mb-4 text-blue-600">Certifications & Badges</h4>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">        
-        <a href="https://www.credly.com/badges/c02e4ad3-0314-40ca-80a7-da419605764e" target="_blank" class="block max-w-sm border rounded-lg shadow-sm hover:shadow-lg transition p-4 bg-white">
-          <img src="https://images.credly.com/size/340x340/images/50eb2436-5a87-4357-8893-7920aabe3a5f/Parent-Issuance.png" alt="IBM watsonx Essentials" class="w-24 h-24 object-contain mx-auto rounded mb-4">
-          <h5 class="text-center text-gray-800 font-semibold text-lg">Patent Issuance</h5>
-     <!--     <h6 class="text-center text-gray-500 font-regular text-md">This badge is awarded to an inventor for the first patent prosecuted through the U.S. Patent & Trademark Office resulting in a patent issuance.</h6>   -->
-          <p class="text-center text-gray-500 text-sm mt-1">Issued by IBM • Click to view details</p>
-        </a>     
-        <a href="https://www.credly.com/badges/2bb375cc-a455-4bae-aecc-77d13b22ae70" target="_blank" class="block max-w-sm border rounded-lg shadow-sm hover:shadow-lg transition p-4 bg-white">
-          <img src="https://images.credly.com/size/340x340/images/d14e59e1-181d-4f60-a3d7-ea633e218847/First-patent.png" alt="IBM watsonx Essentials" class="w-24 h-24 object-contain mx-auto rounded mb-4">
-          <h5 class="text-center text-gray-800 font-semibold text-lg">First Patent File</h5>
-     <!--          <h6 class="text-center text-gray-500 font-regular text-md">This badge is awarded to an inventor for their first application filed with the U.S. Patent & Trademark Office. This badge encourages first-time inventors to join IBM’s patent process.</h6>        -->
-          <p class="text-center text-gray-500 text-sm mt-1">Issued by IBM • Click to view details</p>
-        </a>     
-        <a href="https://www.credly.com/badges/501317b4-1396-4af6-8aed-f5e14115806a" target="_blank" class="block max-w-sm border rounded-lg shadow-sm hover:shadow-lg transition p-4 bg-white">
-          <img src="https://images.credly.com/size/340x340/images/47a15e48-3fd7-4c36-8f7e-639a65945ad8/image.png" alt="IBM watsonx Essentials" class="w-24 h-24 object-contain mx-auto rounded mb-4">
-          <h5 class="text-center text-gray-800 font-semibold text-lg">IBM watsonx Essentials</h5>
-          <!--     <h6 class="text-center text-gray-500 font-regular text-md">This badge earner understands and can articulate the AI use cases where the IBM watsonx platform helps clients deploy and embed generative AI across their businesses, manage all data sources, and accelerate responsible AI workflows. In addition, the earner understands the concepts and advantages of AI, along with IBM's AI strategy for addressing ethical and sustainable AI challenges.</h6>        -->
-          <p class="text-center text-gray-500 text-sm mt-1">Issued by IBM • Click to view details</p>
-        </a>     
-        <a href="https://www.credly.com/badges/6dc40128-cddb-47aa-ae05-fa92395a383e" target="_blank" class="block max-w-sm border rounded-lg shadow-sm hover:shadow-lg transition p-4 bg-white">
-          <img src="https://images.credly.com/size/340x340/images/bc08972c-3c7d-4b99-82a0-c94bcca36674/Badges_v8-07_Practitioner.png" alt="IBM watsonx Essentials" class="w-24 h-24 object-contain mx-auto rounded mb-4">
-          <h5 class="text-center text-gray-800 font-semibold text-lg">Enterprise Design Thinking Practitioner</h5>
-     <!--          <h6 class="text-center text-gray-500 font-regular text-md">The earner has acquired knowledge of applying Enterprise Design Thinking and its value. As a Practitioner, the badge earner finds opportunities to try it out in their every day work.</h6>        -->
-          <p class="text-center text-gray-500 text-sm mt-1">Issued by IBM • Click to view details</p>
-        </a>             
-        <a href="https://www.credly.com/badges/f100b0fc-6afa-42ff-b597-a1b05bc5ce20" target="_blank" class="block max-w-sm border rounded-lg shadow-sm hover:shadow-lg transition p-4 bg-white">
-          <img src="https://images.credly.com/size/340x340/images/a660853a-b47c-4950-956f-c8540a5ced74/IBM-Virtual-Collaborator-1.png" alt="IBM watsonx Essentials" class="w-24 h-24 object-contain mx-auto rounded mb-4">
-          <h5 class="text-center text-gray-800 font-semibold text-lg">IBM Virtual Collaborator</h5>
-     <!--          <h6 class="text-center text-gray-500 font-regular text-md">This badge enables IBMers to deliver consistent client value in a virtual environment. Interaction and collaboration is almost all virtual now. IBMers need to show up differently by knowing how to use collaboration tools better than ever, how the tools work best, the application of the tool's functionality, and best practices that will allow IBMers to engage with colleagues and clients effectively, productively and collaboratively.</h6>        -->
-          <p class="text-center text-gray-500 text-sm mt-1">Issued by IBM • Click to view details</p>
-        </a>             
-      </div>
-    </div>    
-    
-    <!-- Custom LinkedIn Section -->
-    <div class="mt-10">
-      <h4 class="text-xl font-semibold mb-4 text-blue-600">Connect with Me</h4>
-      <div class="flex items-center border rounded-lg p-4 shadow-sm bg-white max-w-xl">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Logo" class="h-12 w-12 rounded mr-4">
-        <div>
-          <p class="text-gray-800 font-medium text-lg">Shammas Oliyath</p>
-          <p class="text-gray-600 text-sm">System Engineer, Developer & Community Builder</p>
-          <a href="https://www.linkedin.com/in/shammas/" target="_blank" aria-label="LinkedIn Profile" class="inline-block mt-2 text-blue-600 hover:underline">
-            View LinkedIn Profile
+    <div class="career-layout">
+
+      <!-- ══════════════════════════════════════════
+           TIMELINE
+      ══════════════════════════════════════════ -->
+      <section class="timeline-section" aria-label="Work experience">
+        <div class="section-label reveal">Experience</div>
+        <h2 class="section-title reveal reveal-delay-1">Professional Journey</h2>
+
+        <div class="timeline-track" style="margin-top:2.5rem;">
+
+          <!-- IBM -->
+          <div class="timeline-item reveal" style="--dot-color: var(--blue)">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <img
+                  src="https://www.ibm.com/brand/experience-guides/developer/b1db1ae501d522a1a4b49613fe07c9f1/01_8-bar-positive.svg"
+                  alt="IBM Logo"
+                  class="timeline-logo"
+                  loading="lazy"
+                  style="background:#000; border-radius:8px;"
+                >
+                <div class="timeline-meta">
+                  <div class="timeline-role">Senior Engineer &amp; Developer</div>
+                  <div class="timeline-company">IBM System z</div>
+                </div>
+                <div class="timeline-period">2006 – Present</div>
+              </div>
+              <div class="timeline-body">
+                Nearly two decades of deep expertise in Enterprise Systems, Mainframes, and System Architectures.
+                Specialized in IBM System z CPU and I/O Architectures, driving innovation at the core of enterprise computing.
+                Filed multiple patents and led cross-functional engineering initiatives.
+              </div>
+            </div>
+          </div>
+
+          <!-- Check4Spam -->
+          <div class="timeline-item reveal reveal-delay-1" style="--dot-color: var(--red)">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <img
+                  src="https://check4spam.com/wp-content/uploads/2016/07/check4spam-512x.png"
+                  alt="Check4Spam Logo"
+                  class="timeline-logo"
+                  loading="lazy"
+                >
+                <div class="timeline-meta">
+                  <div class="timeline-role">Founder</div>
+                  <div class="timeline-company" style="color:var(--red)">Check4Spam</div>
+                </div>
+                <div class="timeline-period">2016 – Present</div>
+              </div>
+              <div class="timeline-body">
+                Built a community-driven platform to identify and bust misinformation and fake news.
+                Featured in top Indian news portals for its unique public service model, creating a trusted
+                resource for fact-checking in the Indian media landscape.
+              </div>
+            </div>
+          </div>
+
+          <!-- Mindtree -->
+          <div class="timeline-item reveal reveal-delay-2" style="--dot-color: var(--green)">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div class="timeline-logo" style="display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;color:var(--green);background:rgba(16,185,129,0.08);border-color:rgba(16,185,129,0.2);">MT</div>
+                <div class="timeline-meta">
+                  <div class="timeline-role">Software Engineer, R&amp;D Unit</div>
+                  <div class="timeline-company" style="color:var(--green)">Mindtree</div>
+                </div>
+                <div class="timeline-period">2004 – 2005</div>
+              </div>
+              <div class="timeline-body">
+                Developed SCSI layer integration for the Linux Kernel for StorageTek's Continuous Protection System —
+                working at the intersection of systems programming and enterprise storage architecture.
+              </div>
+            </div>
+          </div>
+
+          <!-- Proteans -->
+          <div class="timeline-item reveal reveal-delay-3" style="--dot-color: var(--gold)">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div class="timeline-logo" style="display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;color:var(--gold);background:rgba(240,165,0,0.08);border-color:rgba(240,165,0,0.2);">PT</div>
+                <div class="timeline-meta">
+                  <div class="timeline-role">Software Engineer</div>
+                  <div class="timeline-company" style="color:var(--gold)">Proteans</div>
+                </div>
+                <div class="timeline-period">2003 – 2004</div>
+              </div>
+              <div class="timeline-body">
+                Worked with DRDO on Real Time Operating Systems and RISC processors in Embedded Systems —
+                laying the foundation for deep systems-level engineering expertise.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════
+           EDUCATION
+      ══════════════════════════════════════════ -->
+      <section style="margin-bottom:5rem;" aria-label="Education">
+        <div class="section-label reveal">Academia</div>
+        <h2 class="section-title reveal reveal-delay-1">Education</h2>
+
+        <div class="edu-grid" style="margin-top:2rem;">
+          <div class="edu-card reveal reveal-delay-1">
+            <img
+              src="https://staloysius.edu.in/storage/files/images/New%20College%20Logo%20ESTD.jpg"
+              alt="St. Aloysius College"
+              class="edu-logo"
+              loading="lazy"
+            >
+            <div>
+              <div class="edu-degree">MCA – Master of Computer Applications</div>
+              <div class="edu-school">St. Aloysius College, Mangalore</div>
+              <div class="edu-detail">
+                Deepened expertise in software development, systems management, and computing frameworks.
+                A flexible, self-driven programme enabling growth alongside a full-time career at IBM.
+              </div>
+            </div>
+          </div>
+
+          <div class="edu-card reveal reveal-delay-2">
+            <img
+              src="https://staloysius.edu.in/storage/files/images/New%20College%20Logo%20ESTD.jpg"
+              alt="St. Aloysius College"
+              class="edu-logo"
+              loading="lazy"
+            >
+            <div>
+              <div class="edu-degree">BSc – Computer Science</div>
+              <div class="edu-school">St. Aloysius College, Mangalore</div>
+              <div class="edu-detail">
+                Built a strong foundation in programming, systems thinking, and computer science.
+                Active in tech clubs and music performances throughout undergraduate years.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════
+           CERTIFICATIONS
+      ══════════════════════════════════════════ -->
+      <section style="margin-bottom:5rem;" aria-label="Certifications and badges">
+        <div class="section-label reveal">Achievements</div>
+        <h2 class="section-title reveal reveal-delay-1">Certifications &amp; Badges</h2>
+
+        <div class="certs-grid" style="margin-top:2rem;">
+
+          <a href="https://www.credly.com/badges/c02e4ad3-0314-40ca-80a7-da419605764e" target="_blank" rel="noopener" class="cert-card reveal reveal-delay-1">
+            <img src="https://images.credly.com/size/340x340/images/50eb2436-5a87-4357-8893-7920aabe3a5f/Parent-Issuance.png" alt="Patent Issuance Badge" class="cert-badge-img" loading="lazy">
+            <div class="cert-name">Patent Issuance</div>
+            <div class="cert-issuer">IBM</div>
+            <div class="cert-link">View on Credly ↗</div>
           </a>
+
+          <a href="https://www.credly.com/badges/2bb375cc-a455-4bae-aecc-77d13b22ae70" target="_blank" rel="noopener" class="cert-card reveal reveal-delay-2">
+            <img src="https://images.credly.com/size/340x340/images/d14e59e1-181d-4f60-a3d7-ea633e218847/First-patent.png" alt="First Patent File Badge" class="cert-badge-img" loading="lazy">
+            <div class="cert-name">First Patent File</div>
+            <div class="cert-issuer">IBM</div>
+            <div class="cert-link">View on Credly ↗</div>
+          </a>
+
+          <a href="https://www.credly.com/badges/501317b4-1396-4af6-8aed-f5e14115806a" target="_blank" rel="noopener" class="cert-card reveal reveal-delay-3">
+            <img src="https://images.credly.com/size/340x340/images/47a15e48-3fd7-4c36-8f7e-639a65945ad8/image.png" alt="IBM watsonx Essentials Badge" class="cert-badge-img" loading="lazy">
+            <div class="cert-name">IBM watsonx Essentials</div>
+            <div class="cert-issuer">IBM</div>
+            <div class="cert-link">View on Credly ↗</div>
+          </a>
+
+          <a href="https://www.credly.com/badges/6dc40128-cddb-47aa-ae05-fa92395a383e" target="_blank" rel="noopener" class="cert-card reveal reveal-delay-1">
+            <img src="https://images.credly.com/size/340x340/images/bc08972c-3c7d-4b99-82a0-c94bcca36674/Badges_v8-07_Practitioner.png" alt="Enterprise Design Thinking Practitioner" class="cert-badge-img" loading="lazy">
+            <div class="cert-name">Enterprise Design Thinking Practitioner</div>
+            <div class="cert-issuer">IBM</div>
+            <div class="cert-link">View on Credly ↗</div>
+          </a>
+
+          <a href="https://www.credly.com/badges/f100b0fc-6afa-42ff-b597-a1b05bc5ce20" target="_blank" rel="noopener" class="cert-card reveal reveal-delay-2">
+            <img src="https://images.credly.com/size/340x340/images/a660853a-b47c-4950-956f-c8540a5ced74/IBM-Virtual-Collaborator-1.png" alt="IBM Virtual Collaborator" class="cert-badge-img" loading="lazy">
+            <div class="cert-name">IBM Virtual Collaborator</div>
+            <div class="cert-issuer">IBM</div>
+            <div class="cert-link">View on Credly ↗</div>
+          </a>
+
         </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════
+           CONNECT CTA
+      ══════════════════════════════════════════ -->
+      <div class="connect-cta reveal">
+        <div class="connect-text">
+          <h3>Let's connect on LinkedIn</h3>
+          <p>System Engineer, Developer &amp; Community Builder</p>
+        </div>
+        <a href="https://www.linkedin.com/in/shammas/" target="_blank" rel="noopener" class="btn-primary">
+          View LinkedIn Profile
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        </a>
       </div>
-    </div>
+
+    </div><!-- /.career-layout -->
   </main>
 
-  <!-- Footer -->
-  <footer class="mt-16 py-6 bg-gray-50 text-center text-gray-500 text-sm">
-    &copy; 2025 Shammas Oliyath. All rights reserved.
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-socials">
+      <a href="https://www.linkedin.com/in/shammas/" target="_blank" rel="noopener" class="footer-social-link" aria-label="LinkedIn">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" loading="lazy">
+      </a>
+      <a href="https://www.youtube.com/@mshammas" target="_blank" rel="noopener" class="footer-social-link" aria-label="YouTube">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" loading="lazy">
+      </a>
+      <a href="https://www.instagram.com/shammasoliyath" target="_blank" rel="noopener" class="footer-social-link" aria-label="Instagram">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" loading="lazy">
+      </a>
+      <a href="https://twitter.com/mshammas" target="_blank" rel="noopener" class="footer-social-link" aria-label="Twitter">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" loading="lazy">
+      </a>
+    </div>
+    <p class="footer-copy">&copy; 2025 Shammas Oliyath. All rights reserved.</p>
   </footer>
 
-  <!-- Floating LinkedIn Icon -->
-  <a href="https://www.linkedin.com/in/shammas/" target="_blank"
-     class="fixed bottom-4 right-4 bg-white border border-gray-300 rounded-full shadow-lg p-3 hover:bg-blue-600 transition duration-300 z-50">
-    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
-         alt="LinkedIn"
-         class="h-6 w-6 hover:invert">
-  </a>
-  
-  <!-- Floating Scroll-to-Top Button -->
-  <button id="scrollTopBtn"
-    class="hidden fixed bottom-4 left-4 bg-blue-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition z-50">
-    ↑ Top
-  </button>
-  <script defer>
-    const toggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-  
-    toggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-  
-    const scrollTopBtn = document.getElementById("scrollTopBtn");
-    let scrollTimeout;
-  
-    // Show/hide on scroll and idle detection
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 300) {
-        scrollTopBtn.classList.remove("hidden");
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(() => {
-          scrollTopBtn.classList.add("hidden");
-        }, 3000);
-      } else {
-        scrollTopBtn.classList.add("hidden");
-      }
-    });
-  
-    // 👇 Scroll to top when button clicked
-    scrollTopBtn.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-    });
+  <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/service-worker.js');
-    }        
+    }
   </script>
 </body>
 </html>

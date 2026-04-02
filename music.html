@@ -1,38 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-  <!-- Google tag (gtag.js) -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZNW1FKGM0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-2ZNW1FKGM0');
-  </script>  
-  <meta charset="UTF-8" />
+  </script>
+  <!-- Flash-free theme -->
+  <script>(function(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
+
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Music by Shammas Oliyath | Ghazals, Hindustani & Covers</title>
+  <title>Music by Shammas Oliyath | Ghazals, Hindustani &amp; Covers</title>
   <meta name="description" content="Explore the music journey of Shammas Oliyath – from Ghazals to Hindustani renditions and modern covers. Featuring YouTube playlists and SoundCloud tracks.">
   <meta name="author" content="Shammas Oliyath">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://shammas.in/music.html">
   <meta property="og:title" content="Music by Shammas Oliyath | Ghazals, Hindustani & Covers">
   <meta property="og:description" content="Explore the music journey of Shammas Oliyath – from Ghazals to Hindustani renditions and modern covers.">
   <meta property="og:image" content="https://shammas.in/images/profile.jpg">
   <meta property="og:url" content="https://shammas.in/music.html">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <meta name="theme-color" content="#0a0a0f">
+  <link rel="canonical" href="https://shammas.in/music.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
   <link rel="apple-touch-icon" href="/images/icon-192.png">
-  <meta name="theme-color" content="#ffffff">
+  <link rel="manifest" href="/manifest.json">
 
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-  </style>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
 
+  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -47,108 +49,570 @@
     "jobTitle": "Musician and Technologist"
   }
   </script>
-</head>
-<body class="bg-white text-gray-800">
 
-  <!-- Header -->
+  <style>
+    /* ============================================================
+       MUSIC HERO — Full dark immersive
+       ============================================================ */
+    .music-hero {
+      position: relative;
+      padding: 5rem 2rem 4.5rem;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    /* Richer, warmer background for music page */
+    .music-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 20% 50%, rgba(240,165,0,0.12) 0%, transparent 55%),
+                  radial-gradient(ellipse at 80% 20%, rgba(139,92,246,0.12) 0%, transparent 55%),
+                  radial-gradient(ellipse at 60% 80%, rgba(79,142,247,0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    /* Animated waveform SVG */
+    .waveform-wrap {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 80px;
+      overflow: hidden;
+      pointer-events: none;
+      opacity: 0.18;
+    }
+    [data-theme="light"] .waveform-wrap { opacity: 0.1; }
+
+    .waveform-bars {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      height: 100%;
+      gap: 3px;
+      padding: 0 1rem;
+    }
+
+    .waveform-bar {
+      width: 3px;
+      border-radius: 3px 3px 0 0;
+      background: var(--gold);
+      animation: waveAnim var(--dur, 1.2s) ease-in-out infinite alternate;
+      animation-delay: var(--delay, 0s);
+    }
+
+    @keyframes waveAnim {
+      from { height: 8px; }
+      to   { height: var(--h, 40px); }
+    }
+
+    /* Hero content */
+    .music-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .music-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 1rem;
+      border-radius: 99px;
+      background: rgba(240,165,0,0.12);
+      border: 1px solid rgba(240,165,0,0.3);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .music-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 7vw, 4.5rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #fff 0%, var(--gold) 60%, var(--purple) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .music-subtitle {
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ============================================================
+       HERITAGE QUOTE
+       ============================================================ */
+    .heritage-quote {
+      max-width: var(--max-w);
+      margin: 0 auto 4rem;
+      padding: 0 2rem;
+    }
+
+    .quote-card {
+      background: linear-gradient(135deg, rgba(240,165,0,0.06), rgba(139,92,246,0.04));
+      border: 1px solid rgba(240,165,0,0.2);
+      border-left: 4px solid var(--gold);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2.5rem 2.5rem 3rem;
+      position: relative;
+    }
+
+    .quote-mark {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 6rem;
+      line-height: 0.5;
+      color: var(--gold);
+      opacity: 0.25;
+      position: absolute;
+      top: 1.5rem;
+      left: 1.75rem;
+      font-style: italic;
+    }
+
+    .quote-text {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--text);
+      line-height: 1.8;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 1.25rem;
+    }
+
+    .quote-attribution {
+      font-size: 0.85rem;
+      color: var(--gold);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    .quote-attribution span {
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    /* ============================================================
+       YOUTUBE SUBSCRIBE CTA
+       ============================================================ */
+    .subscribe-cta {
+      text-align: center;
+      margin: 0 auto 3rem;
+      padding: 0 2rem;
+    }
+
+    .subscribe-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.875rem 2rem;
+      background: #ff0000;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: 12px;
+      transition: all var(--t);
+      border: 1px solid transparent;
+    }
+    .subscribe-btn:hover {
+      background: #cc0000;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(255,0,0,0.3);
+    }
+    .subscribe-btn svg { width: 22px; height: 22px; fill: currentColor; }
+
+    /* ============================================================
+       VIDEO SECTIONS
+       ============================================================ */
+    .music-layout {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .video-section {
+      margin-bottom: 5rem;
+    }
+
+    .video-wrap {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      transition: box-shadow var(--t);
+    }
+    .video-wrap:hover {
+      box-shadow: 0 24px 80px rgba(0,0,0,0.5), var(--glow-gold);
+    }
+
+    /* Responsive iframe container */
+    .video-ratio {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 */
+    }
+    .video-ratio iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* Video label bar */
+    .video-label-bar {
+      padding: 1.25rem 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+
+    .video-label-title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--text);
+    }
+
+    .video-label-sub {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.1rem;
+    }
+
+    .video-yt-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.82rem;
+      color: var(--gold);
+      font-weight: 600;
+      transition: opacity var(--t);
+      white-space: nowrap;
+    }
+    .video-yt-link:hover { opacity: 0.75; }
+
+    /* ============================================================
+       MUSIC GENRES CHIPS
+       ============================================================ */
+    .genres-section {
+      margin-bottom: 4rem;
+      text-align: center;
+    }
+
+    .genre-chips {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .genre-chip {
+      padding: 0.5rem 1.25rem;
+      border-radius: 99px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--muted);
+      transition: all var(--t);
+    }
+    .genre-chip:hover,
+    .genre-chip.active {
+      background: rgba(240,165,0,0.1);
+      border-color: rgba(240,165,0,0.4);
+      color: var(--gold);
+    }
+
+    /* ============================================================
+       SOUNDCLOUD SECTION
+       ============================================================ */
+    .soundcloud-section {
+      margin-bottom: 5rem;
+    }
+
+    .soundcloud-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      transition: all var(--t);
+      flex-wrap: wrap;
+    }
+    .soundcloud-card:hover {
+      background: var(--card-hover);
+      border-color: rgba(255,85,0,0.4);
+      box-shadow: 0 8px 32px rgba(255,85,0,0.1);
+    }
+
+    .soundcloud-icon {
+      width: 60px; height: 60px;
+      border-radius: 16px;
+      background: #ff5500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.6rem;
+    }
+
+    .soundcloud-text h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+    .soundcloud-text p { color: var(--muted); font-size: 0.875rem; }
+
+    .soundcloud-link {
+      margin-left: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.25rem;
+      border-radius: 10px;
+      background: rgba(255,85,0,0.12);
+      border: 1px solid rgba(255,85,0,0.3);
+      color: #ff5500;
+      font-weight: 600;
+      font-size: 0.875rem;
+      transition: all var(--t);
+    }
+    .soundcloud-link:hover {
+      background: rgba(255,85,0,0.2);
+    }
+
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
+    @media (max-width: 768px) {
+      .soundcloud-card { flex-direction: column; text-align: center; }
+      .soundcloud-link { margin: 0 auto; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" style="position:absolute;left:-9999px">Skip to main content</a>
+
   <div id="header-placeholder"></div>
   <script>
     fetch('/header.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('header-placeholder').innerHTML = data;
-  
-        // Optional: reinitialize any event listeners here
-        const toggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (toggle && mobileMenu) {
-          toggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-          });
-        }
-      });
+      .then(function(r){ return r.text(); })
+      .then(function(html){ document.getElementById('header-placeholder').innerHTML = html; });
   </script>
 
-  <!-- Main Content -->
-  <main class="max-w-4xl mx-auto p-6 mt-10">
-    <h2 class="text-3xl font-semibold mb-6">Music</h2>
+  <main id="main-content">
 
-    <!-- Introduction -->
-    <section class="mb-10">
-      <p class="text-lg text-gray-700 leading-relaxed">
-        Music has always been a profound part of my life. Growing up in a musical family in Thalassery, Kerala, I was deeply influenced by the rich traditions of Indian melodies. My grandfather, the late TC Ummer, was a renowned musician and a guiding light in my musical journey. While I pursued a career in technology, my passion for music remained steadfast, leading me to explore and perform various genres, especially Ghazals and Hindustani music.
-      </p>
-    </section>
+    <!-- ══════════════════════════════════════════
+         HERO
+    ══════════════════════════════════════════ -->
+    <section class="music-hero" aria-label="Music introduction">
+      <div class="music-hero-bg"></div>
 
-    <!-- SEO-Friendly YouTube Subscribe Button with GA4 Tracking -->
-    <div class="my-8 flex justify-center">
-      <a href="https://www.youtube.com/@mshammas?sub_confirmation=1"
-         target="_blank"
-         rel="noopener"
-         class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-full shadow-lg transition"
-         onclick="gtag('event', 'click', {
-           'event_category': 'engagement',
-           'event_label': 'YouTube Subscribe Button',
-           'value': 1
-         });">
-        🎵 Subscribe on YouTube
-      </a>
-    </div>
+      <!-- Animated waveform -->
+      <div class="waveform-wrap" aria-hidden="true">
+        <div class="waveform-bars" id="waveform"></div>
+      </div>
 
-    <!-- Embedded Playlist -->
-    <div class="relative" style="padding-top: 56.25%;">
-      <iframe class="absolute top-0 left-0 w-full h-full" title="YoutubePlaylist"
-              src="https://www.youtube.com/embed/B0z-Y1NBNms?list=PLBFc521pLeCgU_hMsFXg45uFr-uUSnz6A&pp=gAQB" 
-              frameborder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen loading="lazy">
-      </iframe>
-    </div>
-    <!-- My Compositions Section -->
-    <section id="my-compositions" class="bg-white py-16">
-      <div class="max-w-4xl mx-auto px-6 text-center">
-        <h2 class="text-3xl font-semibold mb-4">🎶 My Compositions</h2>
-        <p class="text-gray-700 mb-6">
-          This section features my original music compositions — a blend of heartfelt lyrics, soulful melodies, and collaborative artistry. Explore the sounds and stories that define my musical journey.
+      <div class="music-hero-inner">
+        <div class="music-badge">🎵 Musician &amp; Composer</div>
+        <h1 class="music-title">Soulful Melodies</h1>
+        <p class="music-subtitle">
+          From Ghazals to Hindustani classical — music has been the constant companion
+          of a life lived at the intersection of art and technology.
         </p>
+
+        <a href="https://www.youtube.com/@mshammas?sub_confirmation=1"
+           target="_blank"
+           rel="noopener"
+           class="subscribe-btn"
+           onclick="gtag('event','click',{'event_category':'engagement','event_label':'YouTube Subscribe','value':1})">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+          Subscribe on YouTube
+        </a>
       </div>
     </section>
-    
-    <!-- Original Composition Section -->
-    <section id="original-composition" class="bg-gray-100 py-16">
-      <div class="max-w-4xl mx-auto px-6 text-center">
-        <h3 class="text-2xl font-semibold mb-4">Original Song: A Musical Journey</h3>
-        <p class="text-gray-700 mb-6">
-          I'm excited to share this heartfelt original composition with you. The music, lyrics, and arrangement are a reflection of my creative journey. 🙏🏽 All credits and details are available in the video description.
+
+    <!-- ══════════════════════════════════════════
+         HERITAGE QUOTE
+    ══════════════════════════════════════════ -->
+    <div class="heritage-quote reveal">
+      <div class="quote-card">
+        <div class="quote-mark" aria-hidden="true">"</div>
+        <p class="quote-text">
+          Music has always been a profound part of my life. Growing up in a musical family in Thalassery, Kerala,
+          I was deeply influenced by the rich traditions of Indian melodies. My grandfather, the late TC Ummer,
+          was a renowned musician and a guiding light in my musical journey. While I pursued a career in technology,
+          my passion for music remained steadfast — leading me to explore and perform Ghazals and Hindustani music.
         </p>
-        <div class="relative w-full" style="padding-bottom: 56.25%;">
-          <iframe
-            class="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
-            src="https://www.youtube.com/embed/8mrOtneK4Q8?rel=0"
-            title="Original Composition by Shammas Oliyath"
-            loading="lazy"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
+        <div class="quote-attribution">
+          Shammas Oliyath <span>— Thalassery, Kerala</span>
         </div>
       </div>
-    </section>
-    
+    </div>
+
+    <div class="music-layout">
+
+      <!-- ══════════════════════════════════════════
+           GENRE CHIPS
+      ══════════════════════════════════════════ -->
+      <div class="genres-section reveal">
+        <div class="section-label" style="justify-content:center;margin-bottom:0.5rem">Repertoire</div>
+        <h2 class="section-title">Musical Styles</h2>
+        <div class="genre-chips">
+          <div class="genre-chip active">Ghazals</div>
+          <div class="genre-chip">Hindustani Classical</div>
+          <div class="genre-chip">Urdu Poetry</div>
+          <div class="genre-chip">Original Compositions</div>
+          <div class="genre-chip">Covers &amp; Renditions</div>
+          <div class="genre-chip">Kerala Folk</div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════════
+           PLAYLIST
+      ══════════════════════════════════════════ -->
+      <section class="video-section reveal" aria-label="YouTube playlist">
+        <div class="section-label">Listen</div>
+        <h2 class="section-title" style="margin-bottom:1.5rem">My Playlist</h2>
+
+        <div class="video-wrap">
+          <div class="video-ratio">
+            <iframe
+              src="https://www.youtube.com/embed/B0z-Y1NBNms?list=PLBFc521pLeCgU_hMsFXg45uFr-uUSnz6A&pp=gAQB"
+              title="Shammas Oliyath YouTube Playlist"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="video-label-bar">
+            <div>
+              <div class="video-label-title">Curated Playlist</div>
+              <div class="video-label-sub">Ghazals, Hindustani renditions &amp; more</div>
+            </div>
+            <a href="https://www.youtube.com/@mshammas" target="_blank" rel="noopener" class="video-yt-link">
+              View on YouTube ↗
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════
+           ORIGINAL COMPOSITION
+      ══════════════════════════════════════════ -->
+      <section class="video-section reveal reveal-delay-1" aria-label="Original composition">
+        <div class="section-label" style="color:var(--gold)">Original</div>
+        <h2 class="section-title" style="margin-bottom:0.5rem">My Composition</h2>
+        <p style="color:var(--muted);font-size:0.95rem;margin-bottom:1.5rem;max-width:560px;">
+          A heartfelt original — the music, lyrics, and arrangement are a reflection of my creative journey.
+          All credits and details are in the video description.
+        </p>
+
+        <div class="video-wrap" style="border-color:rgba(240,165,0,0.2);">
+          <div class="video-ratio">
+            <iframe
+              src="https://www.youtube.com/embed/8mrOtneK4Q8?rel=0"
+              title="Original Composition by Shammas Oliyath"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="video-label-bar" style="border-top-color:rgba(240,165,0,0.15);">
+            <div>
+              <div class="video-label-title">Original Composition</div>
+              <div class="video-label-sub">Music, lyrics &amp; arrangement by Shammas Oliyath</div>
+            </div>
+            <a href="https://www.youtube.com/watch?v=8mrOtneK4Q8" target="_blank" rel="noopener" class="video-yt-link">
+              Watch on YouTube ↗
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════
+           SOUNDCLOUD
+      ══════════════════════════════════════════ -->
+      <section class="soundcloud-section reveal" aria-label="SoundCloud">
+        <div class="soundcloud-card">
+          <div class="soundcloud-icon" aria-hidden="true">☁️</div>
+          <div class="soundcloud-text">
+            <h3>Also on SoundCloud</h3>
+            <p>More tracks, early recordings, and exclusive renditions available on SoundCloud.</p>
+          </div>
+          <a href="https://soundcloud.com/shammas" target="_blank" rel="noopener" class="soundcloud-link">
+            Listen on SoundCloud ↗
+          </a>
+        </div>
+      </section>
+
+    </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="mt-16 py-6 bg-gray-50 text-center text-gray-500 text-sm">
-    &copy; 2025 Shammas Oliyath. All rights reserved.
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-socials">
+      <a href="https://www.youtube.com/@mshammas" target="_blank" rel="noopener" class="footer-social-link" aria-label="YouTube">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" loading="lazy">
+      </a>
+      <a href="https://www.linkedin.com/in/shammas/" target="_blank" rel="noopener" class="footer-social-link" aria-label="LinkedIn">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" loading="lazy">
+      </a>
+      <a href="https://www.instagram.com/shammasoliyath" target="_blank" rel="noopener" class="footer-social-link" aria-label="Instagram">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" loading="lazy">
+      </a>
+      <a href="https://twitter.com/mshammas" target="_blank" rel="noopener" class="footer-social-link" aria-label="Twitter">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" loading="lazy">
+      </a>
+    </div>
+    <p class="footer-copy">&copy; 2025 Shammas Oliyath. All rights reserved.</p>
   </footer>
 
-  <!-- Mobile Menu Toggle Script -->
-  <script defer>
-    const toggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    toggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
+  <script>
+    // ── Animated waveform bars ──────────────────────────────────
+    (function () {
+      var container = document.getElementById('waveform');
+      if (!container) return;
+      var barCount = 80;
+      var frag = document.createDocumentFragment();
+      for (var i = 0; i < barCount; i++) {
+        var bar = document.createElement('div');
+        bar.className = 'waveform-bar';
+        var maxH = Math.round(10 + Math.random() * 55);
+        var dur  = (0.8 + Math.random() * 1.0).toFixed(2);
+        var del  = (Math.random() * 1.2).toFixed(2);
+        bar.style.cssText = '--h:' + maxH + 'px;--dur:' + dur + 's;--delay:' + del + 's;height:' + (4 + Math.random() * 20) + 'px';
+        frag.appendChild(bar);
+      }
+      container.appendChild(frag);
+    })();
+
+    // ── Service Worker ──────────────────────────────────────────
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js');
+    }
   </script>
 </body>
 </html>

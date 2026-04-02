@@ -1,48 +1,533 @@
-<header class="p-6 shadow-md bg-gray-50">
-  <div class="max-w-6xl mx-auto flex justify-between items-center">
-    <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold hover:text-blue-500">
-      <div class="w-10 h-10 rounded-full overflow-hidden bg-white shadow flex items-center justify-center">
+<style>
+  /* ============================================================
+     GLOBAL CSS — Dark Luxe Design System
+     ============================================================ */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:           #0a0a0f;
+    --bg-2:         #111118;
+    --bg-3:         #1a1a26;
+    --card:         rgba(255,255,255,0.04);
+    --card-hover:   rgba(255,255,255,0.08);
+    --border:       rgba(255,255,255,0.08);
+    --border-hover: rgba(79,142,247,0.5);
+    --text:         #f1f5f9;
+    --muted:        #94a3b8;
+    --blue:         #4f8ef7;
+    --gold:         #f0a500;
+    --purple:       #8b5cf6;
+    --red:          #ef4444;
+    --green:        #10b981;
+    --radius:       16px;
+    --radius-lg:    24px;
+    --glow-blue:    0 0 40px rgba(79,142,247,0.18);
+    --glow-gold:    0 0 40px rgba(240,165,0,0.18);
+    --t:            0.3s cubic-bezier(0.4,0,0.2,1);
+    --font-display: 'Space Grotesk', 'Inter', sans-serif;
+    --font-body:    'Inter', sans-serif;
+    --max-w:        1200px;
+    --header-h:     68px;
+  }
+
+  [data-theme="light"] {
+    --bg:         #f4f6ff;
+    --bg-2:       #ffffff;
+    --bg-3:       #eef0fa;
+    --card:       rgba(255,255,255,0.75);
+    --card-hover: rgba(255,255,255,0.95);
+    --border:     rgba(0,0,0,0.08);
+    --text:       #0f172a;
+    --muted:      #475569;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background var(--t), color var(--t);
+    padding-top: var(--header-h);
+  }
+
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; display: block; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+  /* ============================================================
+     SCROLL PROGRESS BAR
+     ============================================================ */
+  #progress-bar {
+    position: fixed;
+    top: 0; left: 0;
+    height: 2px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--blue), var(--gold));
+    z-index: 9999;
+    pointer-events: none;
+    transition: width 0.08s linear;
+  }
+
+  /* ============================================================
+     SITE HEADER
+     ============================================================ */
+  #site-header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: var(--header-h);
+    z-index: 1000;
+    background: rgba(10,10,15,0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    transition: background var(--t), border-color var(--t), box-shadow var(--t);
+  }
+
+  [data-theme="light"] #site-header {
+    background: rgba(244,246,255,0.8);
+  }
+
+  #site-header.elevated {
+    background: rgba(10,10,15,0.92);
+    box-shadow: 0 4px 40px rgba(0,0,0,0.4);
+  }
+
+  [data-theme="light"] #site-header.elevated {
+    background: rgba(244,246,255,0.95);
+    box-shadow: 0 4px 40px rgba(0,0,0,0.1);
+  }
+
+  .header-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 2rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  /* Logo */
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    flex-shrink: 0;
+    transition: opacity var(--t);
+  }
+  .logo:hover { opacity: 0.85; }
+
+  .logo-ring {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    padding: 2px;
+    background: linear-gradient(135deg, var(--blue), var(--gold));
+    flex-shrink: 0;
+  }
+  .logo-ring img {
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--bg);
+  }
+
+  /* Desktop nav */
+  #desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    flex: 1;
+    justify-content: center;
+  }
+
+  #desktop-nav a {
+    padding: 0.35rem 0.7rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--muted);
+    transition: color var(--t), background var(--t);
+    white-space: nowrap;
+  }
+  #desktop-nav a:hover { color: var(--text); background: var(--card); }
+
+  /* Header actions */
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  .icon-btn {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text);
+    transition: all var(--t);
+  }
+  .icon-btn:hover {
+    background: var(--card-hover);
+    border-color: var(--border-hover);
+  }
+  .icon-btn svg { width: 17px; height: 17px; stroke: currentColor; fill: none; }
+
+  #menu-toggle { display: none; }
+
+  /* Mobile nav */
+  #mobile-menu {
+    display: none;
+    position: fixed;
+    top: var(--header-h); left: 0; right: 0;
+    background: rgba(10,10,15,0.97);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 1.25rem;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 999;
+    animation: slideDown 0.2s ease;
+  }
+  [data-theme="light"] #mobile-menu { background: rgba(244,246,255,0.97); }
+  #mobile-menu.open { display: flex; }
+
+  #mobile-menu a {
+    padding: 0.7rem 1rem;
+    border-radius: 10px;
+    color: var(--muted);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all var(--t);
+  }
+  #mobile-menu a:hover { color: var(--text); background: var(--card); }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ============================================================
+     SCROLL REVEAL
+     ============================================================ */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+  .reveal-delay-5 { transition-delay: 0.5s; }
+  .reveal-left { opacity: 0; transform: translateX(-30px); transition: opacity 0.65s ease, transform 0.65s ease; }
+  .reveal-left.visible { opacity: 1; transform: translateX(0); }
+
+  /* ============================================================
+     SHARED CARD STYLE
+     ============================================================ */
+  .glass-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    transition: background var(--t), border-color var(--t), transform var(--t), box-shadow var(--t);
+  }
+  .glass-card:hover {
+    background: var(--card-hover);
+    border-color: var(--border-hover);
+    box-shadow: var(--glow-blue);
+    transform: translateY(-4px);
+  }
+
+  /* ============================================================
+     BUTTONS
+     ============================================================ */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.75rem;
+    border-radius: 12px;
+    background: var(--blue);
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all var(--t);
+    border: 1px solid transparent;
+  }
+  .btn-primary:hover {
+    background: #3a7cf0;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(79,142,247,0.35);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.75rem;
+    border-radius: 12px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all var(--t);
+  }
+  .btn-secondary:hover {
+    background: var(--card-hover);
+    border-color: var(--border-hover);
+    transform: translateY(-2px);
+  }
+
+  /* ============================================================
+     SHARED SECTION HEADING
+     ============================================================ */
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 0.75rem;
+  }
+  .section-label::before {
+    content: '';
+    width: 20px; height: 2px;
+    background: var(--blue);
+    border-radius: 2px;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  /* ============================================================
+     SHARED FOOTER
+     ============================================================ */
+  .site-footer {
+    margin-top: 5rem;
+    padding: 3rem 2rem 2rem;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .footer-socials {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer-social-link {
+    width: 42px; height: 42px;
+    border-radius: 12px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--t);
+  }
+  .footer-social-link:hover {
+    background: var(--card-hover);
+    border-color: var(--border-hover);
+    transform: translateY(-3px);
+    box-shadow: var(--glow-blue);
+  }
+  .footer-social-link img {
+    width: 20px; height: 20px;
+    filter: invert(0.6) brightness(1.2);
+  }
+  [data-theme="light"] .footer-social-link img { filter: none; }
+
+  .footer-copy {
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+
+  /* ============================================================
+     RESPONSIVE
+     ============================================================ */
+  @media (max-width: 900px) {
+    #desktop-nav { display: none; }
+    #menu-toggle { display: flex; }
+    .header-inner { padding: 0 1.25rem; }
+  }
+  @media (max-width: 480px) {
+    .logo-name { display: none; }
+  }
+</style>
+
+<div id="progress-bar" role="progressbar" aria-hidden="true"></div>
+
+<header id="site-header">
+  <div class="header-inner">
+
+    <a href="index.html" class="logo">
+      <div class="logo-ring">
         <picture>
           <source srcset="images/profile-ai.webp" type="image/webp">
-          <img
-            src="images/profile-ai@2x.png"
-            srcset="images/profile-ai@2x.png 2x"
-            loading="lazy"
-            alt="Shammas Oliyath@2x"
-            class="w-full h-full object-contain"
-            style="background: transparent;"
-          />
+          <img src="images/profile-ai.png" alt="Shammas Oliyath" loading="eager">
         </picture>
       </div>
-      <span>Shammas Oliyath</span>
+      <span class="logo-name">Shammas Oliyath</span>
     </a>
-    <button id="menu-toggle" aria-label="Menu" class="md:hidden text-gray-700 focus:outline-none">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
-    </button>
-    <nav id="menu" class="hidden md:flex md:space-x-6 text-gray-700 font-medium">
-      <a href="index.html" class="hover:text-blue-500">Home</a>
-      <a href="career.html" class="hover:text-blue-500">Career & Education</a>
-      <a href="music.html" class="hover:text-blue-500">Music</a>
-      <a href="check4spam.html" class="hover:text-blue-500">Check4Spam</a>
-      <a href="sports.html" class="hover:text-blue-500">Sports</a>
-      <a href="https://tools.shammas.in" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">AI Tools</a>
-      <a href="https://photography.shammas.in" target="_blank" class="hover:text-blue-500">Photography</a>
-      <a href="https://blog.shammas.in" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">Blog</a>        
-      <a href="contact.html" class="hover:text-blue-500">Contact</a>
+
+    <nav id="desktop-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="career.html">Career</a>
+      <a href="music.html">Music</a>
+      <a href="check4spam.html">Check4Spam</a>
+      <a href="sports.html">Sports</a>
+      <a href="https://tools.shammas.in" target="_blank" rel="noopener noreferrer">AI Tools</a>
+      <a href="https://photography.shammas.in" target="_blank" rel="noopener noreferrer">Photography</a>
+      <a href="https://blog.shammas.in" target="_blank" rel="noopener noreferrer">Blog</a>
+      <a href="contact.html">Contact</a>
     </nav>
-  </div>
-  <div id="mobile-menu" class="md:hidden hidden mt-4 space-y-2 text-center text-gray-700 font-medium">
-    <a href="index.html" class="block hover:text-blue-500">Home</a>
-    <a href="career.html" class="block hover:text-blue-500">Career & Education</a>
-    <a href="music.html" class="block hover:text-blue-500">Music</a>
-    <a href="check4spam.html" class="block hover:text-blue-500">Check4Spam</a>
-    <a href="sports.html" class="block hover:text-blue-500">Sports</a>
-    <a href="https://tools.shammas.in" target="_blank" class="block hover:text-blue-500">AI Tools</a>
-    <a href="https://photography.shammas.in" target="_blank" class="block hover:text-blue-500">Photography</a>
-    <a href="https://blog.shammas.in" target="_blank" class="block hover:text-blue-500">Blog</a>      
-    <a href="contact.html" class="block hover:text-blue-500">Contact</a>
+
+    <div class="header-actions">
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle light/dark mode" title="Toggle theme">
+        <!-- Moon icon (shown in dark mode) -->
+        <svg id="icon-moon" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <!-- Sun icon (shown in light mode) -->
+        <svg id="icon-sun" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+      </button>
+
+      <button class="icon-btn" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
   </div>
 </header>
+
+<nav id="mobile-menu" aria-label="Mobile navigation">
+  <a href="index.html">Home</a>
+  <a href="career.html">Career &amp; Education</a>
+  <a href="music.html">Music</a>
+  <a href="check4spam.html">Check4Spam</a>
+  <a href="sports.html">Sports</a>
+  <a href="https://tools.shammas.in" target="_blank" rel="noopener">AI Tools ↗</a>
+  <a href="https://photography.shammas.in" target="_blank" rel="noopener">Photography ↗</a>
+  <a href="https://blog.shammas.in" target="_blank" rel="noopener">Blog ↗</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<script>
+(function () {
+  // ── Theme ──────────────────────────────────────────
+  function applyTheme(t) {
+    document.documentElement.setAttribute('data-theme', t);
+    var moon = document.getElementById('icon-moon');
+    var sun  = document.getElementById('icon-sun');
+    if (moon) moon.style.display = t === 'dark' ? '' : 'none';
+    if (sun)  sun.style.display  = t === 'light' ? '' : 'none';
+  }
+
+  var savedTheme = localStorage.getItem('theme') || 'dark';
+  applyTheme(savedTheme);
+
+  var themeBtn = document.getElementById('theme-toggle');
+  if (themeBtn) {
+    themeBtn.addEventListener('click', function () {
+      var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('theme', next);
+      applyTheme(next);
+    });
+  }
+
+  // ── Mobile menu ────────────────────────────────────
+  var menuBtn    = document.getElementById('menu-toggle');
+  var mobileMenu = document.getElementById('mobile-menu');
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', function () {
+      var open = mobileMenu.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open);
+    });
+    // Close on outside click
+    document.addEventListener('click', function (e) {
+      if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+        mobileMenu.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  // ── Scroll: progress bar + header elevation ────────
+  var progressBar = document.getElementById('progress-bar');
+  var header      = document.getElementById('site-header');
+
+  window.addEventListener('scroll', function () {
+    var scrollTop    = document.documentElement.scrollTop || document.body.scrollTop;
+    var scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    if (progressBar && scrollHeight > 0) {
+      progressBar.style.width = ((scrollTop / scrollHeight) * 100) + '%';
+    }
+    if (header) {
+      header.classList.toggle('elevated', scrollTop > 30);
+    }
+  }, { passive: true });
+
+  // ── Scroll reveal ──────────────────────────────────
+  var revealObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  // Observe on next tick (page content may not be in DOM yet)
+  setTimeout(function () {
+    document.querySelectorAll('.reveal, .reveal-left').forEach(function (el) {
+      revealObserver.observe(el);
+    });
+  }, 150);
+
+  // ── Highlight active nav link ──────────────────────
+  var path = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('#desktop-nav a, #mobile-menu a').forEach(function (a) {
+    var href = a.getAttribute('href');
+    if (href === path || (path === '' && href === 'index.html')) {
+      a.style.color = 'var(--blue)';
+      a.style.background = 'rgba(79,142,247,0.08)';
+    }
+  });
+})();
+</script>

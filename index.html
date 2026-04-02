@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-  <!-- Google tag (gtag.js) -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZNW1FKGM0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -9,40 +9,39 @@
     gtag('js', new Date());
     gtag('config', 'G-2ZNW1FKGM0');
   </script>
-  <meta charset="UTF-8" />
-  <link rel="manifest" href="/manifest.json">
-  <link rel="apple-touch-icon" href="/images/profile-ai.jpg"> <!-- or better: optimized icon -->
-  <link rel="preload" href="/images/profile-ai.webp" as="image" type="image/webp">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Flash-free theme -->
+  <script>(function(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
+
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Portfolio of Shammas Oliyath — technologist, musician, and innovator. Explore his work, tools, and musical journey.">
   <meta name="keywords" content="Shammas Oliyath, AI Tools, Music, System Engineer, Portfolio, Check4Spam">
   <meta name="author" content="Shammas Oliyath">
   <meta property="og:title" content="Shammas Oliyath | Portfolio">
-  <meta property="og:description" content="Harmony in Technology, Music, and Passion. Explore Shammas' tools, music, and more.">
+  <meta property="og:description" content="Harmony in Technology, Music, and Passion.">
   <meta property="og:image" content="https://shammas.in/images/profile-ai.jpg">
   <meta property="og:url" content="https://shammas.in">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Shammas Oliyath">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0a0a0f">
   <meta name="HandheldFriendly" content="true">
   <meta name="mobile-web-app-capable" content="yes">
-  <title>Shammas Oliyath | Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" onload="this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"></noscript>  
-  <link rel="dns-prefetch" href="//fonts.googleapis.com">
-  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="/manifest.json">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/images/icon-192.png">
   <link rel="apple-touch-icon" href="/images/icon-192.png">
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" as="style">
-  <link rel="canonical" href="https://shammas.in/" />
-  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-  <link rel="preconnect" href="https://cdn-icons-png.flaticon.com" crossorigin>
+  <link rel="canonical" href="https://shammas.in/"/>
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
+  <title>Shammas Oliyath | Portfolio</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -50,224 +49,759 @@
     "name": "Shammas Oliyath",
     "url": "https://shammas.in",
     "image": "https://shammas.in/images/profile-ai.jpg",
+    "jobTitle": "System Engineer & Developer",
+    "worksFor": { "@type": "Organization", "name": "IBM" },
     "sameAs": [
       "https://www.linkedin.com/in/shammas/",
       "https://www.youtube.com/@mshammas",
       "https://www.instagram.com/shammasoliyath",
       "https://twitter.com/mshammas"
-    ],
-    "jobTitle": "System Engineer & Developer",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "IBM"
-    }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://shammas.in"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Career & Education",
-        "item": "https://shammas.in/career.html"
-      }
-      // Add others as needed
     ]
   }
   </script>
+
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
+    /* ============================================================
+       HERO
+       ============================================================ */
+    .hero {
+      position: relative;
+      min-height: calc(100vh - var(--header-h));
+      display: flex;
+      align-items: center;
+      overflow: hidden;
     }
-    html {
-      scroll-behavior: smooth;
-    }    
+
+    /* Mesh gradient background */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    /* Subtle grid overlay */
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    [data-theme="light"] .hero-bg::after {
+      background-image:
+        linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(90px);
+      pointer-events: none;
+    }
+    .orb-1 {
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(79,142,247,0.5), transparent 70%);
+      top: -20%; left: -15%;
+      animation: orbFloat 12s ease-in-out infinite;
+    }
+    .orb-2 {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(240,165,0,0.35), transparent 70%);
+      bottom: -15%; right: -10%;
+      animation: orbFloat 15s ease-in-out infinite reverse;
+      animation-delay: -5s;
+    }
+    .orb-3 {
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(139,92,246,0.3), transparent 70%);
+      top: 40%; left: 50%;
+      animation: orbFloat 18s ease-in-out infinite;
+      animation-delay: -10s;
+    }
+    [data-theme="light"] .orb { opacity: 0.5; }
+
+    @keyframes orbFloat {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33%       { transform: translate(30px, -40px) scale(1.05); }
+      66%       { transform: translate(-25px, 25px) scale(0.96); }
+    }
+
+    /* Hero layout */
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 5rem 2rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 4rem;
+      align-items: center;
+      width: 100%;
+    }
+
+    /* Badge */
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 1rem;
+      border-radius: 99px;
+      background: rgba(79,142,247,0.1);
+      border: 1px solid rgba(79,142,247,0.25);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--blue);
+      letter-spacing: 0.04em;
+      margin-bottom: 1.5rem;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--blue);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.5; transform: scale(0.8); }
+    }
+
+    /* Name */
+    .hero-name {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--text) 0%, var(--muted) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Typewriter row */
+    .hero-typewriter {
+      font-family: var(--font-display);
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      min-height: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .typewriter-word {
+      color: var(--blue);
+      font-weight: 600;
+    }
+    .typewriter-cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1.4em;
+      background: var(--blue);
+      border-radius: 2px;
+      animation: blink 1s step-end infinite;
+      margin-left: 2px;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0; }
+    }
+
+    /* Hero description */
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 520px;
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+    }
+
+    /* CTA buttons */
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.875rem;
+    }
+
+    /* Avatar */
+    .hero-avatar-wrap {
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      padding: 3px;
+      background: conic-gradient(var(--blue) 0deg, var(--gold) 120deg, var(--purple) 240deg, var(--blue) 360deg);
+      animation: spinBorder 8s linear infinite;
+      flex-shrink: 0;
+    }
+    @keyframes spinBorder {
+      to { transform: rotate(360deg); }
+    }
+    .hero-avatar-inner {
+      width: 100%; height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid var(--bg);
+      transition: border-color var(--t);
+    }
+    .hero-avatar-inner img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--muted);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      animation: fadeInUp 1s ease 1s both;
+    }
+    .scroll-mouse {
+      width: 22px; height: 34px;
+      border: 2px solid var(--muted);
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      padding-top: 5px;
+    }
+    .scroll-dot {
+      width: 4px; height: 8px;
+      background: var(--muted);
+      border-radius: 2px;
+      animation: scrollBounce 2s ease-in-out infinite;
+    }
+    @keyframes scrollBounce {
+      0%, 100% { transform: translateY(0); opacity: 1; }
+      50%       { transform: translateY(8px); opacity: 0.3; }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+      to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+    }
+
+    /* ============================================================
+       STATS BAND
+       ============================================================ */
+    .stats-band {
+      max-width: var(--max-w);
+      margin: 0 auto 5rem;
+      padding: 0 2rem;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .stat-item {
+      background: var(--card);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: background var(--t);
+    }
+    .stat-item:hover { background: var(--card-hover); }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      background: linear-gradient(135deg, var(--blue), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+
+    /* ============================================================
+       BENTO GRID
+       ============================================================ */
+    .bento-section {
+      max-width: var(--max-w);
+      margin: 0 auto 5rem;
+      padding: 0 2rem;
+    }
+
+    .bento-header {
+      margin-bottom: 2rem;
+    }
+
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto;
+      gap: 1rem;
+    }
+
+    .bento-item {
+      display: flex;
+      flex-direction: column;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      transition: all var(--t);
+      position: relative;
+      overflow: hidden;
+      min-height: 190px;
+      cursor: pointer;
+    }
+
+    .bento-item::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity var(--t);
+      border-radius: var(--radius-lg);
+    }
+
+    .bento-item:hover {
+      border-color: var(--item-accent, var(--blue));
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+    }
+
+    .bento-item:hover::before { opacity: 1; }
+
+    /* Per-card accent colours */
+    .bento-career  { --item-accent: var(--blue);   }
+    .bento-career::before  { background: radial-gradient(ellipse at top left,  rgba(79,142,247,0.08),  transparent 60%); }
+
+    .bento-music   { --item-accent: var(--gold);   }
+    .bento-music::before   { background: radial-gradient(ellipse at top right, rgba(240,165,0,0.08),   transparent 60%); }
+
+    .bento-spam    { --item-accent: var(--red);    }
+    .bento-spam::before    { background: radial-gradient(ellipse at bottom left, rgba(239,68,68,0.08),  transparent 60%); }
+
+    .bento-ai      { --item-accent: var(--purple); }
+    .bento-ai::before      { background: radial-gradient(ellipse at top,       rgba(139,92,246,0.08), transparent 60%); }
+
+    .bento-photo   { --item-accent: var(--green);  }
+    .bento-photo::before   { background: radial-gradient(ellipse at bottom,    rgba(16,185,129,0.08), transparent 60%); }
+
+    .bento-blog    { --item-accent: var(--blue);   }
+    .bento-blog::before    { background: radial-gradient(ellipse at top left,  rgba(79,142,247,0.08),  transparent 60%); }
+
+    /* Grid spans */
+    .bento-career { grid-column: span 2; }
+    .bento-blog   { grid-column: span 2; }
+
+    .bento-cat {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--item-accent, var(--blue));
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .bento-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      transition: transform var(--t);
+    }
+    .bento-item:hover .bento-icon { transform: scale(1.1) rotate(-5deg); }
+
+    .bento-title {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .bento-desc {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .bento-arrow {
+      margin-top: 1.25rem;
+      font-size: 1.1rem;
+      color: var(--item-accent, var(--blue));
+      transition: transform var(--t);
+      align-self: flex-start;
+    }
+    .bento-item:hover .bento-arrow { transform: translate(4px, -4px); }
+
+    /* ============================================================
+       SOCIAL STRIP
+       ============================================================ */
+    .social-strip {
+      max-width: var(--max-w);
+      margin: 0 auto 5rem;
+      padding: 0 2rem;
+    }
+
+    .social-strip-inner {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .social-strip-text h3 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.25rem;
+    }
+    .social-strip-text p { color: var(--muted); font-size: 0.9rem; }
+
+    .social-icons {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .social-icon-link {
+      width: 46px; height: 46px;
+      border-radius: 12px;
+      background: var(--bg-2, var(--bg));
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--t);
+    }
+    .social-icon-link:hover {
+      background: var(--card-hover);
+      border-color: var(--border-hover);
+      transform: translateY(-3px);
+      box-shadow: var(--glow-blue);
+    }
+    .social-icon-link img {
+      width: 22px; height: 22px;
+      filter: invert(0.6) brightness(1.2);
+    }
+    [data-theme="light"] .social-icon-link img { filter: none; }
+
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 4rem 1.5rem;
+        gap: 3rem;
+      }
+      .hero-avatar-wrap {
+        width: 200px; height: 200px;
+        margin: 0 auto;
+      }
+      .hero-cta { justify-content: center; }
+      .hero-desc { margin: 0 auto 2.5rem; }
+      .hero-badge { margin: 0 auto 1.5rem; }
+      .hero-typewriter { justify-content: center; }
+      .scroll-indicator { display: none; }
+
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .bento-grid { grid-template-columns: 1fr 1fr; }
+      .bento-career { grid-column: span 2; }
+      .bento-blog   { grid-column: span 2; }
+
+      .social-strip-inner { flex-direction: column; text-align: center; }
+    }
+
+    @media (max-width: 600px) {
+      .bento-grid { grid-template-columns: 1fr; }
+      .bento-career, .bento-blog { grid-column: span 1; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    }
   </style>
 </head>
-<body id="top" class="bg-white text-gray-800 transition-all duration-300 ease-in-out">
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded">
-    Skip to main content
-  </a>  
-  <noscript>
-    <div style="text-align:center; padding:1rem; background:#ffeeba; color:#856404;">
-      This site works best with JavaScript enabled.
-    </div>
-  </noscript>  
+<body>
+  <a href="#main-content" class="sr-only" style="position:absolute;left:-9999px">Skip to main content</a>
+  <noscript><div style="padding:1rem;background:#1a1a26;color:#f1f5f9;text-align:center">This site works best with JavaScript enabled.</div></noscript>
+
+  <!-- Header (injected) -->
   <div id="header-placeholder"></div>
-  
   <script>
     fetch('/header.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('header-placeholder').innerHTML = data;
-  
-        // Optional: reinitialize any event listeners here
-        const toggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        if (toggle && mobileMenu) {
-          toggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-          });
-        }
-      });
+      .then(function(r){ return r.text(); })
+      .then(function(html){ document.getElementById('header-placeholder').innerHTML = html; });
   </script>
-  
+
   <main id="main-content">
-    <section class="max-w-4xl mx-auto mt-12 p-6 text-center">
-      <h2 class="text-4xl font-semibold mb-4">Harmony in Technology, Music, and Passion</h2>
-      <p class="text-lg text-gray-600 leading-relaxed">
-        I'm Shammas Oliyath — a passionate technologist, musician, sports enthusiast, and lifelong learner.
-        With over two decades of experience in system engineering and development, I’ve explored a
-        range of fields from AI tools to performing ghazals and curating spam protection systems.
-      </p>
-      <div class="mt-8">
-        <picture>
-          <source srcset="images/profile-ai.webp" type="image/webp">
-          <img
-            src="images/profile-ai@2x.png"
-            srcset="images/profile-ai@2x.png 2x"
-            loading="lazy"
-            alt="Shammas Oliyath"
-            class="w-40 h-40 mx-auto object-contain"
-            style="background: transparent;"
-          />
-        </picture>
+
+    <!-- ══════════════════════════════════════════
+         HERO
+    ══════════════════════════════════════════ -->
+    <section class="hero" aria-label="Introduction">
+      <div class="hero-bg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
       </div>
-    </section>
-  
-    <section class="max-w-6xl mx-auto mt-12 px-6">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 justify-items-center">
-        <!-- Card 1 -->
-        <a href="career.html" class="w-full h-full p-6 shadow rounded-lg bg-gray-50 hover:shadow-lg transition hover:bg-blue-50 transition-transform hover:scale-105 text-center">
-          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="Career & Education Icon" class="h-12 mx-auto mb-4">
-          <h3 class="text-xl font-semibold mb-2">Career & Education</h3>
-          <p class="text-gray-600">Discover my professional journey and academic background.</p>
-        </a>
-    
-        <!-- Card 2 -->
-        <a href="music.html" class="w-full h-full p-6 shadow rounded-lg bg-gray-50 hover:shadow-lg transition hover:bg-blue-50 transition-transform hover:scale-105 text-center">
-          <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Music Icon" class="h-12 mx-auto mb-4">
-          <h3 class="text-xl font-semibold mb-2">Music</h3>
-          <p class="text-gray-600">Explore my musical journey across YouTube, SoundCloud, and more.</p>
-        </a>
-    
-        <!-- Card 3 -->
-        <a href="check4spam.html" class="w-full h-full p-6 shadow rounded-lg bg-gray-50 hover:shadow-lg transition hover:bg-blue-50 transition-transform hover:scale-105 text-center">
-          <img src="https://cdn-icons-png.flaticon.com/512/595/595655.png" alt="Fact Check Icon" class="h-12 mx-auto mb-4">
-          <h3 class="text-xl font-semibold mb-2">Check4Spam</h3>
-          <p class="text-gray-600">A quick look at my initiative to fight misinformation online.</p>
-        </a>
-    
-        <!-- Card 4 -->
-        <a href="https://tools.shammas.in" target="_blank" class="w-full h-full p-6 shadow rounded-lg bg-gray-50 hover:shadow-lg transition hover:bg-blue-50 transition-transform hover:scale-105 text-center" aria-label="Open AI Tools in new tab">
-          <img src="https://cdn-icons-png.flaticon.com/512/681/681392.png" alt="AI Tools Icon" class="h-12 mx-auto mb-4">
-          <h3 class="text-xl font-semibold mb-2">AI Tools</h3>
-          <p class="text-gray-600">Access custom tools built using AI to simplify daily tasks.</p>
-        </a>
-    
-        <!-- Card 5 -->
-        <a href="https://photography.shammas.in" target="_blank" class="w-full h-full p-6 shadow rounded-lg bg-gray-50 hover:shadow-lg transition hover:bg-blue-50 transition-transform hover:scale-105 text-center">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M3 7h2l2-3h10l2 3h2a1 1 0 011 1v11a1 1 0 01-1 1H3a1 1 0 01-1-1V8a1 1 0 011-1z" />
-            <circle cx="12" cy="13" r="4" />
-          </svg>
-          <h3 class="text-xl font-semibold mb-2">Photography</h3>
-          <p class="text-gray-600 leading-relaxed">
-            Discover my photography portfolio showcasing moments captured through my lens.
+
+      <div class="hero-inner">
+        <div class="hero-text">
+          <div class="hero-badge">Senior Engineer &amp; Developer at IBM</div>
+
+          <h1 class="hero-name">Shammas<br>Oliyath</h1>
+
+          <div class="hero-typewriter" aria-live="polite">
+            <span>I am a&nbsp;</span>
+            <span class="typewriter-word" id="typewriter" aria-label="Roles"></span>
+            <span class="typewriter-cursor" aria-hidden="true"></span>
+          </div>
+
+          <p class="hero-desc">
+            Two decades at IBM on Enterprise &amp; Mainframe systems. Founder of Check4Spam.
+            Ghazal and Hindustani musician. Building at the intersection of technology, creativity, and community.
           </p>
-        </a>
-    
-        <!-- Card 6 -->
-        <a href="https://blog.shammas.in" target="_blank" class="w-full h-full p-6 shadow rounded-lg bg-gray-50 hover:shadow-lg transition hover:bg-blue-50 transition-transform hover:scale-105 text-center">
-          <img src="https://cdn-icons-png.flaticon.com/512/3649/3649463.png" alt="Blog Icon" class="h-12 mx-auto mb-4">
-          <h3 class="text-xl font-semibold mb-2">Blog</h3>
-          <p class="text-gray-600">Insights, stories, and reflections from my journey in tech, music, and beyond.</p>
-        </a>
+
+          <div class="hero-cta">
+            <a href="career.html" class="btn-primary">
+              Explore My Work
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="contact.html" class="btn-secondary">Get in Touch</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-avatar-wrap" aria-hidden="true">
+            <div class="hero-avatar-inner">
+              <picture>
+                <source srcset="images/profile-ai.webp" type="image/webp">
+                <img src="images/profile-ai.png" alt="Shammas Oliyath" loading="eager">
+              </picture>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-indicator" aria-hidden="true">
+        <div class="scroll-mouse"><div class="scroll-dot"></div></div>
+        <span>Scroll</span>
       </div>
     </section>
 
-    <!-- Social Media Links -->
-    <div class="mt-16 text-center">
-      <h4 class="text-xl font-semibold mb-4 text-blue-600">Follow Me</h4>
-      <div class="flex justify-center space-x-6">
-        <!-- LinkedIn -->
-        <a href="https://www.linkedin.com/in/shammas/" target="_blank" aria-label="LinkedIn">
-          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="h-8 w-8 hover:opacity-80 transition">
-        </a>
-        <!-- Instagram -->
-        <a href="https://www.instagram.com/shammasoliyath" target="_blank" aria-label="Instagram">
-          <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" class="h-8 w-8 hover:opacity-80 transition">
-        </a>
-        <!-- Facebook -->
-        <a href="https://www.facebook.com/mshammas" target="_blank" aria-label="Facebook">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" class="h-8 w-8 hover:opacity-80 transition">
-        </a>
-        <!-- YouTube -->
-        <a href="https://www.youtube.com/@mshammas" target="_blank" aria-label="YouTube">
-          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" class="h-8 w-8 hover:opacity-80 transition">
-        </a>
-        <!-- Twitter -->
-        <a href="https://twitter.com/mshammas" target="_blank" aria-label="Twitter">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" class="h-8 w-8 hover:opacity-80 transition">
-        </a>   
+    <!-- ══════════════════════════════════════════
+         STATS
+    ══════════════════════════════════════════ -->
+    <div class="stats-band reveal" id="stats-band">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number"><span class="counter" data-target="20">0</span>+</div>
+          <div class="stat-label">Years in Tech</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">IBM</div>
+          <div class="stat-label">System z Expert</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number"><span class="counter" data-target="2">0</span></div>
+          <div class="stat-label">Patents Filed</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">2016</div>
+          <div class="stat-label">Check4Spam Founded</div>
+        </div>
       </div>
     </div>
-  </main>
-  <footer class="mt-16 py-6 bg-gray-50 text-center text-gray-500 text-sm">
-    &copy; 2025 Shammas Oliyath. All rights reserved.
-  </footer>
-  
-  <!-- Floating Go to Top Button -->
-  <a href="#top" id="scrollTopBtn"
-     class="hidden fixed bottom-4 left-4 bg-blue-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition z-50">
-    ↑ Top
-  </a>
-  
-  <script defer>
-    const toggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    if (toggle && mobileMenu) {
-      toggle.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
-    }
-  
-    // Scroll-to-top button with idle detection
-    const scrollTopBtn = document.getElementById("scrollTopBtn");
-    let scrollTimeout;
-  
-    window.addEventListener("scroll", () => {
-      // Show button if user scrolls beyond 300px
-      if (window.scrollY > 300) {
-        scrollTopBtn.classList.remove("hidden");
-  
-        // Clear any previous timeout
-        clearTimeout(scrollTimeout);
-  
-        // Hide button after 3 seconds of no scroll activity
-        scrollTimeout = setTimeout(() => {
-          scrollTopBtn.classList.add("hidden");
-        }, 3000);
-      } else {
-        scrollTopBtn.classList.add("hidden");
-      }
-    });
 
+    <!-- ══════════════════════════════════════════
+         BENTO GRID
+    ══════════════════════════════════════════ -->
+    <section class="bento-section" aria-label="Explore">
+      <div class="bento-header reveal">
+        <div class="section-label">Explore</div>
+        <h2 class="section-title">Everything I Do</h2>
+      </div>
+
+      <div class="bento-grid">
+
+        <a href="career.html" class="bento-item bento-career reveal reveal-delay-1">
+          <div class="bento-cat">Career &amp; Education</div>
+          <div class="bento-icon">💼</div>
+          <div class="bento-title">Professional Journey</div>
+          <div class="bento-desc">Nearly two decades at IBM System z. Mainframe architect, patent inventor, and R&amp;D engineer with roots in Linux kernel development.</div>
+          <div class="bento-arrow">↗</div>
+        </a>
+
+        <a href="music.html" class="bento-item bento-music reveal reveal-delay-2">
+          <div class="bento-cat">Music</div>
+          <div class="bento-icon">🎵</div>
+          <div class="bento-title">Ghazals &amp; Hindustani</div>
+          <div class="bento-desc">Soulful renditions inspired by a rich musical heritage from Thalassery, Kerala.</div>
+          <div class="bento-arrow">↗</div>
+        </a>
+
+        <a href="check4spam.html" class="bento-item bento-spam reveal reveal-delay-1">
+          <div class="bento-cat">Initiative</div>
+          <div class="bento-icon">🔍</div>
+          <div class="bento-title">Check4Spam</div>
+          <div class="bento-desc">Community-driven fact-checking platform fighting misinformation since 2016. Featured in top Indian news portals.</div>
+          <div class="bento-arrow">↗</div>
+        </a>
+
+        <a href="https://tools.shammas.in" target="_blank" rel="noopener" class="bento-item bento-ai reveal reveal-delay-2">
+          <div class="bento-cat">Tools</div>
+          <div class="bento-icon">🤖</div>
+          <div class="bento-title">AI Tools</div>
+          <div class="bento-desc">Custom AI-powered utilities built to simplify everyday tasks and workflows.</div>
+          <div class="bento-arrow">↗</div>
+        </a>
+
+        <a href="https://photography.shammas.in" target="_blank" rel="noopener" class="bento-item bento-photo reveal reveal-delay-3">
+          <div class="bento-cat">Photography</div>
+          <div class="bento-icon">📷</div>
+          <div class="bento-title">Through My Lens</div>
+          <div class="bento-desc">Moments captured. Stories told in light and shadow.</div>
+          <div class="bento-arrow">↗</div>
+        </a>
+
+        <a href="https://blog.shammas.in" target="_blank" rel="noopener" class="bento-item bento-blog reveal reveal-delay-1">
+          <div class="bento-cat">Writing</div>
+          <div class="bento-icon">✍️</div>
+          <div class="bento-title">Blog</div>
+          <div class="bento-desc">Insights, stories, and reflections from two decades at the crossroads of technology, music, and society.</div>
+          <div class="bento-arrow">↗</div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SOCIAL STRIP
+    ══════════════════════════════════════════ -->
+    <section class="social-strip reveal" aria-label="Social media links">
+      <div class="social-strip-inner">
+        <div class="social-strip-text">
+          <h3>Let's Connect</h3>
+          <p>Find me across the web — tech, music, and everything in between.</p>
+        </div>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/shammas/" target="_blank" rel="noopener" class="social-icon-link" aria-label="LinkedIn">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" loading="lazy">
+          </a>
+          <a href="https://www.youtube.com/@mshammas" target="_blank" rel="noopener" class="social-icon-link" aria-label="YouTube">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" loading="lazy">
+          </a>
+          <a href="https://www.instagram.com/shammasoliyath" target="_blank" rel="noopener" class="social-icon-link" aria-label="Instagram">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" loading="lazy">
+          </a>
+          <a href="https://www.facebook.com/mshammas" target="_blank" rel="noopener" class="social-icon-link" aria-label="Facebook">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" loading="lazy">
+          </a>
+          <a href="https://twitter.com/mshammas" target="_blank" rel="noopener" class="social-icon-link" aria-label="Twitter / X">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" loading="lazy">
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <p class="footer-copy">&copy; 2025 Shammas Oliyath. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // ── Typewriter ───────────────────────────────────────────────
+    (function () {
+      var roles = ['Technologist', 'Musician', 'Ghazal Artist', 'Innovator', 'Community Builder', 'Patent Inventor'];
+      var el = document.getElementById('typewriter');
+      if (!el) return;
+      var idx = 0, charIdx = 0, deleting = false;
+      function tick() {
+        var word = roles[idx];
+        if (!deleting) {
+          el.textContent = word.slice(0, ++charIdx);
+          if (charIdx === word.length) { deleting = true; setTimeout(tick, 2200); return; }
+        } else {
+          el.textContent = word.slice(0, --charIdx);
+          if (charIdx === 0) { deleting = false; idx = (idx + 1) % roles.length; }
+        }
+        setTimeout(tick, deleting ? 55 : 115);
+      }
+      tick();
+    })();
+
+    // ── Counter animation ────────────────────────────────────────
+    (function () {
+      var counters = document.querySelectorAll('.counter');
+      if (!counters.length) return;
+      var done = false;
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting && !done) {
+            done = true;
+            counters.forEach(function (el) {
+              var target = +el.dataset.target;
+              var start = 0;
+              var step = target / 45;
+              var timer = setInterval(function () {
+                start = Math.min(start + step, target);
+                el.textContent = Math.floor(start);
+                if (start >= target) clearInterval(timer);
+              }, 28);
+            });
+          }
+        });
+      }, { threshold: 0.5 });
+      var band = document.getElementById('stats-band');
+      if (band) observer.observe(band);
+    })();
+
+    // ── Service Worker ───────────────────────────────────────────
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/service-worker.js');
-    }    
+    }
   </script>
 </body>
 </html>
