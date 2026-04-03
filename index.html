@@ -391,37 +391,57 @@
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
-      padding: 2rem;
+      padding: 0;
       transition: all var(--t);
       position: relative;
       overflow: hidden;
-      min-height: 190px;
       cursor: pointer;
       will-change: transform;
     }
     [data-theme="light"] .bento-item {
       box-shadow: 0 1px 4px rgba(0,0,0,0.05);
     }
-    [data-theme="light"] .bento-item:hover {
-      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-    }
-
-    .bento-item::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      transition: opacity var(--t);
-      border-radius: var(--radius-lg);
-    }
 
     .bento-item:hover {
       border-color: var(--item-accent, var(--blue));
       transform: translateY(-5px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.22);
+    }
+    [data-theme="light"] .bento-item:hover {
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
     }
 
-    .bento-item:hover::before { opacity: 1; }
+    /* Image zone */
+    .bento-img-wrap {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      flex-shrink: 0;
+      height: 180px;
+      transition: transform 0.7s cubic-bezier(0.4,0,0.2,1);
+    }
+    .bento-item:hover .bento-img-wrap { transform: scale(1.06); }
+
+    /* Text zone */
+    .bento-content {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    /* Wide cards — horizontal split */
+    .bento-career,
+    .bento-blog {
+      flex-direction: row;
+      align-items: stretch;
+    }
+    .bento-career .bento-img-wrap,
+    .bento-blog .bento-img-wrap {
+      width: 42%;
+      height: auto;
+      min-height: 220px;
+    }
 
     /* Per-card accent colours */
     .bento-career  { --item-accent: var(--blue);   }
@@ -488,8 +508,88 @@
       flex: 1;
     }
 
-    .bento-arrow {
+    .bento-journey {
+      display: flex;
+      align-items: center;
+      gap: 0;
       margin-top: 1.25rem;
+    }
+    .bj-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .bj-year {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+    .bj-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--border-hover);
+      border: 2px solid var(--border);
+      flex-shrink: 0;
+    }
+    .bj-current .bj-dot {
+      background: var(--blue);
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(79,142,247,0.2);
+    }
+    .bj-company {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+    }
+    .bj-current .bj-company {
+      color: var(--blue);
+    }
+    .bj-line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+      min-width: 24px;
+      margin-bottom: 1px; /* align with dot center */
+      margin-top: calc(0.65rem + 0.3rem + 4px); /* push down to dot row */
+    }
+
+    .bento-wordcloud-wrap {
+      margin-top: 1.25rem;
+      width: 100%;
+    }
+    .bento-wordcloud-wrap canvas {
+      display: block;
+      width: 100%;
+    }
+
+    .bento-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 1rem;
+    }
+    .bento-tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 0.25rem 0.6rem;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    [data-theme="light"] .bento-tag {
+      background: rgba(0,0,0,0.04);
+      border-color: rgba(0,0,0,0.1);
+    }
+
+    .bento-arrow {
+      margin-top: auto;
+      padding-top: 1rem;
       font-size: 1.1rem;
       color: var(--item-accent, var(--blue));
       transition: transform var(--t);
@@ -593,8 +693,9 @@
       .hero-avatar-wrap { width: 170px; height: 170px; }
       .hero-name { font-size: clamp(2.4rem, 10vw, 3.5rem); }
       .bento-grid { grid-template-columns: 1fr; }
-      .bento-career, .bento-blog { grid-column: span 1; }
-      .bento-item { min-height: 160px; }
+      .bento-career, .bento-blog { grid-column: span 1; flex-direction: column; }
+      .bento-career .bento-img-wrap,
+      .bento-blog .bento-img-wrap { width: 100%; height: 180px; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
       .stats-grid .stat-item:last-child { grid-column: 1 / -1; }
       .stat-item { padding: 1.5rem 1rem; }
@@ -711,51 +812,119 @@
       <div class="bento-grid">
 
         <a href="career.html" class="bento-item bento-career reveal reveal-delay-1">
-          <div class="bento-cat">Career &amp; Education</div>
-          <div class="bento-icon">💼</div>
-          <div class="bento-title">Professional Journey</div>
-          <div class="bento-desc">Nearly two decades at IBM System z. Mainframe architect, patent inventor, and R&amp;D engineer with roots in Linux kernel development.</div>
-          <div class="bento-arrow">↗</div>
+          <div class="bento-img-wrap" style="background-image:url('images/profile-linkedin.jpg');background-position:40% top"></div>
+          <div class="bento-content">
+            <div class="bento-cat">Career &amp; Education</div>
+            <div class="bento-title">Professional Journey</div>
+            <div class="bento-desc">Over two decades of industry experience specialising in IBM System Z CPU &amp; IO Architecture and Linux Kernel development. Currently serving as Technical Leader for IBM ISDL's System Z Infrastructure Test organisation.</div>
+
+            <div class="bento-journey">
+              <div class="bj-step">
+                <div class="bj-year">2003</div>
+                <div class="bj-dot"></div>
+                <div class="bj-company">Proteans</div>
+              </div>
+              <div class="bj-line"></div>
+              <div class="bj-step">
+                <div class="bj-year">2004</div>
+                <div class="bj-dot"></div>
+                <div class="bj-company">Mindtree</div>
+              </div>
+              <div class="bj-line"></div>
+              <div class="bj-step bj-current">
+                <div class="bj-year">2006</div>
+                <div class="bj-dot"></div>
+                <div class="bj-company">IBM</div>
+              </div>
+            </div>
+
+            <div class="bento-wordcloud-wrap">
+              <canvas id="career-wordcloud"></canvas>
+            </div>
+            <div class="bento-tags">
+              <span class="bento-tag">IBM System Z</span>
+              <span class="bento-tag">Linux Kernel</span>
+              <span class="bento-tag">Fact Checker</span>
+            </div>
+            <div class="bento-arrow">↗</div>
+          </div>
         </a>
 
         <a href="music.html" class="bento-item bento-music reveal reveal-delay-2">
-          <div class="bento-cat">Music</div>
-          <div class="bento-icon">🎵</div>
-          <div class="bento-title">Ghazals &amp; Hindustani</div>
-          <div class="bento-desc">Soulful renditions inspired by a rich musical heritage from Thalassery, Kerala.</div>
-          <div class="bento-arrow">↗</div>
+          <div class="bento-img-wrap" style="background-image:url('https://img.youtube.com/vi/8mrOtneK4Q8/maxresdefault.jpg');background-position:center;background-size:145%"></div>
+          <div class="bento-content">
+            <div class="bento-cat">Music</div>
+            <div class="bento-title">Ghazals &amp; Hindustani</div>
+            <div class="bento-desc">Trained in Hindustani classical music, with a deep love for Ghazals. Performing and recording since childhood, rooted in the rich musical culture of Thalassery, Kerala.</div>
+            <div class="bento-tags">
+              <span class="bento-tag">Hindustani Classical</span>
+              <span class="bento-tag">Ghazals</span>
+              <span class="bento-tag">Thalassery, Kerala</span>
+            </div>
+            <div class="bento-arrow">↗</div>
+          </div>
         </a>
 
         <a href="check4spam.html" class="bento-item bento-spam reveal reveal-delay-1">
-          <div class="bento-cat">Initiative</div>
-          <div class="bento-icon">🔍</div>
-          <div class="bento-title">Check4Spam</div>
-          <div class="bento-desc">Community-driven fact-checking platform fighting misinformation since 2016. Featured in top Indian news portals.</div>
-          <div class="bento-arrow">↗</div>
+          <div class="bento-img-wrap" style="background-image:url('https://img.youtube.com/vi/bFPCWhMcY_g/maxresdefault.jpg');background-position:center top"></div>
+          <div class="bento-content">
+            <div class="bento-cat">Initiative</div>
+            <div class="bento-title">Check4Spam</div>
+            <div class="bento-desc">India's pioneering community fact-checking platform, founded in 2016 to combat viral misinformation. Covered by The Hindu, NDTV, and Times of India, with a volunteer network spanning the country.</div>
+            <div class="bento-tags">
+              <span class="bento-tag">Fact-Checking</span>
+              <span class="bento-tag">Since 2016</span>
+              <span class="bento-tag">10K+ Members</span>
+              <span class="bento-tag">Media Covered</span>
+            </div>
+            <div class="bento-arrow">↗</div>
+          </div>
         </a>
 
         <a href="https://tools.shammas.in" target="_blank" rel="noopener" class="bento-item bento-ai reveal reveal-delay-2">
-          <div class="bento-cat">Tools</div>
-          <div class="bento-icon">🤖</div>
-          <div class="bento-title">AI Tools</div>
-          <div class="bento-desc">Custom AI-powered utilities built to simplify everyday tasks and workflows.</div>
-          <div class="bento-arrow">↗</div>
+          <div class="bento-img-wrap" style="background-image:url('images/LinkedIn Header.jpeg');background-position:left center"></div>
+          <div class="bento-content">
+            <div class="bento-cat">Tools</div>
+            <div class="bento-title">AI Tools</div>
+            <div class="bento-desc">A growing suite of custom AI-powered utilities — from language tools to productivity helpers — built to solve real problems and simplify everyday workflows.</div>
+            <div class="bento-tags">
+              <span class="bento-tag">Generative AI</span>
+              <span class="bento-tag">Productivity</span>
+              <span class="bento-tag">Open Source</span>
+            </div>
+            <div class="bento-arrow">↗</div>
+          </div>
         </a>
 
         <a href="https://photography.shammas.in" target="_blank" rel="noopener" class="bento-item bento-photo reveal reveal-delay-3">
-          <div class="bento-cat">Photography</div>
-          <div class="bento-icon">📷</div>
-          <div class="bento-title">Through My Lens</div>
-          <div class="bento-desc">Moments captured. Stories told in light and shadow.</div>
-          <div class="bento-arrow">↗</div>
+          <div class="bento-img-wrap" style="background-image:url('images/Photography.jpg');background-size:cover;background-position:center"></div>
+          <div class="bento-content">
+            <div class="bento-cat">Photography</div>
+            <div class="bento-title">Through My Lens</div>
+            <div class="bento-desc">Street portraits, travel, and candid moments. Awarded on GuruShots with thousands of votes across global competitions.</div>
+            <div class="bento-tags">
+              <span class="bento-tag">Street Portraits</span>
+              <span class="bento-tag">Travel</span>
+              <span class="bento-tag">GuruShots Awarded</span>
+            </div>
+            <div class="bento-arrow">↗</div>
+          </div>
         </a>
 
         <a href="https://blog.shammas.in" target="_blank" rel="noopener" class="bento-item bento-blog reveal reveal-delay-1">
-          <div class="bento-cat">Writing</div>
-          <div class="bento-icon">✍️</div>
-          <div class="bento-title">Blog</div>
-          <div class="bento-desc">Insights, stories, and reflections from two decades at the crossroads of technology, music, and society.</div>
-          <div class="bento-arrow">↗</div>
+          <div class="bento-img-wrap" style="background-image:url('images/kspfactcheck-launch-1.jpg');background-position:center top"></div>
+          <div class="bento-content">
+            <div class="bento-cat">Writing</div>
+            <div class="bento-title">Blog</div>
+            <div class="bento-desc">Long-form reflections on technology, society, and the human condition — written from the intersection of a technologist's rigour and a musician's sensibility.</div>
+            <div class="bento-tags">
+              <span class="bento-tag">Technology</span>
+              <span class="bento-tag">Society</span>
+              <span class="bento-tag">Music &amp; Culture</span>
+              <span class="bento-tag">Long-form</span>
+            </div>
+            <div class="bento-arrow">↗</div>
+          </div>
         </a>
 
       </div>
@@ -848,6 +1017,65 @@
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/service-worker.js');
     }
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wordcloud2.js/1.2.2/wordcloud2.min.js"></script>
+  <script>
+    (function () {
+      function renderWordCloud() {
+        var canvas = document.getElementById('career-wordcloud');
+        if (!canvas || typeof WordCloud === 'undefined') return;
+        var wrap = canvas.parentElement;
+        var w = wrap.offsetWidth || 380;
+        var h = 200;
+        canvas.width = w;
+        canvas.height = h;
+
+        var isDark = document.documentElement.getAttribute('data-theme') !== 'light';
+        var colors = isDark
+          ? ['#e879f9','#38bdf8','#fb923c','#4ade80','#facc15','#f472b6','#a78bfa','#60a5fa','#34d399','#f87171']
+          : ['#9333ea','#0284c7','#ea580c','#16a34a','#ca8a04','#db2777','#7c3aed','#2563eb','#059669','#dc2626'];
+
+        WordCloud(canvas, {
+          list: [
+            ['IBM-Z CPU Architecture', 9],
+            ['System Architecture', 8],
+            ['Linux Kernel', 8],
+            ['IBM-Z IO Architecture', 7],
+            ['IBM Mainframe Hardware', 6],
+            ['Architecture Verification', 5],
+            ['IBM z/VM', 5],
+            ['C Programming', 5],
+            ['Virtualization', 4],
+            ['Device Drivers', 4],
+            ['Hardware Testing', 4],
+            ['SCSI', 4],
+            ['IBM z/OS', 4],
+            ['Test Automation', 3],
+            ['Performance Analysis', 3],
+            ['Storage I/O', 3],
+            ['Debugging', 3],
+            ['Fact Checking', 3],
+            ['IBM ISDL', 3],
+          ],
+          gridSize: Math.round(6 * w / 400),
+          weightFactor: function (size) { return size * (w / 400) * 2.8; },
+          fontFamily: 'Space Grotesk, Inter, sans-serif',
+          color: function () { return colors[Math.floor(Math.random() * colors.length)]; },
+          backgroundColor: 'transparent',
+          rotateRatio: 0.35,
+          rotationSteps: 2,
+          minSize: 8,
+          drawOutOfBound: false,
+          shrinkToFit: true,
+        });
+      }
+
+      window.addEventListener('load', function () { setTimeout(renderWordCloud, 100); });
+
+      var themeObserver = new MutationObserver(function () { setTimeout(renderWordCloud, 50); });
+      themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    })();
   </script>
 </body>
 </html>
