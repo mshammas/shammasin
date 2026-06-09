@@ -51,6 +51,27 @@
   }
   </script>
 
+  <!-- Latest single -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MusicRecording",
+    "name": "Shikharam",
+    "alternateName": "ശിഖരം",
+    "inLanguage": "ml",
+    "datePublished": "2026-05",
+    "duration": "PT4M13S",
+    "byArtist": { "@type": "Person", "name": "Shammas Oliyath" },
+    "composer": { "@type": "Person", "name": "Shammas Oliyath" },
+    "lyricist": { "@type": "Person", "name": "Ajmal Mampad" },
+    "performer": [
+      { "@type": "Person", "name": "Faheed Ali" },
+      { "@type": "Person", "name": "Saarika Gopinath" }
+    ],
+    "sameAs": "https://open.spotify.com/track/72kWmgoxqF3RDbwavCK5ts"
+  }
+  </script>
+
   <style>
     /* ============================================================
        MUSIC HERO — Full dark immersive
@@ -418,11 +439,98 @@
     }
 
     /* ============================================================
+       LATEST RELEASE — Featured new single
+       ============================================================ */
+    .latest-release {
+      max-width: var(--max-w);
+      margin: 0 auto 4rem;
+      padding: 0 2rem;
+    }
+
+    .release-card {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 2.5rem;
+      align-items: center;
+      background: linear-gradient(135deg, rgba(240,165,0,0.06), rgba(139,92,246,0.04));
+      border: 1px solid rgba(240,165,0,0.2);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      transition: all var(--t);
+    }
+    .release-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: var(--glow-gold);
+    }
+    [data-theme="light"] .release-card {
+      background: linear-gradient(135deg, rgba(240,165,0,0.05), rgba(255,255,255,0.8));
+      box-shadow: 0 4px 20px rgba(240,165,0,0.06), 0 1px 4px rgba(0,0,0,0.06);
+    }
+
+    .release-cover {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1 / 1;
+      border-radius: var(--radius-lg);
+      object-fit: cover;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    }
+    [data-theme="light"] .release-cover {
+      box-shadow: 0 12px 36px rgba(0,0,0,0.15);
+    }
+
+    .release-info { min-width: 0; }
+
+    .release-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4.5vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin: 0.85rem 0 0.5rem;
+    }
+    .release-title span { color: var(--gold); font-weight: 600; }
+
+    .release-credits {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .release-credits strong { color: var(--text); font-weight: 600; }
+
+    .release-player { margin-bottom: 1.5rem; }
+    .release-player iframe { display: block; }
+
+    .spotify-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.8rem 1.6rem;
+      background: #1DB954;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border-radius: 99px;
+      transition: all var(--t);
+    }
+    .spotify-btn:hover {
+      background: #1ed760;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(29,185,84,0.3);
+    }
+    .spotify-btn svg { width: 20px; height: 20px; fill: currentColor; }
+
+    /* ============================================================
        RESPONSIVE
        ============================================================ */
     @media (max-width: 768px) {
       .soundcloud-card { flex-direction: column; text-align: center; }
       .soundcloud-link { margin: 0 auto; }
+      .latest-release { padding: 0 1.25rem; }
+      .release-card { grid-template-columns: 1fr; gap: 1.75rem; padding: 1.5rem; text-align: center; }
+      .release-cover { max-width: 260px; margin: 0 auto; }
+      .spotify-btn { margin: 0 auto; }
       .quote-card { padding: 1.75rem 1.5rem 1.75rem 2rem; }
       .music-hero { padding: 3.5rem 1.5rem 3.5rem; }
       .music-layout { padding: 0 1.25rem; }
@@ -479,6 +587,52 @@
           </svg>
           Subscribe on YouTube
         </a>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         LATEST RELEASE — Shikharam (new single)
+    ══════════════════════════════════════════ -->
+    <section class="latest-release reveal" aria-label="Latest release">
+      <div class="section-label" style="color:var(--gold)">New Release · May 2026</div>
+      <h2 class="section-title" style="margin-bottom:1.5rem">Latest Release</h2>
+
+      <div class="release-card">
+        <img class="release-cover"
+             src="images/Shikharam-800.jpg"
+             alt="Shikharam (ശിഖരം) — single cover art"
+             width="800" height="800" loading="lazy">
+
+        <div class="release-info">
+          <div class="music-badge">🎵 Latest Single</div>
+          <h3 class="release-title">Shikharam <span>ശിഖരം</span></h3>
+          <p class="release-credits">
+            Composed by <strong>Shammas Oliyath</strong> · Lyrics by <strong>Ajmal Mampad</strong><br>
+            Vocals by <strong>Faheed Ali</strong> &amp; <strong>Saarika Gopinath</strong> · Single · 2026
+          </p>
+
+          <div class="release-player">
+            <iframe
+              style="border-radius:12px"
+              src="https://open.spotify.com/embed/track/72kWmgoxqF3RDbwavCK5ts?utm_source=oembed"
+              width="100%" height="152" frameborder="0"
+              title="Spotify Embed: Shikharam (ശിഖരം)"
+              loading="lazy"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <a href="https://open.spotify.com/track/72kWmgoxqF3RDbwavCK5ts"
+             target="_blank" rel="noopener"
+             class="spotify-btn"
+             onclick="gtag('event','click',{'event_category':'engagement','event_label':'Spotify Shikharam','value':1})">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.52 17.34c-.24.36-.66.48-1.02.24-2.82-1.74-6.36-2.1-10.56-1.14-.42.12-.78-.18-.9-.54-.12-.42.18-.78.54-.9 4.56-1.02 8.52-.6 11.64 1.32.42.18.48.66.3 1.02zm1.44-3.3c-.3.42-.84.6-1.26.3-3.24-1.98-8.16-2.58-11.94-1.38-.48.12-1.02-.12-1.14-.6-.12-.48.12-1.02.6-1.14 4.38-1.32 9.78-.66 13.5 1.62.42.24.54.78.24 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.1 9.3c-.6.18-1.2-.18-1.38-.72-.18-.6.18-1.2.72-1.38 4.32-1.32 11.34-1.02 15.78 1.62.54.3.72 1.02.42 1.56-.3.48-1.02.66-1.56.36z"/>
+            </svg>
+            Play on Spotify ↗
+          </a>
+        </div>
       </div>
     </section>
 
