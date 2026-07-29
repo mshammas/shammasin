@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZNW1FKGM0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2ZNW1FKGM0');
+  </script>
+  <!-- Flash-free theme -->
+  <script>(function(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
+
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Ventures | Shammas Oliyath</title>
+  <meta name="description" content="AI-powered ventures built by Shammas Oliyath — SongPractice, a lyrics prompter, FIFA World Cup 2026 live scores, and Eventsbook.">
+  <meta name="keywords" content="Shammas Oliyath, AI Ventures, SongPractice, Lyrics Prompter, FIFA World Cup 2026, Eventsbook">
+  <meta name="author" content="Shammas Oliyath">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AI Ventures | Shammas Oliyath">
+  <meta property="og:description" content="A collection of AI-powered products and tools built by Shammas Oliyath.">
+  <meta property="og:image" content="https://shammas.in/images/ai-ventures.jpg">
+  <meta property="og:url" content="https://shammas.in/ventures.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0a0a0f">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+  <link rel="apple-touch-icon" href="/images/icon-192.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="canonical" href="https://shammas.in/ventures.html"/>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="/site.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Shammas Oliyath",
+    "url": "https://shammas.in",
+    "image": "https://shammas.in/images/profile-linkedin.jpg",
+    "jobTitle": "System Engineer & Developer",
+    "worksFor": { "@type": "Organization", "name": "IBM" },
+    "sameAs": [
+      "https://www.linkedin.com/in/shammas/",
+      "https://twitter.com/mshammas",
+      "https://www.instagram.com/shammasoliyath",
+      "https://www.youtube.com/@mshammas"
+    ]
+  }
+  </script>
+
+  <style>
+    /* ============================================================
+       PAGE INTRO
+       ============================================================ */
+    .ventures-intro {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 4rem 2rem 2rem;
+      text-align: center;
+    }
+    .ventures-intro .section-label {
+      justify-content: center;
+    }
+    .ventures-intro .section-label::before {
+      display: none;
+    }
+    .ventures-lead {
+      max-width: 640px;
+      margin: 0.5rem auto 0;
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    /* ============================================================
+       VENTURES GRID
+       ============================================================ */
+    .ventures-section {
+      max-width: var(--max-w);
+      margin: 0 auto 4rem;
+      padding: 1rem 2rem 0;
+    }
+
+    .ventures-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+
+    .venture-card {
+      display: flex;
+      flex-direction: column;
+      padding: 1.75rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .venture-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at top left, var(--card-glow, transparent), transparent 60%);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity var(--t);
+    }
+    .venture-card:hover::before { opacity: 1; }
+    .venture-card:hover { border-color: var(--card-accent, var(--blue)); }
+
+    /* Per-card accents from the shared theme palette */
+    .venture-practice { --card-accent: var(--gold);   --card-glow: rgba(240,165,0,0.10); }
+    .venture-lyrics   { --card-accent: var(--purple); --card-glow: rgba(139,92,246,0.10); }
+    .venture-fifa     { --card-accent: var(--green);  --card-glow: rgba(16,185,129,0.10); }
+    .venture-events   { --card-accent: var(--blue);   --card-glow: rgba(79,142,247,0.10); }
+
+    .venture-cat {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--card-accent, var(--blue));
+      margin-bottom: 0.75rem;
+    }
+
+    .venture-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 0.6rem;
+    }
+
+    .venture-domain {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--card-accent, var(--blue));
+      margin-bottom: 0.9rem;
+    }
+
+    .venture-desc {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    .venture-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 1.25rem;
+    }
+    .venture-tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 0.25rem 0.6rem;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    [data-theme="light"] .venture-tag {
+      background: rgba(0,0,0,0.04);
+      border-color: rgba(0,0,0,0.1);
+    }
+
+    .venture-visit {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--card-accent, var(--blue));
+      transition: transform var(--t);
+      align-self: flex-start;
+    }
+    .venture-card:hover .venture-visit { transform: translateX(4px); }
+
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
+    @media (max-width: 900px) {
+      .ventures-intro { padding: 3rem 1.25rem 1.5rem; }
+      .ventures-section { padding: 0.5rem 1.25rem 0; margin-bottom: 3rem; }
+    }
+    @media (max-width: 700px) {
+      .ventures-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="sr-only" style="position:absolute;left:-9999px">Skip to main content</a>
+  <noscript><div style="padding:1rem;background:#1a1a26;color:#f1f5f9;text-align:center">This site works best with JavaScript enabled.</div></noscript>
+
+  <!-- Header (injected) -->
+  <div id="header-placeholder"></div>
+  <script>
+    fetch('/header.html')
+      .then(function(r){ return r.text(); })
+      .then(function(html){
+        document.getElementById('header-placeholder').innerHTML = html;
+        if (typeof window.initHeader === 'function') window.initHeader();
+      });
+  </script>
+
+  <main id="main-content">
+
+    <!-- ══════════════════════════════════════════
+         INTRO
+    ══════════════════════════════════════════ -->
+    <section class="ventures-intro reveal" aria-label="AI Ventures introduction">
+      <div class="section-label">AI Ventures</div>
+      <h1 class="section-title">Things I'm Building with AI</h1>
+      <p class="ventures-lead">
+        A growing set of AI-powered products and tools I build to scratch my own itches — from
+        music practice and performance to live sports and running real-world events.
+      </p>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         VENTURES GRID
+    ══════════════════════════════════════════ -->
+    <section class="ventures-section" aria-label="AI ventures">
+      <div class="ventures-grid">
+
+        <a href="https://practice.shammas.in" target="_blank" rel="noopener" class="venture-card glass-card venture-practice reveal reveal-delay-1">
+          <div class="venture-cat">Music Tool</div>
+          <div class="venture-title">SongPractice</div>
+          <div class="venture-domain">practice.shammas.in ↗</div>
+          <p class="venture-desc">
+            Clip a song into sections and loop them on repeat to master the parts you're learning —
+            a focused practice tool for learning a song piece by piece.
+          </p>
+          <div class="venture-tags">
+            <span class="venture-tag">Song Sections</span>
+            <span class="venture-tag">Loop / Repeat</span>
+            <span class="venture-tag">Practice</span>
+          </div>
+          <span class="venture-visit">Visit SongPractice ↗</span>
+        </a>
+
+        <a href="https://lyrics.shammas.in" target="_blank" rel="noopener" class="venture-card glass-card venture-lyrics reveal reveal-delay-2">
+          <div class="venture-cat">Music Tool</div>
+          <div class="venture-title">Lyrics Prompter</div>
+          <div class="venture-domain">lyrics.shammas.in ↗</div>
+          <p class="venture-desc">
+            A singer's lyrics prompter that keeps the words in front of you so you can stay in the
+            moment on stage or in the studio.
+          </p>
+          <div class="venture-tags">
+            <span class="venture-tag">Lyrics</span>
+            <span class="venture-tag">Prompter</span>
+            <span class="venture-tag">Performance</span>
+          </div>
+          <span class="venture-visit">Visit Lyrics Prompter ↗</span>
+        </a>
+
+        <a href="https://fifa.shammas.in" target="_blank" rel="noopener" class="venture-card glass-card venture-fifa reveal reveal-delay-1">
+          <div class="venture-cat">Sports</div>
+          <div class="venture-title">FIFA World Cup 2026 Live</div>
+          <div class="venture-domain">fifa.shammas.in ↗</div>
+          <p class="venture-desc">
+            Live FIFA World Cup 2026 scores, the full match schedule, standings, goals and cards —
+            auto-updating across every timezone for the USA, Canada &amp; Mexico tournament.
+          </p>
+          <div class="venture-tags">
+            <span class="venture-tag">Live Scores</span>
+            <span class="venture-tag">Schedule</span>
+            <span class="venture-tag">Standings</span>
+          </div>
+          <span class="venture-visit">Visit FIFA 2026 Live ↗</span>
+        </a>
+
+        <a href="https://eventsbook.in" target="_blank" rel="noopener" class="venture-card glass-card venture-events reveal reveal-delay-2">
+          <div class="venture-cat">Product</div>
+          <div class="venture-title">Eventsbook</div>
+          <div class="venture-domain">eventsbook.in ↗</div>
+          <p class="venture-desc">
+            Create an event, take bookings over UPI, and check attendees in at the door — an
+            end-to-end platform covering bookings, payments, tickets and door check-in.
+          </p>
+          <div class="venture-tags">
+            <span class="venture-tag">Events</span>
+            <span class="venture-tag">UPI Payments</span>
+            <span class="venture-tag">Ticketing</span>
+            <span class="venture-tag">Check-in</span>
+          </div>
+          <span class="venture-visit">Visit Eventsbook ↗</span>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-socials">
+      <a href="https://www.linkedin.com/in/shammas/" target="_blank" rel="noopener" class="footer-social-link" aria-label="LinkedIn">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" loading="lazy">
+      </a>
+      <a href="https://www.youtube.com/@mshammas" target="_blank" rel="noopener" class="footer-social-link" aria-label="YouTube">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" loading="lazy">
+      </a>
+      <a href="https://www.instagram.com/shammasoliyath" target="_blank" rel="noopener" class="footer-social-link" aria-label="Instagram">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" loading="lazy">
+      </a>
+      <a href="https://twitter.com/mshammas" target="_blank" rel="noopener" class="footer-social-link" aria-label="Twitter">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" loading="lazy">
+      </a>
+    </div>
+    <p class="footer-copy">&copy; 2025 Shammas Oliyath. All rights reserved.</p>
+  </footer>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js');
+    }
+  </script>
+</body>
+</html>

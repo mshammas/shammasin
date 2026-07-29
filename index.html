@@ -456,6 +456,15 @@
     .bento-ai      { --item-accent: var(--purple); }
     .bento-ai::before      { background: radial-gradient(ellipse at top,       rgba(139,92,246,0.08), transparent 60%); }
 
+    .bento-ventures { --item-accent: var(--gold); }
+    .bento-ventures::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at top right, rgba(240,165,0,0.10), transparent 60%);
+      pointer-events: none;
+    }
+
     .bento-photo   { --item-accent: var(--green);  }
     .bento-photo::before   { background: radial-gradient(ellipse at bottom,    rgba(16,185,129,0.08), transparent 60%); }
 
@@ -1059,6 +1068,22 @@
               <span class="bento-tag">Generative AI</span>
               <span class="bento-tag">Productivity</span>
               <span class="bento-tag">Open Source</span>
+            </div>
+            <div class="bento-arrow">↗</div>
+          </div>
+        </a>
+
+        <a href="ventures.html" class="bento-item bento-ventures reveal reveal-delay-3">
+          <div class="bento-img-wrap" style="background-image:url('images/ai-ventures.jpg');background-position:center"></div>
+          <div class="bento-content">
+            <div class="bento-cat">AI Ventures</div>
+            <div class="bento-title">Things I'm Building</div>
+            <div class="bento-desc">A growing set of AI-powered products and tools — a song-practice looper, a lyrics prompter, live FIFA World Cup 2026 scores, and Eventsbook for running events over UPI.</div>
+            <div class="bento-tags">
+              <span class="bento-tag">SongPractice</span>
+              <span class="bento-tag">Lyrics Prompter</span>
+              <span class="bento-tag">FIFA 2026 Live</span>
+              <span class="bento-tag">Eventsbook</span>
             </div>
             <div class="bento-arrow">↗</div>
           </div>
