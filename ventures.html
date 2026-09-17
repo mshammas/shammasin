@@ -15,8 +15,8 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AI Ventures | Shammas Oliyath</title>
-  <meta name="description" content="AI-powered ventures built by Shammas Oliyath — LessonCues, SongPractice, a lyrics prompter, FIFA World Cup 2026 live scores, and Eventsbook.">
-  <meta name="keywords" content="Shammas Oliyath, AI Ventures, LessonCues, SongPractice, Lyrics Prompter, FIFA World Cup 2026, Eventsbook">
+  <meta name="description" content="AI-powered ventures built by Shammas Oliyath — LessonCues and Eventsbook, plus SongPractice, a lyrics prompter and FIFA World Cup 2026 live scores.">
+  <meta name="keywords" content="Shammas Oliyath, AI Ventures, LessonCues, Eventsbook, SongPractice, Lyrics Prompter, FIFA World Cup 2026">
   <meta name="author" content="Shammas Oliyath">
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="website">
@@ -121,8 +121,17 @@
     .venture-events   { --card-accent: var(--blue);   --card-glow: rgba(79,142,247,0.10); }
     .venture-lessons  { --card-accent: var(--red);    --card-glow: rgba(239,68,68,0.10); }
 
-    /* Featured card spans the full grid width */
-    .venture-featured { grid-column: 1 / -1; }
+    /* Group headings: flagship products, then smaller tools */
+    .ventures-group-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 1rem;
+    }
+    .ventures-grid + .ventures-group-label { margin-top: 3rem; }
+    .ventures-grid-3 { grid-template-columns: repeat(3, 1fr); }
 
     .venture-cat {
       font-size: 0.72rem;
@@ -207,8 +216,11 @@
       .ventures-intro { padding: 3rem 1.25rem 1.5rem; }
       .ventures-section { padding: 0.5rem 1.25rem 0; margin-bottom: 3rem; }
     }
+    @media (max-width: 900px) {
+      .ventures-grid-3 { grid-template-columns: repeat(2, 1fr); }
+    }
     @media (max-width: 700px) {
-      .ventures-grid { grid-template-columns: 1fr; }
+      .ventures-grid, .ventures-grid-3 { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -245,9 +257,10 @@
          VENTURES GRID
     ══════════════════════════════════════════ -->
     <section class="ventures-section" aria-label="AI ventures">
+      <h2 class="ventures-group-label">Flagship products</h2>
       <div class="ventures-grid">
 
-        <article class="venture-card glass-card venture-lessons venture-featured reveal reveal-delay-1">
+        <article class="venture-card glass-card venture-lessons reveal reveal-delay-1">
           <div class="venture-cat">Learning Tool</div>
           <div class="venture-title">LessonCues</div>
           <a href="https://lessoncues.com" target="_blank" rel="noopener" class="venture-domain">lessoncues.com ↗</a>
@@ -270,6 +283,28 @@
             <a href="https://medium.com/@shammas/i-rebuilt-youtubes-retired-clip-feature-and-it-turned-into-a-teaching-tool-3bb9c289dfc5" target="_blank" rel="noopener" class="venture-visit">Read the story on Medium ↗</a>
           </div>
         </article>
+
+        <a href="https://eventsbook.in" target="_blank" rel="noopener" class="venture-card glass-card venture-events reveal reveal-delay-2">
+          <div class="venture-cat">Product</div>
+          <div class="venture-title">Eventsbook</div>
+          <div class="venture-domain">eventsbook.in ↗</div>
+          <p class="venture-desc">
+            Create an event, take bookings over UPI, and check attendees in at the door — an
+            end-to-end platform covering bookings, payments, tickets and door check-in.
+          </p>
+          <div class="venture-tags">
+            <span class="venture-tag">Events</span>
+            <span class="venture-tag">UPI Payments</span>
+            <span class="venture-tag">Ticketing</span>
+            <span class="venture-tag">Check-in</span>
+          </div>
+          <span class="venture-visit">Visit Eventsbook ↗</span>
+        </a>
+
+      </div>
+
+      <h2 class="ventures-group-label">Smaller tools &amp; experiments</h2>
+      <div class="ventures-grid ventures-grid-3">
 
         <a href="https://practice.shammas.in" target="_blank" rel="noopener" class="venture-card glass-card venture-practice reveal reveal-delay-1">
           <div class="venture-cat">Music Tool</div>
@@ -303,7 +338,7 @@
           <span class="venture-visit">Visit Lyrics Prompter ↗</span>
         </a>
 
-        <a href="https://fifa.shammas.in" target="_blank" rel="noopener" class="venture-card glass-card venture-fifa reveal reveal-delay-1">
+        <a href="https://fifa.shammas.in" target="_blank" rel="noopener" class="venture-card glass-card venture-fifa reveal reveal-delay-3">
           <div class="venture-cat">Sports</div>
           <div class="venture-title">FIFA World Cup 2026 Live</div>
           <div class="venture-domain">fifa.shammas.in ↗</div>
@@ -317,23 +352,6 @@
             <span class="venture-tag">Standings</span>
           </div>
           <span class="venture-visit">Visit FIFA 2026 Live ↗</span>
-        </a>
-
-        <a href="https://eventsbook.in" target="_blank" rel="noopener" class="venture-card glass-card venture-events reveal reveal-delay-2">
-          <div class="venture-cat">Product</div>
-          <div class="venture-title">Eventsbook</div>
-          <div class="venture-domain">eventsbook.in ↗</div>
-          <p class="venture-desc">
-            Create an event, take bookings over UPI, and check attendees in at the door — an
-            end-to-end platform covering bookings, payments, tickets and door check-in.
-          </p>
-          <div class="venture-tags">
-            <span class="venture-tag">Events</span>
-            <span class="venture-tag">UPI Payments</span>
-            <span class="venture-tag">Ticketing</span>
-            <span class="venture-tag">Check-in</span>
-          </div>
-          <span class="venture-visit">Visit Eventsbook ↗</span>
         </a>
 
       </div>
