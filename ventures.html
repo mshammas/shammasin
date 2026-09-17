@@ -15,8 +15,8 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AI Ventures | Shammas Oliyath</title>
-  <meta name="description" content="AI-powered ventures built by Shammas Oliyath — SongPractice, a lyrics prompter, FIFA World Cup 2026 live scores, and Eventsbook.">
-  <meta name="keywords" content="Shammas Oliyath, AI Ventures, SongPractice, Lyrics Prompter, FIFA World Cup 2026, Eventsbook">
+  <meta name="description" content="AI-powered ventures built by Shammas Oliyath — LessonCues, SongPractice, a lyrics prompter, FIFA World Cup 2026 live scores, and Eventsbook.">
+  <meta name="keywords" content="Shammas Oliyath, AI Ventures, LessonCues, SongPractice, Lyrics Prompter, FIFA World Cup 2026, Eventsbook">
   <meta name="author" content="Shammas Oliyath">
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="website">
@@ -119,6 +119,10 @@
     .venture-lyrics   { --card-accent: var(--purple); --card-glow: rgba(139,92,246,0.10); }
     .venture-fifa     { --card-accent: var(--green);  --card-glow: rgba(16,185,129,0.10); }
     .venture-events   { --card-accent: var(--blue);   --card-glow: rgba(79,142,247,0.10); }
+    .venture-lessons  { --card-accent: var(--red);    --card-glow: rgba(239,68,68,0.10); }
+
+    /* Featured card spans the full grid width */
+    .venture-featured { grid-column: 1 / -1; }
 
     .venture-cat {
       font-size: 0.72rem;
@@ -187,6 +191,15 @@
     }
     .venture-card:hover .venture-visit { transform: translateX(4px); }
 
+    .venture-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 1.5rem;
+    }
+    .venture-links .venture-visit:hover { transform: translateX(4px); }
+    .venture-card:hover .venture-links .venture-visit { transform: none; }
+    .venture-card:hover .venture-links .venture-visit:hover { transform: translateX(4px); }
+
     /* ============================================================
        RESPONSIVE
        ============================================================ */
@@ -224,7 +237,7 @@
       <h1 class="section-title">Things I'm Building with AI</h1>
       <p class="ventures-lead">
         A growing set of AI-powered products and tools I build to scratch my own itches — from
-        music practice and performance to live sports and running real-world events.
+        teaching and music practice to live sports and running real-world events.
       </p>
     </section>
 
@@ -233,6 +246,30 @@
     ══════════════════════════════════════════ -->
     <section class="ventures-section" aria-label="AI ventures">
       <div class="ventures-grid">
+
+        <article class="venture-card glass-card venture-lessons venture-featured reveal reveal-delay-1">
+          <div class="venture-cat">Learning Tool</div>
+          <div class="venture-title">LessonCues</div>
+          <a href="https://lessoncues.com" target="_blank" rel="noopener" class="venture-domain">lessoncues.com ↗</a>
+          <p class="venture-desc">
+            It started as a rebuild of YouTube's retired Clips feature and grew into a teaching tool.
+            Clip exact moments from any YouTube video, practise them with slow-down, looping and pause,
+            and put clips from different videos together into lessons to share with students. It's for
+            musicians, dancers, coaches and language learners. Nothing is downloaded: clips play through
+            YouTube's own player, so creators keep their views, and anyone can watch for free without
+            an account.
+          </p>
+          <div class="venture-tags">
+            <span class="venture-tag">YouTube Clips</span>
+            <span class="venture-tag">Slow-down / Loop</span>
+            <span class="venture-tag">Lessons</span>
+            <span class="venture-tag">Teaching</span>
+          </div>
+          <div class="venture-links">
+            <a href="https://lessoncues.com" target="_blank" rel="noopener" class="venture-visit">Visit LessonCues ↗</a>
+            <a href="https://medium.com/@shammas/i-rebuilt-youtubes-retired-clip-feature-and-it-turned-into-a-teaching-tool-3bb9c289dfc5" target="_blank" rel="noopener" class="venture-visit">Read the story on Medium ↗</a>
+          </div>
+        </article>
 
         <a href="https://practice.shammas.in" target="_blank" rel="noopener" class="venture-card glass-card venture-practice reveal reveal-delay-1">
           <div class="venture-cat">Music Tool</div>
